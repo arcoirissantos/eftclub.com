@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Build output
+_site/
+dist/
+*.log
+
+# Sass compiler outputs
+src/scss/*.css
+src/scss/*.css.map
+
+# Output folders (optional if using dist folders)
+src/css/*.css.map
+
+# VS Code settings (optional)
+.vscode/
+
+# OS-specific
+.DS_Store
+Thumbs.db
