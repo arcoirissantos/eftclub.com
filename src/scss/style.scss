@@ -1,1 +1,90 @@
 @import "reset";
+@import "variables";
+
+// section {
+//   margin-block: clamp(2rem, 5vw, 4rem);
+
+//   @media (max-width: $mobile-break) {
+//     margin-block: 2rem;
+//   }
+// }
+
+// body {
+//   max-width: 900px;
+//   width: 85%;
+//   margin: 0 auto;
+// }
+
+.background_main {
+  padding: clamp(2rem, 5vw, 4rem);
+
+  @media (max-width: $mobile-break) {
+    padding: 2rem;
+  }
+
+  max-width: none;
+  margin-inline: auto;
+  background-image: url("/src/images/background_top.webp"),
+    url("/src/images/background_botton.webp");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
+  background-size: clamp(100px, 20vw, 200px), clamp(100px, 20vw, 200px);
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .banner {
+    img {
+      width: clamp(200px, 30vw, 300px);
+      height: auto;
+      display: block;
+    }
+  }
+
+  .content {
+    margin-block: 4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+
+    .proposta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 500px;
+      h1 {
+        line-height: 1em;
+        text-align: center;
+      }
+
+      @media (max-width: $mobile-break) {
+        gap: 2rem;
+      }
+    }
+
+    .terapeuta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: 700;
+      img {
+        width: clamp(150px, 20vw, 200px);
+      }
+      ul {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        img {
+          width: 20px;
+        }
+      }
+    }
+  }
+}

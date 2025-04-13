@@ -1,0 +1,59 @@
+//colors//
+$color-primary: #08aeaf;
+$color-secondary: #319e4e;
+$color-text: #033b3b;
+$color-background: linear-gradient(135deg, #c3dcc877, #f5ead229);
+$color-white: #ffffff;
+
+//fonts//
+$font: "Signika", sans-serif;
+
+//mobile @//
+$mobile-break: 768px;
+
+//global styles//
+body {
+  font-family: $font;
+  color: $color-text;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem); // ~29px to 40px
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 2.3vw, 1.5rem); // ~21px to 32px
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 1rem;
+  max-width: 65ch; // keeps long text readable
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  background-color: $color-primary;
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: $font;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background-color: $color-secondary;
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}

@@ -1,0 +1,169 @@
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Signika", sans-serif;
+  color: #033b3b;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 2.3vw, 1.5rem);
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 1rem;
+  max-width: 65ch;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  background-color: #08aeaf;
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Signika", sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn:hover, .btn:focus {
+  background-color: #319e4e;
+  transform: scale(1.03);
+  cursor: pointer;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+.background_main {
+  padding: clamp(2rem, 5vw, 4rem);
+  max-width: none;
+  margin-inline: auto;
+  background-image: url("/src/images/background_top.webp"), url("/src/images/background_botton.webp");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, bottom right;
+  background-size: clamp(100px, 20vw, 200px), clamp(100px, 20vw, 200px);
+}
+@media (max-width: 768px) {
+  .background_main {
+    padding: 2rem;
+  }
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#main .banner img {
+  width: clamp(200px, 30vw, 300px);
+  height: auto;
+  display: block;
+}
+#main .content {
+  margin-block: 4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+}
+#main .content .proposta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 500px;
+}
+#main .content .proposta h1 {
+  line-height: 1em;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  #main .content .proposta {
+    gap: 2rem;
+  }
+}
+#main .content .terapeuta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+}
+#main .content .terapeuta img {
+  width: clamp(150px, 20vw, 200px);
+}
+#main .content .terapeuta ul {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+#main .content .terapeuta ul img {
+  width: 20px;
+}
