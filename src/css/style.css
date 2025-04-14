@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Modern CSS Reset */
 *,
 *::before,
@@ -102,12 +103,12 @@ p {
 
 .background_main {
   padding: clamp(2rem, 5vw, 4rem);
-  max-width: none;
   margin-inline: auto;
   background-image: url("/src/images/background_top.webp"), url("/src/images/background_botton.webp");
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
   background-size: clamp(100px, 20vw, 200px), clamp(100px, 20vw, 200px);
+  background-color: #f5f7f0;
 }
 @media (max-width: 768px) {
   .background_main {
@@ -150,6 +151,11 @@ p {
     gap: 2rem;
   }
 }
+#main .content .sub_btn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 #main .content .terapeuta {
   display: flex;
   flex-direction: column;
@@ -166,4 +172,50 @@ p {
 }
 #main .content .terapeuta ul img {
   width: 20px;
+}
+#about {
+  padding: clamp(1rem, 5vw, 4rem);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+#about .especilização {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#about ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#about li {
+  display: flex;
+  gap: 10px;
+}
+#about img {
+  width: 26px;
+}
+#about .saber-mais {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  max-width: 39rem;
+}
+#about .saber-mais ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+#about .saber-mais ul .btn {
+  background-color: transparent;
+  border: 3px solid #08aeaf;
+  color: #033b3b;
 }
