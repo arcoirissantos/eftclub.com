@@ -21,78 +21,84 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 
   .banner {
+    padding-top: 2rem;
     img {
       width: clamp(200px, 30vw, 300px);
       height: auto;
-      display: block;
     }
   }
 
   .content {
-    margin-block: 4rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5rem;
-    justify-content: center;
+    padding: 2rem clamp(1rem, 4vw, 5rem);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "h1 terapeuta"
+      "proposta terapeuta";
 
-    .proposta {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      max-width: 500px;
-
-      h1 {
-        line-height: 1em;
-        text-align: center;
-      }
-
-      @media (max-width: $mobile-break) {
-        gap: 2rem;
-      }
+    h1 {
+      max-width: clamp(40rem, 10vw + 1rem, 45rem);
+      line-height: 1em;
+      text-align: center;
+      grid-area: h1;
+      align-self: center;
     }
-    .sub_btn {
-      display: flex;
-      flex-direction: column;
+    .proposta {
+      display: grid;
+      grid-area: proposta;
+      align-self: start;
+      justify-items: center;
       gap: 1rem;
     }
     .terapeuta {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-weight: 700;
+      grid-area: terapeuta;
+    }
 
-      img {
-        width: clamp(150px, 20vw, 200px);
-      }
+    @media (max-width: $mobile-break) {
+      grid-template-rows: auto auto auto;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "h1"
+        "terapeuta"
+        "proposta";
+      gap: 2rem;
 
-      ul {
-        display: flex;
-        gap: 5px;
-        justify-content: center;
-
-        img {
-          width: 20px;
-        }
+      h1 {
+        max-width: clamp(22rem, 10vw + 1rem, 45rem);
       }
     }
   }
 
-  @media (max-width: $mobile-break) {
-    // .banner {
-    //   order: 1;
-    // }
+  .terapeuta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 700;
+
+    img {
+      width: clamp(150px, 20vw, 200px);
+    }
+
+    ul {
+      display: flex;
+      gap: 5px;
+      justify-content: center;
+
+      img {
+        width: 20px;
+      }
+    }
   }
 }
 
 // Starts section 2
 
 #about {
-  padding: clamp(1rem, 5vw, 4rem);
+  padding: 3rem clamp(1rem, 4vw, 5rem);
   margin-left: 1rem;
   margin-right: 1rem;
   display: flex;
@@ -104,13 +110,14 @@
   .especilização {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 2rem;
   }
 
   ul {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   li {
@@ -128,17 +135,38 @@
     text-align: center;
     max-width: 39rem;
 
+    .saiba-mais {
+      font-weight: 700;
+    }
+
+    .btn {
+      max-width: 10rem;
+      padding: 0.5rem 1.3rem;
+    }
+
     ul {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 2rem;
+      gap: 1rem;
       justify-content: center;
+      align-items: baseline;
       .btn {
         background-color: transparent;
         border: 3px solid $color-primary;
         color: $color-text;
       }
+    }
+  }
+
+  @media (max-width: 1060px) {
+    .btn-mobile {
+      display: none;
+    }
+    gap: 2rem;
+
+    .especilização {
+      align-items: center;
     }
   }
 }

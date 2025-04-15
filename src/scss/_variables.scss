@@ -40,9 +40,10 @@ p {
   background-color: $color-primary;
   color: #fff;
   border: none;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   text-align: center;
   text-decoration: none;
+  line-height: 1.3rem;
   font-family: $font;
   transition: background-color 0.3s ease, transform 0.2s ease;
 
