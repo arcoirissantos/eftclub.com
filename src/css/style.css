@@ -66,16 +66,23 @@ body {
 h1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 700;
+  line-height: 1em;
 }
 
 h2 {
-  font-size: clamp(1.2rem, 2.3vw, 1.5rem);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  line-height: 1em;
+  text-align: center;
+}
+
+h3 {
+  line-height: 1.5rem;
 }
 
 p {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  margin-bottom: 1rem;
-  max-width: 65ch;
+  max-width: 50ch;
 }
 
 .btn {
@@ -102,19 +109,26 @@ p {
   transform: scale(0.97);
 }
 
+.btn_border {
+  background-color: transparent;
+  border: 3px solid #08aeaf;
+  color: #033b3b;
+}
+.btn_border:hover, .btn_border:focus {
+  background-color: transparent;
+}
+
+section {
+  padding: 4rem clamp(2rem, 6vw, 5rem) 4rem;
+}
+
 .background_main {
-  padding: clamp(2rem, 5vw, 4rem);
   margin-inline: auto;
   background-image: url("/src/images/background_top.webp"), url("/src/images/background_botton.webp");
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
   background-size: clamp(100px, 20vw, 200px), clamp(100px, 20vw, 200px);
   background-color: #f5f7f0;
-}
-@media (max-width: 768px) {
-  .background_main {
-    padding: 2rem;
-  }
 }
 
 #main {
@@ -124,14 +138,19 @@ p {
   gap: 1rem;
 }
 #main .banner {
-  padding-top: 2rem;
+  margin-bottom: 2rem;
 }
 #main .banner img {
-  width: clamp(200px, 30vw, 300px);
+  width: clamp(250px, 30vw, 300px);
   height: auto;
 }
+@media (max-width: 768px) {
+  #main .banner {
+    margin-bottom: 0;
+  }
+}
 #main .content {
-  padding: 2rem clamp(1rem, 4vw, 5rem);
+  padding: 2rem clamp(1rem, 4vw, 5rem) 0rem;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
@@ -139,10 +158,10 @@ p {
 }
 #main .content h1 {
   max-width: clamp(40rem, 10vw + 1rem, 45rem);
-  line-height: 1em;
   text-align: center;
   grid-area: h1;
   align-self: center;
+  margin-bottom: 2rem;
 }
 #main .content .proposta {
   display: grid;
@@ -150,6 +169,11 @@ p {
   align-self: start;
   justify-items: center;
   gap: 1rem;
+}
+#main .content .proposta h2 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 1rem;
+  max-width: 65ch;
 }
 #main .content .terapeuta {
   grid-area: terapeuta;
@@ -163,6 +187,7 @@ p {
   }
   #main .content h1 {
     max-width: clamp(22rem, 10vw + 1rem, 45rem);
+    margin-bottom: 0;
   }
 }
 #main .terapeuta {
@@ -184,9 +209,6 @@ p {
 }
 
 #about {
-  padding: 3rem clamp(1rem, 4vw, 5rem);
-  margin-left: 1rem;
-  margin-right: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,6 +220,10 @@ p {
   flex-direction: column;
   align-items: flex-start;
   gap: 2rem;
+}
+#about h2 {
+  max-width: 18rem;
+  text-align: left;
 }
 #about ul {
   display: flex;
@@ -216,14 +242,10 @@ p {
   flex-direction: column;
   gap: 1rem;
   text-align: center;
-  max-width: 39rem;
+  max-width: 35rem;
 }
 #about .saber-mais .saiba-mais {
   font-weight: 700;
-}
-#about .saber-mais .btn {
-  max-width: 10rem;
-  padding: 0.5rem 1.3rem;
 }
 #about .saber-mais ul {
   display: flex;
@@ -233,14 +255,12 @@ p {
   justify-content: center;
   align-items: baseline;
 }
-#about .saber-mais ul .btn {
-  background-color: transparent;
-  border: 3px solid #08aeaf;
-  color: #033b3b;
-}
-@media (max-width: 1060px) {
+@media (max-width: 768px) {
   #about {
     gap: 2rem;
+  }
+  #about h2 {
+    text-align: center;
   }
   #about .btn-mobile {
     display: none;
@@ -248,4 +268,143 @@ p {
   #about .especilização {
     align-items: center;
   }
+}
+
+.background_testimony {
+  background-image: linear-gradient(to bottom, rgba(195, 220, 200, 0.4666666667), rgba(245, 234, 210, 0.1607843137));
+}
+
+#testimony {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "title testimony" "abrath testimony";
+  max-width: 1020px;
+  margin: 0 auto;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+  justify-items: center;
+}
+#testimony .testimony_title {
+  grid-area: title;
+  max-width: clamp(30rem, 10vw + 1rem, 45rem);
+  margin-bottom: 2rem;
+}
+#testimony .testimony_abrath {
+  grid-area: abrath;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+#testimony .testimony_abrath ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#testimony .testimony_abrath ul img {
+  width: 150px;
+}
+#testimony .testimony_abrath img {
+  width: clamp(150px, 20vw, 200px);
+}
+#testimony .testimony_testimony {
+  grid-area: testimony;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+#testimony .testimony_testimony img {
+  width: clamp(250px, 30vw, 400px);
+}
+@media (max-width: 768px) {
+  #testimony {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "title" "testimony" "abrath";
+  }
+  #testimony .btn_border {
+    margin-bottom: 2rem;
+  }
+  #testimony .testimony_testimony img {
+    width: clamp(400px, 40vw, 500px);
+  }
+  #testimony .testimony_abrath img {
+    width: clamp(200px, 40vw, 500px);
+  }
+}
+
+#price {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3rem;
+}
+#price h2 {
+  margin-bottom: 4rem;
+}
+#price .prices {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+#price .prices .individual,
+#price .prices .pacote {
+  background-image: linear-gradient(to bottom, rgba(195, 220, 200, 0.4666666667), rgba(245, 234, 210, 0.1607843137));
+  border: 3px solid #319e4e;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+#price .prices .individual h3,
+#price .prices .pacote h3 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#price .prices .individual .btn,
+#price .prices .pacote .btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+}
+#price .prices .individual ul,
+#price .prices .pacote ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#price .prices .individual ul li,
+#price .prices .pacote ul li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#price .prices .individual ul li img,
+#price .prices .pacote ul li img {
+  width: 30px;
+}
+#price .prices .individual .price_container,
+#price .prices .pacote .price_container {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  gap: 0.8rem;
+  align-items: center;
+  text-align: center;
+}
+#price .prices .individual .price_container .price,
+#price .prices .pacote .price_container .price {
+  font-weight: 700;
+  font-size: 2rem;
+}
+#price .prices .individual .obs,
+#price .prices .pacote .obs {
+  font-size: 0.8rem;
+  margin-bottom: -1.39rem;
 }

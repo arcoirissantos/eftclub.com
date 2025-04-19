@@ -2,7 +2,7 @@
 $color-primary: #08aeaf;
 $color-secondary: #319e4e;
 $color-text: #033b3b;
-$color-background: linear-gradient(135deg, #c3dcc877, #f5ead229);
+$color-background: linear-gradient(to bottom, #c3dcc877, #f5ead229);
 $color-white: #ffffff;
 
 //fonts//
@@ -11,7 +11,7 @@ $font: "Signika", sans-serif;
 //mobile @//
 $mobile-break: 768px;
 
-//global styles//
+//-------- Font --------/
 body {
   font-family: $font;
   color: $color-text;
@@ -20,17 +20,27 @@ body {
 h1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem); // ~29px to 40px
   font-weight: 700;
+  line-height: 1em;
 }
 
 h2 {
-  font-size: clamp(1.2rem, 2.3vw, 1.5rem); // ~21px to 32px
+  font-size: clamp(1.5rem, 5vw, 2rem); // ~29px to 40px
+  font-weight: 700;
+  line-height: 1em;
+  text-align: center;
+}
+
+h3 {
+  line-height: 1.5rem;
 }
 
 p {
   font-size: clamp(1rem, 2vw, 1.2rem);
-  margin-bottom: 1rem;
-  max-width: 65ch; // keeps long text readable
+  // margin-bottom: 1rem;
+  max-width: 50ch; // keeps long text readable
 }
+
+//-------- btn --------//
 
 .btn {
   display: inline-block;
@@ -58,3 +68,16 @@ p {
     transform: scale(0.97);
   }
 }
+
+.btn_border {
+  background-color: transparent;
+  border: 3px solid $color-primary;
+  color: $color-text;
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+//-------- footer --------//
