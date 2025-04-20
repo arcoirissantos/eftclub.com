@@ -58,6 +58,10 @@ ol {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 section {
   padding: 4rem clamp(2rem, 6vw, 5rem) 4rem;
 }
@@ -213,6 +217,11 @@ footer .rights_reserved {
 }
 footer .rights_reserved .obs {
   font-size: 0.7rem;
+}
+
+.container > * {
+  /* allow transforms */
+  transition: transform 0.3s ease;
 }
 
 .background_main {
