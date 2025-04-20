@@ -58,6 +58,10 @@ ol {
   margin: 0;
 }
 
+section {
+  padding: 4rem clamp(2rem, 6vw, 5rem) 4rem;
+}
+
 body {
   font-family: "Signika", sans-serif;
   color: #033b3b;
@@ -85,8 +89,37 @@ p {
   max-width: 50ch;
 }
 
+p a {
+  display: inline-block;
+  line-height: 1.1;
+  border-bottom: 2px solid transparent;
+  color: #08aeaf;
+  font-weight: 700;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+p a:hover, p a:focus {
+  transform: scale(1.05);
+  border-color: #08aeaf;
+}
+p a:active {
+  transform: scale(0.97);
+  border-bottom: none;
+}
+
+.img_link {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.img_link:hover, .img_link:focus {
+  transform: scale(1.1);
+}
+.img_link:active {
+  transform: scale(0.97);
+}
+
 .btn {
   display: inline-block;
+  box-shadow: none;
   padding: 0.75rem 2rem;
   font-weight: 700;
   font-size: clamp(1rem, 2vw, 1.1rem);
@@ -98,15 +131,17 @@ p {
   text-decoration: none;
   line-height: 1.3rem;
   font-family: "Signika", sans-serif;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn:hover, .btn:focus {
   background-color: #319e4e;
   transform: scale(1.03);
   cursor: pointer;
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 .btn:active {
   transform: scale(0.97);
+  box-shadow: none;
 }
 
 .btn_border {
@@ -118,8 +153,66 @@ p {
   background-color: transparent;
 }
 
-section {
-  padding: 4rem clamp(2rem, 6vw, 5rem) 4rem;
+footer {
+  background-image: linear-gradient(to bottom, #08aeaf, white);
+}
+footer section {
+  padding: 2rem;
+}
+footer .main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+footer .main .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+footer .main .contact ul {
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+}
+footer .main .contact ul img {
+  width: 20px;
+}
+footer .main .logo {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .main .logo img {
+  width: clamp(80px, 5vw, 200px);
+  height: auto;
+}
+footer .main .aviso_legal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  text-align: center;
+}
+footer .main .aviso_legal p {
+  font-size: 0.8rem;
+}
+@media (max-width: 768px) {
+  footer .main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+footer .rights_reserved {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+footer .rights_reserved .obs {
+  font-size: 0.7rem;
 }
 
 .background_main {
@@ -186,7 +279,7 @@ section {
     gap: 2rem;
   }
   #main .content h1 {
-    max-width: clamp(22rem, 10vw + 1rem, 45rem);
+    max-width: 30rem;
     margin-bottom: 0;
   }
 }
@@ -372,6 +465,7 @@ section {
 #price .prices .pacote .btn {
   padding: 0.6rem 1.2rem;
   border: none;
+  background-image: none;
 }
 #price .prices .individual ul,
 #price .prices .pacote ul {

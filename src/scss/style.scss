@@ -1,10 +1,6 @@
 @import "reset";
 @import "variables";
 
-section {
-  padding: 4rem clamp(2rem, 6vw, 5rem) 4rem;
-}
-
 .background_main {
   margin-inline: auto;
   background-image: url("/src/images/background_top.webp"),
@@ -77,7 +73,7 @@ section {
       gap: 2rem;
 
       h1 {
-        max-width: clamp(22rem, 10vw + 1rem, 45rem);
+        max-width: 30rem;
         margin-bottom: 0;
       }
     }
@@ -294,6 +290,7 @@ section {
       .btn {
         padding: 0.6rem 1.2rem;
         border: none;
+        background-image: none;
       }
 
       ul {
