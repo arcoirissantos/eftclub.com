@@ -250,6 +250,131 @@
       }
     }
   }
+
+  // depoimento popup
+  // keyframes for dialog
+  @keyframes fadeScaleIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @keyframes fadeScaleOut {
+    from {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.8);
+    }
+  }
+
+  // keyframes for backdrop
+  @keyframes fadeBackdropIn {
+    from {
+      background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  @keyframes fadeBackdropOut {
+    from {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    to {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  .depoimentos_popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* start hidden & small */
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    pointer-events: none;
+
+    width: 90vw;
+    max-width: 1080px;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+    padding: 1.5rem 1.5rem 1.5rem;
+    padding-top: 5rem;
+    z-index: 1000;
+
+    // reset focus outline
+    &:focus {
+      outline: none !important;
+    }
+
+    // backdrop is always transparent until we animate it
+    &::backdrop {
+      background: rgba(0, 0, 0, 0);
+    }
+
+    // when we add the .animate-open class…
+    &.animate-open {
+      pointer-events: auto;
+      animation: fadeScaleIn 0.3s ease-out forwards;
+    }
+    &.animate-open::backdrop {
+      animation: fadeBackdropIn 0.3s ease-out forwards;
+    }
+
+    // when we add the .animate-close class…
+    &.animate-close {
+      pointer-events: none;
+      animation: fadeScaleOut 0.3s ease-in forwards;
+    }
+    &.animate-close::backdrop {
+      animation: fadeBackdropOut 0.3s ease-in forwards;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    // your masonry/columns styles…
+    ul {
+      column-width: 300px;
+      column-gap: 1rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        width: 100%;
+        break-inside: avoid-column;
+        margin-bottom: 1rem;
+
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+          border-radius: 0.25rem;
+        }
+      }
+    }
+  }
+}
+
+// stop scrolling behind the popup
+body.no-scroll {
+  overflow: hidden;
 }
 
 // Starts section 4

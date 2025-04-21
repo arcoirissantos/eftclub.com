@@ -114,7 +114,9 @@ p {
     box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1);
   }
 
-  &:active {
+  &:active,
+  &pressed {
+    background-color: darken($color-primary, 5%);
     transform: scale(0.97);
     box-shadow: none;
   }
@@ -205,7 +207,7 @@ footer {
 }
 
 //-------- Window resize animation --------//
-.container > * {
+.flip-container > * {
   /* allow transforms */
   transition: transform 0.3s ease;
 }
