@@ -1,0 +1,278 @@
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  color: #222;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 4rem clamp(2rem, 6vw, 5rem) 4rem;
+}
+
+body {
+  font-family: "Signika", sans-serif;
+  color: #033b3b;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1em;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 700;
+  line-height: 1em;
+  text-align: center;
+}
+
+h3 {
+  line-height: 1.5rem;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 50ch;
+}
+
+p a {
+  display: inline-block;
+  line-height: 1.1;
+  border-bottom: 2px solid transparent;
+  color: #08aeaf;
+  font-weight: 700;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+p a:hover, p a:focus {
+  transform: scale(1.05);
+  border-color: #08aeaf;
+}
+p a:active {
+  transform: scale(0.97);
+  border-bottom: none;
+}
+
+.img_link {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.img_link:hover, .img_link:focus {
+  transform: scale(1.1);
+}
+.img_link:active {
+  transform: scale(0.97);
+}
+
+.btn {
+  display: inline-block;
+  box-shadow: none;
+  padding: 0.75rem 2rem;
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  background-color: #08aeaf;
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.3rem;
+  font-family: "Signika", sans-serif;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn:hover, .btn:focus {
+  background-color: #319e4e;
+  transform: scale(1.03);
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.btn:active, .btnpressed {
+  background-color: #079697;
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
+.btn_border {
+  background-color: transparent;
+  border: 3px solid #08aeaf;
+  color: #033b3b;
+}
+.btn_border:hover, .btn_border:focus {
+  background-color: transparent;
+}
+
+footer {
+  background-image: linear-gradient(to bottom, #08aeaf, white);
+}
+footer section {
+  padding: 2rem;
+}
+footer .main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+footer .main .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+footer .main .contact ul {
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+}
+footer .main .contact ul img {
+  width: 20px;
+}
+footer .main .logo {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .main .logo img {
+  width: clamp(80px, 5vw, 200px);
+  height: auto;
+}
+footer .main .aviso_legal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 300px;
+  text-align: center;
+}
+footer .main .aviso_legal p {
+  font-size: 0.8rem;
+}
+@media (max-width: 768px) {
+  footer .main {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+footer .rights_reserved {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+footer .rights_reserved .obs {
+  font-size: 0.7rem;
+}
+
+.flip-container > * {
+  /* allow transforms */
+  transition: transform 0.3s ease;
+}
+
+.navigation {
+  margin: 1rem;
+}
+.navigation .nav-main {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  padding-right: 2rem;
+  background-color: #65cdcd;
+  border-radius: 100px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "logo lema blogs";
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+.navigation .nav-main img {
+  width: clamp(30px, 5vw, 50px);
+}
+.navigation .nav-main p {
+  font-size: clamp(0.5rem, 3.6vw, 1rem);
+  line-height: 1rem;
+}
+.navigation .nav-main .lema {
+  justify-self: start;
+}
+@media (max-width: 768px) {
+  .navigation .nav-main {
+    padding-right: 0.5rem;
+  }
+  .navigation .nav-main .blogs {
+    max-width: 10ch;
+  }
+}
+.navigation .call {
+  background-color: #319e4e;
+  padding: 0.5rem;
+  padding-top: 1rem;
+  margin-top: -0.5rem;
+  border-radius: 0.5rem;
+  width: clamp(10rem, 50vw, 18rem);
+  display: flex;
+  justify-content: center;
+  margin-left: 3rem;
+  color: white;
+}
+.navigation .call p {
+  font-size: clamp(0.5rem, 3vw, 0.8rem);
+  line-height: 0.8rem;
+}

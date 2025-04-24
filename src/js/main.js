@@ -1,11 +1,12 @@
-//handle btn effect on touch devices
+//----- handle btn effect on touch devices -----//'
+
 document.querySelectorAll(".btn").forEach((btn) => {
   btn.addEventListener("touchstart", () => btn.classList.add("pressed"));
   btn.addEventListener("touchend", () => btn.classList.remove("pressed"));
   btn.addEventListener("touchcancel", () => btn.classList.remove("pressed"));
 });
 
-//handle depoimento popup
+//----- handle depoimento popup -----//
 
 const popup = document.querySelector(".depoimentos_popup");
 const openBtns = document.querySelectorAll(".open-button");
