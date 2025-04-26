@@ -158,6 +158,59 @@ p a:active {
   background-color: transparent;
 }
 
+.navigation {
+  margin: 1rem;
+}
+.navigation .nav-main {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  padding-right: 2rem;
+  background-color: #65cdcd;
+  border-radius: 100px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "logo lema blogs";
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+.navigation .nav-main img {
+  width: clamp(30px, 5vw, 50px);
+}
+.navigation .nav-main p {
+  font-size: clamp(0.5rem, 3.6vw, 1rem);
+  line-height: 1rem;
+}
+.navigation .nav-main .lema {
+  justify-self: start;
+}
+@media (max-width: 768px) {
+  .navigation .nav-main {
+    padding-right: 0.5rem;
+  }
+  .navigation .nav-main .blogs {
+    max-width: 10ch;
+  }
+}
+.navigation .call {
+  background-color: #319e4e;
+  padding: 0.5rem;
+  padding-top: 1rem;
+  margin-top: -0.5rem;
+  border-radius: 0.5rem;
+  width: clamp(10rem, 50vw, 18rem);
+  display: flex;
+  justify-content: center;
+  margin-left: 3rem;
+  color: white;
+}
+.navigation .call p {
+  font-size: clamp(0.5rem, 3vw, 0.8rem);
+  line-height: 0.8rem;
+}
+
 footer {
   background-image: linear-gradient(to bottom, #08aeaf, white);
 }

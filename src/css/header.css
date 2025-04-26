@@ -45,8 +45,8 @@ a {
   color: inherit;
 }
 
-ul[role=list],
-ol[role=list] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -100,7 +100,8 @@ p a {
   font-weight: 700;
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
-p a:hover, p a:focus {
+p a:hover,
+p a:focus {
   transform: scale(1.05);
   border-color: #08aeaf;
 }
@@ -113,7 +114,8 @@ p a:active {
   display: inline-block;
   transition: transform 0.3s ease;
 }
-.img_link:hover, .img_link:focus {
+.img_link:hover,
+.img_link:focus {
   transform: scale(1.1);
 }
 .img_link:active {
@@ -134,15 +136,18 @@ p a:active {
   text-decoration: none;
   line-height: 1.3rem;
   font-family: "Signika", sans-serif;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
-.btn:hover, .btn:focus {
+.btn:hover,
+.btn:focus {
   background-color: #319e4e;
   transform: scale(1.03);
   cursor: pointer;
   box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
-.btn:active, .btnpressed {
+.btn:active,
+.btnpressed {
   background-color: #079697;
   transform: scale(0.97);
   box-shadow: none;
@@ -153,61 +158,9 @@ p a:active {
   border: 3px solid #08aeaf;
   color: #033b3b;
 }
-.btn_border:hover, .btn_border:focus {
+.btn_border:hover,
+.btn_border:focus {
   background-color: transparent;
-}
-
-.navigation {
-  margin: 1rem;
-}
-.navigation .nav-main {
-  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  padding-right: 2rem;
-  background-color: #65cdcd;
-  border-radius: 100px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-areas: "logo lema blogs";
-  align-items: center;
-  gap: 1rem;
-  font-weight: 700;
-  position: relative;
-  z-index: 1;
-}
-.navigation .nav-main img {
-  width: clamp(30px, 5vw, 50px);
-}
-.navigation .nav-main p {
-  font-size: clamp(0.5rem, 3.6vw, 1rem);
-  line-height: 1rem;
-}
-.navigation .nav-main .lema {
-  justify-self: start;
-}
-@media (max-width: 768px) {
-  .navigation .nav-main {
-    padding-right: 0.5rem;
-  }
-  .navigation .nav-main .blogs {
-    max-width: 10ch;
-  }
-}
-.navigation .call {
-  background-color: #319e4e;
-  padding: 0.5rem;
-  padding-top: 1rem;
-  margin-top: -0.5rem;
-  border-radius: 0.5rem;
-  width: clamp(10rem, 50vw, 18rem);
-  display: flex;
-  justify-content: center;
-  margin-left: 3rem;
-  color: white;
-}
-.navigation .call p {
-  font-size: clamp(0.5rem, 3vw, 0.8rem);
-  line-height: 0.8rem;
 }
 
 footer {
@@ -275,4 +228,57 @@ footer .rights_reserved .obs {
 .flip-container > * {
   /* allow transforms */
   transition: transform 0.3s ease;
+}
+
+.navigation {
+  margin: 1rem;
+}
+.navigation .nav-main {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  padding-right: 2rem;
+  background-color: #65cdcd;
+  border-radius: 100px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "logo lema blogs";
+  align-items: center;
+  gap: 1rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+.navigation .nav-main img {
+  width: clamp(30px, 5vw, 50px);
+}
+.navigation .nav-main p {
+  font-size: clamp(0.5rem, 3.6vw, 1rem);
+  line-height: 1rem;
+}
+.navigation .nav-main .lema {
+  justify-self: start;
+}
+@media (max-width: 768px) {
+  .navigation .nav-main {
+    padding-right: 0.5rem;
+  }
+  .navigation .nav-main .blogs {
+    max-width: 10ch;
+  }
+}
+.navigation .call {
+  background-color: #319e4e;
+  padding: 0.5rem;
+  padding-top: 1rem;
+  margin-top: -0.5rem;
+  border-radius: 0.5rem;
+  width: clamp(10rem, 50vw, 18rem);
+  display: flex;
+  justify-content: center;
+  margin-left: 3rem;
+  color: white;
+}
+.navigation .call p {
+  font-size: clamp(0.5rem, 3vw, 0.8rem);
+  line-height: 0.8rem;
 }

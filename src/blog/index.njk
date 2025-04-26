@@ -1,14 +1,29 @@
 ---
-title: Artigos recentes
-layout: "base_blog"
+title: Artigos Recentes
+layout: false
 ---
 
-<div class="section container">
-  <ul role="list" class="articles_list flow">
-    {%- for post in collections.post -%}
-    <li class="snippet">
-      <h3 class="snippet_title">{{ post.data.title }}</h3>
-    </li>
-    {%- endfor -%}
-  </ul>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/css/style-blogs.css" />
+  </head>
+  <body>
+    {% include "header.njk" %}
+    <div class="container">
+      <ul role="list" class="articles_list flow">
+        {%- for post in collections.post | reverse -%}
+        <li class="snippet">
+          <h3 class="snippet_title">{{ post.data.title }}</h3>
+          <p>{{ post.date | readableDate }}</p>
+          <a href="{{ post.url }}">Acessar</a>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+    {% include "footer.njk" %}
+  </body>
+</html>

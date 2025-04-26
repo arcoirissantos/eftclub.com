@@ -1,4 +1,5 @@
 ---
+tags: post
 title: Processo Terapêutico da Terapia Cura Emocional
 author: Mutisia Santos
 date: 2025-04-25

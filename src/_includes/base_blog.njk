@@ -4,16 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}</title>
-
     <link rel="stylesheet" href="/css/style-blogs.css" />
   </head>
   <body>
     {% include "header.njk" %}
+    <main>
+      <article class="post-content">
+        <h1>{{ title }}</h1>
+        <div class="autor-data">
+          <p>
+            <address>Autora: {{ author }}</address><br>
+            <!-- published date -->
+            <time datetime="{{ date | dateISO }}">
+              {{ date | readableDate }}
+            </time>
 
-    <h1>{{ title }}</h1>
+            {% if lastUpdated %}
+              <br>
+              <!-- last-updated date -->
+              <span class="last-updated">
+                Atualizado em:
+                <time datetime="{{ lastUpdated | dateISO }}">
+                  {{ lastUpdated | readableDate }}
+                </time>
+              </span>
+            {% endif %}
+          </p>
+        </div>
 
-    {{ content | safe }}
-
+        {{ content | safe }}
+      </article>
+    </main>
+    <section class="side-bar">
+      <div class="ajuda">
+      <h2>Precisa de ajuda para lidar com as suas emoções?</h2>
+        <a href="/index" class="btn">Saiba Mais</a>
+    </div>
+    <div class="artigos">
+      <h2>Você pode se interessar também:</h2>
+      <ul>
+        {%- for post in collections.post | reverse -%}
+        {% if loop.index <= 3 %}
+          <li>
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.date | readableDate }}</p>
+            <p>{{ post.data.author }}</p>
+          </li>
+          {% endif %}
+        {%- endfor -%}
+      </ul>
+    </div>
+    </section>
     {% include "footer.njk" %}
   </body>
 </html>
