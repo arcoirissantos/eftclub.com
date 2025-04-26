@@ -19,3 +19,6 @@ src/css/*.css.map
 # OS-specific
 .DS_Store
 Thumbs.db
+
+public
+

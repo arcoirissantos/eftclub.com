@@ -1,0 +1,14 @@
+---
+title: Artigos recentes
+layout: "base_blog"
+---
+
+<div class="section container">
+  <ul role="list" class="articles_list flow">
+    {%- for post in collections.post -%}
+    <li class="snippet">
+      <h3 class="snippet_title">{{ post.data.title }}</h3>
+    </li>
+    {%- endfor -%}
+  </ul>
+</div>

@@ -227,7 +227,7 @@ footer .rights_reserved .obs {
 
 .background_main {
   margin-inline: auto;
-  background-image: url("/src/images/background_top.webp"), url("/src/images/background_botton.webp");
+  background-image: url("/images/background_top.webp"), url("/images/background_botton.webp");
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
   background-size: clamp(100px, 20vw, 200px), clamp(100px, 20vw, 200px);
