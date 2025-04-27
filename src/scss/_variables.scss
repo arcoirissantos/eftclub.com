@@ -46,7 +46,7 @@ h3 {
 p {
   font-size: clamp(1rem, 2vw, 1.2rem);
   // margin-bottom: 1rem;
-  max-width: 50ch; // keeps long text readable
+  // max-width: 50ch;
 }
 
 //-------- Links --------//
@@ -269,10 +269,4 @@ footer {
       font-size: 0.7rem;
     }
   }
-}
-
-//-------- Window resize animation --------//
-.flip-container > * {
-  /* allow transforms */
-  transition: transform 0.3s ease;
 }
