@@ -8,53 +8,53 @@
   </head>
   <body>
     {% include "header.njk" %}
-    <main>
-      <article class="post-content">
-        <h1>{{ title }}</h1>
-        <div class="autor-data">
-          <p>
-            <address>Autora: {{ author }}</address><br>
-            <!-- published date -->
-            <time datetime="{{ date | dateISO }}">
-              {{ date | readableDate }}
-            </time>
+    <div class="containner">
+      <main class="post">
+        <article class="post-content">
+          <h1>{{ title }}</h1>
+          <div class="autor-data">
+            <p>
+              <address>Autora: {{ author }}</address><br>
+              <!-- published date -->
+              <time datetime="{{ date | dateISO }}">
+                {{ date | readableDate }}
+              </time>
 
-            {% if lastUpdated %}
-              <br>
-              <!-- last-updated date -->
-              <span class="last-updated">
-                Atualizado em:
-                <time datetime="{{ lastUpdated | dateISO }}">
-                  {{ lastUpdated | readableDate }}
-                </time>
-              </span>
-            {% endif %}
-          </p>
+              {% if lastUpdated %}
+                <br>
+                <!-- last-updated date -->
+                <span class="last-updated">
+                  Atualizado em:
+                  <time datetime="{{ lastUpdated | dateISO }}">
+                    {{ lastUpdated | readableDate }}
+                  </time>
+                </span>
+              {% endif %}
+            </p>
+          </div>
+          {{ content | safe }}
+        </article>
+      </main>
+      <section class="side-bar">
+        <div class="ajuda">
+          <h2>Precisa da minha ajuda?</h2>
+          <a href="/index" class=" btn btn_border">Saiba Mais</a>
         </div>
-
-        {{ content | safe }}
-      </article>
-    </main>
-    <section class="side-bar">
-      <div class="ajuda">
-      <h2>Precisa de ajuda para lidar com as suas emoções?</h2>
-        <a href="/index" class="btn">Saiba Mais</a>
+        <div class="artigos">
+          <h2>Você pode se interessar também:</h2>
+          <ul>
+            {%- for post in collections.post | reverse -%}
+            {% if loop.index <= 3 %}
+              <li>
+                <h3>{{ post.data.title }}</h3>
+                <p>Autora: {{ post.data.author }}</p>
+              </li>
+              {% endif %}
+            {%- endfor -%}
+          </ul>
+        </div>
+      </section>
     </div>
-    <div class="artigos">
-      <h2>Você pode se interessar também:</h2>
-      <ul>
-        {%- for post in collections.post | reverse -%}
-        {% if loop.index <= 3 %}
-          <li>
-            <h3>{{ post.data.title }}</h3>
-            <p>{{ post.data.date | readableDate }}</p>
-            <p>{{ post.data.author }}</p>
-          </li>
-          {% endif %}
-        {%- endfor -%}
-      </ul>
-    </div>
-    </section>
     {% include "footer.njk" %}
   </body>
 </html>

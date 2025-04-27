@@ -74,13 +74,13 @@ body {
 h1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 700;
-  line-height: 1em;
+  line-height: 1.3em;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-size: clamp(1rem, 4vw, 1.5rem);
   font-weight: 700;
-  line-height: 1em;
+  line-height: 1.3em;
   text-align: center;
 }
 

@@ -4,7 +4,8 @@
   "main": ".eleventy.js",
   "scripts": {
     "build": "eleventy",
-    "start": "eleventy --serve"
+    "start": "eleventy --serve",
+    "format": "prettier --write \"**/*.{js,css,html,njk,md}\" || true"
   },
   "keywords": [],
   "author": "",

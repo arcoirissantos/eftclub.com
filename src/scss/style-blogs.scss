@@ -1,2 +1,60 @@
-@import "reset";
-@import "variables";
+@import 'reset';
+@import 'variables';
+
+.containner {
+  margin: 5%;
+  display: flex;
+  justify-content: center;
+  @media (max-width: $mobile-break) {
+    flex-wrap: wrap;
+  }
+
+  .post {
+    max-width: 720px;
+  }
+
+  .side-bar {
+    max-width: 400px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-right: 0;
+
+    .ajuda {
+      background-image: $color-background;
+      border: 3px solid $color-text;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      gap: 3rem;
+    }
+    .artigos {
+      border: 3px solid $color-text;
+      border-radius: 30px;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1rem 2rem;
+      gap: 2rem;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        li {
+          border-left: 3px solid $color-primary;
+          padding-left: 0.5rem;
+
+          p {
+            font-size: 0.8rem;
+            line-height: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
