@@ -276,6 +276,50 @@ footer .rights_reserved .obs {
   font-size: 0.7rem;
 }
 
+.whatsapp-float {
+  position: fixed;
+  width: auto;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-float:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+  .whatsapp-float {
+    font-size: 0.8rem;
+    bottom: 15px;
+    right: 15px;
+  }
+  .whatsapp-float img {
+    width: 18px;
+    height: auto;
+  }
+}
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
 .container {
   margin: 5%;
   display: flex;
@@ -298,7 +342,7 @@ footer .rights_reserved .obs {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 2rem 0rem;
+  margin: 2rem 0rem 1rem;
 }
 .container .post .autor-data-container img {
   width: clamp(60px, 10vw, 90px);
@@ -354,7 +398,8 @@ footer .rights_reserved .obs {
   line-height: 1rem;
 }
 
-.post-content .video {
+.post-content .video,
+.post-content .video-shorts {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
@@ -367,6 +412,54 @@ footer .rights_reserved .obs {
   border: none;
   overflow: hidden;
   display: block;
+}
+.post-content .shorts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.post-content .shorts-container .overlay-container {
+  position: relative;
+  max-width: 200px;
+  aspect-ratio: 9/16;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 768px) {
+  .post-content .shorts-container .overlay-container {
+    max-width: 130px;
+  }
+}
+.post-content .shorts-container .overlay-container .video-shorts {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: inherit;
+}
+.post-content .shorts-container .overlay-container .video-shorts iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  border-radius: 10px;
+}
+.post-content .shorts-container .overlay-container .video-shorts .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+}
+.post-content .shorts-container .overlay-container .video-shorts .overlay img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
 }
 .post-content h2 {
   font-size: 1.5rem;

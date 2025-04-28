@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}</title>
+
+    <!-- JS -->
+    <script src="/js/post.js" defer></script>
+
     <link rel="stylesheet" href="/css/style-blogs.css" />
   </head>
   <body>
@@ -79,6 +83,7 @@
       </section>
     </div>
 
+    {% include "whatsapp-btn.njk" %}
     {% include "footer.njk" %}
   </body>
 </html>

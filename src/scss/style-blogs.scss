@@ -22,7 +22,7 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      margin: 2rem 0rem;
+      margin: 2rem 0rem 1rem;
 
       img {
         width: clamp(60px, 10vw, 90px);
@@ -90,7 +90,8 @@
 //-------- texto posts --------//
 
 .post-content {
-  .video {
+  .video,
+  .video-shorts {
     max-width: 800px;
     margin: 0 auto;
     padding: 1rem;
@@ -104,6 +105,57 @@
     border: none;
     overflow: hidden;
     display: block;
+  }
+
+  .shorts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+
+    .overlay-container {
+      position: relative;
+      max-width: 200px;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      @media (max-width: $mobile-break) {
+        max-width: 130px;
+      }
+
+      .video-shorts {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding: inherit;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+          display: block;
+          border-radius: 10px;
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+          transition: opacity 0.5s ease;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
   }
 
   h2 {
