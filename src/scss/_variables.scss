@@ -30,6 +30,7 @@ h1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem); // ~29px to 40px
   font-weight: 700;
   line-height: 1.3em;
+  text-wrap: balance;
 }
 
 h2 {
@@ -47,6 +48,10 @@ p {
   font-size: clamp(1rem, 2vw, 1.2rem);
   // margin-bottom: 1rem;
   // max-width: 50ch;
+}
+
+address {
+  font-style: normal;
 }
 
 //-------- Links --------//

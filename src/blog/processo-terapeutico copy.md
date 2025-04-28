@@ -6,6 +6,7 @@ date: 2025-04-25
 image: /images/Mutisia-Profile-EFTclub.webp
 image_alt: This is a test
 description: Na terapia cura emocional, não estamos apenas tratando os sintomas superficiais, mas sim as raízes emocionais que os causam.
+layout: base_blog
 ---
 
 ## Não é sobre o sintoma. É sobre o que está por trás do sintoma.

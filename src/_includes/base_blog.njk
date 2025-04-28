@@ -19,9 +19,9 @@
               {{ date | readableDate }}
             </time> 
 
-            {% if lastUpdated %} e atualizado em:
+            {% if lastUpdated and (date | updatedAfterSixMonths(lastUpdated)) %}
+              e atualizado em:
               <span class="last-updated">
-                
                 <time datetime="{{ lastUpdated | dateISO }}">
                   {{ lastUpdated | readableDate }}
                 </time>
@@ -35,9 +35,8 @@
               "alt": "Default Author"
             } %}
             
-              <img src="{{ authorInfo.image }}" alt="{{ authorInfo.alt }}" class="author-picture" />
-            
-            
+            <img src="{{ authorInfo.image }}" alt="{{ authorInfo.alt }}" class="author-picture" />
+
             <div class="autor-data">
               <p>
                 <address>
@@ -59,16 +58,23 @@
 
         <div class="artigos">
           <h2>Você pode se interessar também:</h2>
-          <ul>
-            {%- for post in collections.post | reverse -%}
-              {% if loop.index <= 3 %}
-                <li>
+
+          {% set otherPosts = collections.posts | excludeCurrentPost(page.url) | reverse %}
+          {% set limitedPosts = otherPosts | slice(0, 3) %}
+
+          {% if limitedPosts | length > 0 %}
+            <ul>
+              {% for post in limitedPosts %}
+                <a class="img_link" href="{{ post.url }}"><li>
                   <h3>{{ post.data.title }}</h3>
                   <p>Autora: {{ post.data.author }}</p>
-                </li>
-              {% endif %}
-            {%- endfor -%}
-          </ul>
+                </li></a>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>Nenhum outro artigo encontrado.</p>
+          {% endif %}
+          
         </div>
       </section>
     </div>

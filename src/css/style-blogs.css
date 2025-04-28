@@ -74,6 +74,7 @@ h1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 700;
   line-height: 1.3em;
+  text-wrap: balance;
 }
 
 h2 {
@@ -89,6 +90,10 @@ h3 {
 
 p {
   font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+address {
+  font-style: normal;
 }
 
 p a {
@@ -284,8 +289,10 @@ footer .rights_reserved .obs {
 .container .post {
   max-width: 720px;
 }
-.container .post .pub-date p {
-  line-height: 0.5rem;
+.container .post .pub-date {
+  padding-left: 10px;
+  border-left: 3px solid #319e4e;
+  font-size: 0.8rem;
 }
 .container .post .autor-data-container {
   display: flex;
@@ -298,6 +305,9 @@ footer .rights_reserved .obs {
   border: solid 3px #08aeaf;
   border-radius: 100px;
 }
+.container .post .autor-data-container .author-picture {
+  margin: inherit;
+}
 .container .side-bar {
   max-width: 400px;
   min-width: 300px;
@@ -305,6 +315,12 @@ footer .rights_reserved .obs {
   flex-direction: column;
   gap: 2rem;
   padding-right: 0;
+}
+@media (max-width: 768px) {
+  .container .side-bar {
+    padding: inherit;
+    margin-top: 2rem;
+  }
 }
 .container .side-bar .ajuda {
   background-image: linear-gradient(to bottom, rgba(195, 220, 200, 0.4666666667), rgba(245, 234, 210, 0.1607843137));
@@ -372,10 +388,29 @@ footer .rights_reserved .obs {
 }
 .post-content img {
   max-width: 500px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+.post-content figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .post-content figcaption {
   font-style: italic;
   margin-top: -1rem;
+  font-size: 0.8rem;
+}
+@media (max-width: 768px) {
+  .post-content h1 {
+    margin-top: 1rem;
+  }
 }
 
 .highlight-numbers {

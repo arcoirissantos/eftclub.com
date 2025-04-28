@@ -13,9 +13,9 @@
     max-width: 720px;
 
     .pub-date {
-      p {
-        line-height: 0.5rem;
-      }
+      padding-left: 10px;
+      border-left: 3px solid $color-secondary;
+      font-size: 0.8rem;
     }
 
     .autor-data-container {
@@ -29,6 +29,10 @@
         border: solid 3px $color-primary;
         border-radius: 100px;
       }
+
+      .author-picture {
+        margin: inherit;
+      }
     }
   }
 
@@ -39,6 +43,11 @@
     flex-direction: column;
     gap: 2rem;
     padding-right: 0;
+
+    @media (max-width: $mobile-break) {
+      padding: inherit;
+      margin-top: 2rem;
+    }
 
     .ajuda {
       background-image: $color-background;
@@ -79,6 +88,7 @@
 }
 
 //-------- texto posts --------//
+
 .post-content {
   .video {
     max-width: 800px;
@@ -118,11 +128,30 @@
 
   img {
     max-width: 500px;
+    margin: auto;
+
+    @media (max-width: $mobile-break) {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   figcaption {
     font-style: italic;
     margin-top: -1rem;
+    font-size: 0.8rem;
+  }
+  @media (max-width: $mobile-break) {
+    h1 {
+      margin-top: 1rem;
+    }
   }
 }
 
