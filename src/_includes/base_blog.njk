@@ -6,9 +6,17 @@
     <title>{{ title }}</title>
 
     <!-- JS -->
-    <script src="/js/post.js" defer></script>
+    <script type="module" src="/js/main.js"></script>
 
-    <link rel="stylesheet" href="/css/style-blogs.css" />
+    <link rel="stylesheet" href="/css/style-blogs.css">
+
+    <!-- SEO-->
+    <meta
+      name="description"
+      content="{{ description }}"
+    />
+
+    <meta name="robots" content="index, follow" />
   </head>
   <body>
     {% include "header.njk" %}

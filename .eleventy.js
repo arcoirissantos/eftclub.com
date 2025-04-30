@@ -2,10 +2,15 @@ const fs = require('fs')
 const { DateTime } = require('luxon')
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy('src/css')
-  eleventyConfig.addPassthroughCopy('src/images')
-  eleventyConfig.addPassthroughCopy('src/js')
+  eleventyConfig.addWatchTarget('src/scss')
+  // ✅ Only let Eleventy handle static files that Parcel does NOT build
+  eleventyConfig.addPassthroughCopy({ 'src/images': 'images' })
 
+  // ✅ Remove passthrough of CSS and JS — Parcel handles those now
+  // eleventyConfig.addPassthroughCopy('src/css'); ← remove
+  // eleventyConfig.addPassthroughCopy('src/js');  ← remove
+
+  // Filters
   eleventyConfig.addFilter('readableDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj).toFormat('dd/MM/yyyy')
   })
@@ -14,7 +19,6 @@ module.exports = function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toISO()
   })
 
-  // Exclude current post, normalize URLs
   eleventyConfig.addFilter('excludeCurrentPost', function (posts, currentUrl) {
     function normalize(url) {
       return url.replace(/\/$/, '')
@@ -30,20 +34,19 @@ module.exports = function (eleventyConfig) {
     (publishedDate, updatedDate) => {
       if (!publishedDate || !updatedDate) return false
 
-      const SIX_MONTHS_MS = 1000 * 60 * 60 * 24 * 30 * 6 // ~6 months in milliseconds
+      const SIX_MONTHS_MS = 1000 * 60 * 60 * 24 * 30 * 6
       const diff = updatedDate - publishedDate
 
       return diff > SIX_MONTHS_MS
     }
   )
 
-  // Add 'slice' filter globally
   eleventyConfig.addFilter('slice', function (array, start, end) {
     if (!Array.isArray(array)) return []
     return array.slice(start, end)
   })
 
-  // Add posts collection
+  // Collection for blog posts
   eleventyConfig.addCollection('posts', (collectionApi) => {
     return collectionApi.getFilteredByTag('post').map((post) => {
       let stats = fs.statSync(post.inputPath)

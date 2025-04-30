@@ -1,10 +1,14 @@
 {
   "name": "website-code",
   "version": "1.0.0",
-  "main": ".eleventy.js",
   "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve",
+    "start": "concurrently \"npm:eleventy\" \"npm:parcel:css\" \"npm:parcel:js\"",
+    "eleventy": "eleventy --watch --serve --output=public",
+    "parcel:js": "parcel watch src/js/main.js --dist-dir public/js --no-source-maps --no-hmr --no-autoinstall",
+    "parcel:css": "parcel watch src/scss/style.scss src/scss/style-blogs.scss --dist-dir public/css --public-url=/css --no-source-maps --no-hmr --no-autoinstall",
+    "build": "npm run build:eleventy && npm run build:parcel",
+    "build:eleventy": "eleventy --output=public",
+    "build:parcel": "parcel build src/js/main.js --dist-dir public/js --no-source-maps && parcel build src/scss/style.scss src/scss/style-blogs.scss --dist-dir public/css --public-url=/css --no-source-maps",
     "format": "prettier --write \"**/*.{js,css,html,njk,md}\" || true"
   },
   "keywords": [],
@@ -12,6 +16,9 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "@parcel/transformer-sass": "^2.14.4",
+    "concurrently": "^9.1.2",
+    "parcel": "^2.14.4",
     "prettier": "^3.5.3",
     "prettier-plugin-jinja-template": "^2.1.0"
   },

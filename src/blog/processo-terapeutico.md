@@ -60,7 +60,7 @@ Inclusive, você vai aprender a usar técnicas poderosas para lidar com qualquer
         referrerpolicy="strict-origin-when-cross-origin"
         loading="lazy">
       </iframe>
-      <div class="overlay" onclick="playVideo(this)">
+      <div class="overlay">
         <img src="/images/posts/trg-overlay.webp" alt="Play Video" />
       </div>
     </div>
@@ -77,7 +77,7 @@ Inclusive, você vai aprender a usar técnicas poderosas para lidar com qualquer
         referrerpolicy="strict-origin-when-cross-origin"
         loading="lazy">
       </iframe>
-      <div class="overlay" onclick="playVideo(this)">
+      <div class="overlay">
         <img src="/images/posts/eft-overlay.webp" alt="Play Video" />
       </div>
     </div>
@@ -94,7 +94,7 @@ Inclusive, você vai aprender a usar técnicas poderosas para lidar com qualquer
         referrerpolicy="strict-origin-when-cross-origin"
         loading="lazy">
       </iframe>
-      <div class="overlay" onclick="playVideo(this)">
+      <div class="overlay">
         <img src="/images/posts/causaraiz-overlay.webp" alt="Play Video" />
       </div>
     </div>

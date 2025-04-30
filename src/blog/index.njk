@@ -4,12 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artigos</title>
-    <link rel="stylesheet" href="/css/style-blogs.css" />
+
+    <link rel="stylesheet" href="/css/style-blogs.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script type="module" src="/js/main.js"></script>
+
   </head>
   <body>
     {% include "header.njk" %}
+    
     <div class="container">
-      <ul role="list" class="articles_list flow">
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Buscar post..."
+        aria-label="Buscar post"
+        class="search-input"
+      />
+      <p id="search-message" class="search-message"></p>
+      <ul role="list" id="search-results" class="articles_list flow">
         {%- for post in collections.post | reverse -%}
         <li class="snippet">
           <h3 class="snippet_title">{{ post.data.title }}</h3>
@@ -18,7 +33,8 @@
         </li>
         {%- endfor -%}
       </ul>
-    </div>
+    </div>    
+    
     {% include "footer.njk" %}
   </body>
 </html>

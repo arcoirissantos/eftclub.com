@@ -1,12 +1,15 @@
-@import "reset";
-@import "variables";
+@use 'reset';
+@use 'variables';
 
 .background_main {
   margin-inline: auto;
-  background-image: url("/images/background_top.webp"),
-    url("/images/background_botton.webp");
+  background-image:
+    url('../images/background_top.webp'),
+    url('../images/background_botton.webp');
   background-repeat: no-repeat, no-repeat;
-  background-position: top left, bottom right;
+  background-position:
+    top left,
+    bottom right;
   background-size: clamp(100px, 20vw, 200px), clamp(100px, 20vw, 200px);
   background-color: #f5f7f0;
 }
@@ -24,7 +27,7 @@
       width: clamp(250px, 30vw, 300px);
       height: auto;
     }
-    @media (max-width: $mobile-break) {
+    @media (max-width: variables.$mobile-break) {
       margin-bottom: 0;
     }
   }
@@ -35,8 +38,8 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "h1 terapeuta"
-      "proposta terapeuta";
+      'h1 terapeuta'
+      'proposta terapeuta';
 
     h1 {
       max-width: clamp(40rem, 10vw + 1rem, 45rem);
@@ -63,13 +66,13 @@
       grid-area: terapeuta;
     }
 
-    @media (max-width: $mobile-break) {
+    @media (max-width: variables.$mobile-break) {
       grid-template-rows: auto auto auto;
       grid-template-columns: 1fr;
       grid-template-areas:
-        "h1"
-        "terapeuta"
-        "proposta";
+        'h1'
+        'terapeuta'
+        'proposta';
       gap: 2rem;
 
       h1 {
@@ -157,7 +160,7 @@
     }
   }
 
-  @media (max-width: $mobile-break) {
+  @media (max-width: variables.$mobile-break) {
     gap: 2rem;
     h2 {
       text-align: center;
@@ -173,7 +176,7 @@
 
 // Starts Section 3
 .background_testimony {
-  background-image: $color-background;
+  background-image: variables.$color-background;
 }
 
 #testimony {
@@ -181,8 +184,8 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   grid-template-areas:
-    "title testimony"
-    "abrath testimony";
+    'title testimony'
+    'abrath testimony';
   max-width: 1020px;
   margin: 0 auto;
 
@@ -227,13 +230,13 @@
     }
   }
 
-  @media (max-width: $mobile-break) {
+  @media (max-width: variables.$mobile-break) {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:
-      "title"
-      "testimony"
-      "abrath";
+      'title'
+      'testimony'
+      'abrath';
     .btn_border {
       margin-bottom: 2rem;
     }
@@ -397,8 +400,8 @@ body.no-scroll {
 
     .individual,
     .pacote {
-      background-image: $color-background;
-      border: 3px solid $color-secondary;
+      background-image: variables.$color-background;
+      border: 3px solid variables.$color-secondary;
       border-radius: 10px;
       padding: 2rem;
       max-width: 350px;
