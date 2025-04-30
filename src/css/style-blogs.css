@@ -45,13 +45,11 @@ a {
   color: inherit;
 }
 
-ul[role=list],
-ol[role=list] {
+ul[role=list] {
   list-style: none;
 }
 
-ul,
-ol {
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -96,6 +94,10 @@ address {
   font-style: normal;
 }
 
+ol {
+  margin-left: 1rem;
+}
+
 p a {
   display: inline-block;
   line-height: 1.1;
@@ -128,6 +130,8 @@ p a:active {
   display: inline-block;
   box-shadow: none;
   padding: 0.75rem 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
   font-weight: 700;
   font-size: clamp(1rem, 2vw, 1.1rem);
   background-color: #08aeaf;
@@ -506,9 +510,21 @@ footer .rights_reserved .obs {
   }
 }
 
-.highlight-numbers {
+.highlight {
   font-size: 1.8rem;
   font-weight: 700;
   color: #319e4e;
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1), 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#blog-call {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  #blog-call {
+    display: none;
+  }
 }

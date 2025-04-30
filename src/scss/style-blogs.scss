@@ -207,11 +207,22 @@
   }
 }
 
-.highlight-numbers {
+.highlight {
   font-size: 1.8rem;
   font-weight: 700;
   color: $color-secondary;
   text-shadow:
     -1px -1px 1px rgba(255, 255, 255, 0.1),
     1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+// btn final do blog quando chamando para terapia
+#blog-call {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+
+  @media (max-width: $mobile-break) {
+    display: none;
+  }
 }

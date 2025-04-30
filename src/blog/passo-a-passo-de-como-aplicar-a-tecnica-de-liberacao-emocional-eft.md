@@ -10,7 +10,7 @@ layout: base_blog
 ---
 
 <div class="video">
-<iframe src="https://www.youtube.com/embed/-sA84maKle8?si=JIQWUKNGDINX_-BD" title="Técnica de Liberação Emocional Passo a Passo." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups"
+<iframe src="https://www.youtube.com/embed/-sA84maKle8?si=JIQWUKNGDINX_-BD" title="Técnica de Liberação Emocional Passo a Passo." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
  loading="lazy"></iframe>
  </div>
 
@@ -46,38 +46,38 @@ A EFT é uma ferramenta poderosa, muito útil e eficiente para lidar com o estre
 
 **Segue aqui os 5 passos da Receita Básica da EFT ou Tapping**. Ela pode parecer complicada no início, mas é fácil e rápida de aprender.
 
-### <span class="highlight-numbers">1.</span> Identifique o problema
+### <span class="highlight">1.</span> Identifique o problema
 
 Pense em qualquer coisa que te incomoda, pode ser uma dor física, o momento em que alguém te humilhou, uma memória que não te deixa em paz, uma situação que te causa muito estresse… (trabalhe uma questão por vez para ter resultados satisfatórios).
 
-### <span class="highlight-numbers">2.</span> Avalie a intensidade
+### <span class="highlight">2.</span> Avalie a intensidade
 
 Avalie a intensidade da emoção e/ou dor numa escala de 0 a 10 (0 para nenhuma emoção/dor e 10 para emoção/dor insuportável). A avaliação se refere a como você se sente agora, quando pensa no problema, e não no que você sentiu na hora da memória ou acontecimento.
 
-<img src="/images/posts/avaliacao-eft.webp" alt="Escala de avaliação EFT de zero a dez representadas com cores. Verde para zero e vermelho para dez."></img>
+<img src="/images/posts/avaliacao-eft.webp" alt="Escala de avaliação EFT de zero a dez representadas com cores. Verde para zero e vermelho para dez." loading="lazy"></img>
 
 Este passo é muito importante como ponto de referência para acompanhar o progresso depois de cada rodada da EFT.
 
-### <span class="highlight-numbers">3.</span> Preparação
+### <span class="highlight">3.</span> Preparação
 
 A preparação é o processo que usamos para iniciar as rodadas do tapping. Precisamos comunicar ao nosso sistema o que nós queremos trabalhar. Para isso, usamos uma simples frase enquanto damos leves tapinhas continuamente no ponto caratê.
 
-<img src="/images/posts/ponto-carate-eft.webp" alt="Ponto caratê do EFT localizado na lateral externa da mão, na base do dedo mínimo, próximo ao osso da mão."></img>
+<img src="/images/posts/ponto-carate-eft.webp" alt="Ponto caratê do EFT localizado na lateral externa da mão, na base do dedo mínimo, próximo ao osso da mão." loading="lazy"></img>
 
 A frase terá dois propósitos, um de reconhecer o problema e o outro de aceitar a si mesmo apesar do problema. A frase é formulada da seguinte forma: “Mesmo que eu tenha (sinta) este/esta [ o problema que você quer trabalhar ], eu me amo e aceito profunda e completamente”. Por exemplo: “Mesmo que eu tenha esta dor pulsando no lado esquerdo da minha cabeça, eu me amo e aceito profunda e completamente” ou “Mesmo que eu me sinta humilhado(a) pelo jeito que meu chefe me tratou na frente dos meus colegas, eu me amo e aceito profunda e completamente”. Quanto mais específico você descreve a situação e quanto mais você consegue se conectar com a emoção, mais rápido será o resultado.
 
 Uma cena pode ter várias emoções. Por conta disso, é bom trabalhar elas separadamente, tratando uma por uma. O foco deve estar sempre em você mesmo(a), no que você sente e nunca no que o outro faz/fez.
 
-### <span class="highlight-numbers">4.</span> A sequência
+### <span class="highlight">4.</span> A sequência
 
 <figure>
-  <img src="/images/posts/todos-pontos-eft.webp" alt="Imagem de uma mulher sorridente, com indicações dos pontos de EFT: topo da cabeça, início da sobrancelha, canto do olho, embaixo do olho, entre o nariz e o lábio superior, entre o lábio inferior e o queixo, região da clavícula e embaixo do braço.">
+  <img src="/images/posts/todos-pontos-eft.webp" alt="Imagem de uma mulher sorridente, com indicações dos pontos de EFT: topo da cabeça, início da sobrancelha, canto do olho, embaixo do olho, entre o nariz e o lábio superior, entre o lábio inferior e o queixo, região da clavícula e embaixo do braço." loading="lazy">
   <figcaption>Sequência de cima para baixo dos pontos de EFT.</figcaption>
 </figure>
 
 Agora vamos para a sequência. Nessa fase você vai estimular, equilibrar e desbloquear o fluxo energético do corpo. Para isso, você vai dar leves tapinhas com os dedos em cada um dos pontos em sequência enquanto fala uma frase lembrete para manter o sistema conectado com o problema em questão. A frase lembrete é uma frase simples e curta. Por exemplo, essa dor de cabeça, essa dor pulsante… ou essa humilhação, essa humilhação na frente dos colegas… Você pode ir repetindo essa frase enquanto dá tapinhas leves com os dedos nos pontos específicos. Você pode fazer três rodadas ou mais.
 
-### <span class="highlight-numbers">5.</span> Testar a intensidade novamente
+### <span class="highlight">5.</span> Testar a intensidade novamente
 
 No final da terceira rodada, respire fundo e se conecte com o problema novamente. Avalie a intensidade da emoção e/ou dor novamente e compare com a avaliação inicial para verificar o seu progresso. Muito provavelmente a emoção/dor vai ter diminuído. Repita o procedimento novamente, desta vez pode dizer, por exemplo: “mesmo que eu ainda tenha um pouco de dor de cabeça no meu lado esquerdo, eu me amo e aceito profunda e completamente” ou “mesmo que eu ainda tenha uma intensidade 6 de dor de cabeça no meu lado esquerdo, eu me amo e aceito profunda e completamente”.
 
@@ -93,11 +93,11 @@ Por fim, é importante perceber se a dor mudou de lugar ou de sensação. Por ex
 ### EFT para limpeza de memórias dolorosas passo a passo
 
 <div class="video">
-<iframe src="https://www.youtube.com/embed/BABRa1Q67VY?si=HN13UGBT2a5_rPc2" title="Limpeza de memórias com EFT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups"
+<iframe src="https://www.youtube.com/embed/BABRa1Q67VY?si=HN13UGBT2a5_rPc2" title="Limpeza de memórias com EFT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen 
  loading="lazy"></iframe></div>
 
 ### EFT para liberar emoções tóxicas passo a passo
 
 <div class="video">
-<iframe src="https://www.youtube.com/embed/USTCGwV32VQ?si=rWOmxnlC9JFvjpS4" title="Como Liberar Emoções Tóxicas com EFT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups"
+<iframe src="https://www.youtube.com/embed/USTCGwV32VQ?si=rWOmxnlC9JFvjpS4" title="Como Liberar Emoções Tóxicas com EFT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen 
  loading="lazy"></iframe></div>

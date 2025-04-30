@@ -10,7 +10,7 @@ layout: base_blog
 ---
 
 <div class="video">
-<iframe src="https://www.youtube.com/embed/78u2n-lQV4w?si=Wvl4IK24JmM70FYy" title="Processo Terapêutico da Terapia Cura Emocional " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen sandbox="allow-same-origin allow-scripts allow-presentation allow-popups"
+<iframe src="https://www.youtube.com/embed/78u2n-lQV4w?si=Wvl4IK24JmM70FYy" title="Processo Terapêutico da Terapia Cura Emocional " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen 
  loading="lazy">></iframe> </>
 
 ## Não é sobre o sintoma. É sobre o que está por trás do sintoma.
@@ -45,7 +45,7 @@ Vamos fortalecer a sua autoconfiança, eliminando os medos que geram ansiedade e
 
 Inclusive, você vai aprender a usar técnicas poderosas para lidar com qualquer desafio emocional que possa aparecer na sua vida.
 
-## Quais são as abordagens e técnicas usadas na Terapia Cura Emocional?
+<h2 id="abordagens">Quais são as abordagens e técnicas usadas na Terapia Cura Emocional?</h2>
 
 <div class="shorts-container">
 
@@ -58,7 +58,6 @@ Inclusive, você vai aprender a usar técnicas poderosas para lidar com qualquer
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen 
         referrerpolicy="strict-origin-when-cross-origin"
-        sandbox="allow-same-origin allow-scripts allow-presentation allow-popups"
         loading="lazy">
       </iframe>
       <div class="overlay" onclick="playVideo(this)">
@@ -76,7 +75,6 @@ Inclusive, você vai aprender a usar técnicas poderosas para lidar com qualquer
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen 
         referrerpolicy="strict-origin-when-cross-origin"
-        sandbox="allow-same-origin allow-scripts allow-presentation allow-popups"
         loading="lazy">
       </iframe>
       <div class="overlay" onclick="playVideo(this)">
@@ -94,7 +92,6 @@ Inclusive, você vai aprender a usar técnicas poderosas para lidar com qualquer
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen 
         referrerpolicy="strict-origin-when-cross-origin"
-        sandbox="allow-same-origin allow-scripts allow-presentation allow-popups"
         loading="lazy">
       </iframe>
       <div class="overlay" onclick="playVideo(this)">
@@ -107,11 +104,11 @@ Inclusive, você vai aprender a usar técnicas poderosas para lidar com qualquer
 
 ### TRG (Terapia de Reprocessamento Generativo)
 
-A Terapia de Reprocessamento Generativo (TRG) é uma abordagem terapêutica inovadora que visa resolver problemas emocionais atuando diretamente em suas raízes. Este método foca em processar memórias desde a infância até o presente, eliminando traumas, crenças limitantes e dores emocionais, fortalecendo a sua autoconfiança e te preparando para enfrentar os desafios do dia a dia com mais calma, segurança e confiança.
+A <a href="/blog/desvendando-a-terapia-de-reprocessamento-generativo-trg" target="_blank">Terapia de Reprocessamento Generativo (TRG)</a> é uma abordagem terapêutica inovadora que visa resolver problemas emocionais atuando diretamente em suas raízes. Este método foca em processar memórias desde a infância até o presente, eliminando traumas, crenças limitantes e dores emocionais, fortalecendo a sua autoconfiança e te preparando para enfrentar os desafios do dia a dia com mais calma, segurança e confiança.
 
 ### EFT (Técnica de Liberação Emocional)
 
-A técnica de liberação emocional EFT é altamente eficaz no tratamento de traumas, aliviando emoções como angústia, tristeza, medo e culpa que ficam presas no sistema energético e criam bloqueios, dificultando uma vida leve e saudável. Através de leves batidinhas em pontos específicos dos meridianos, a EFT gradualmente dissipa a carga emocional vinculada aos traumas, transformando eventos dolorosos em memórias que já não causam mais dor ou sofrimento.
+A <a href="/blog/passo-a-passo-de-como-aplicar-a-tecnica-de-liberacao-emocional-eft" target="_blank">técnica de liberação emocional EFT</a> é altamente eficaz no tratamento de traumas, aliviando emoções como angústia, tristeza, medo e culpa que ficam presas no sistema energético e criam bloqueios, dificultando uma vida leve e saudável. Através de leves batidinhas em pontos específicos dos meridianos, a EFT gradualmente dissipa a carga emocional vinculada aos traumas, transformando eventos dolorosos em memórias que já não causam mais dor ou sofrimento.
 
 ## Quais são os pilares da Terapia Cura Emocional?
 
@@ -140,4 +137,6 @@ Esse é o pilar que sustenta a nossa conexão com o poder curador que está alé
 Com uma abordagem alternativa, utilizando métodos e técnicas comprovados, como a TRG e a EFT, você pode **libertar-se de dores emocionais** e começar a viver plenamente. Não adie o cuidado com a sua saúde emocional.
 
 **Não adie o cuidado com a sua saúde emocional.  
-Agende agora mesmo sua sessão.**
+<a href="/index">Agende</a> agora mesmo sua sessão.**
+
+<a href="/index" id="blog-call" class="btn">Saiba Mais</a>
