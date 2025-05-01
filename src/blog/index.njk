@@ -14,8 +14,9 @@
   </head>
   <body>
     {% include "header.njk" %}
-    
+
     <div class="container-blogs">
+      <div class="container-search">
       <input
         id="search-input"
         type="search"
@@ -23,16 +24,14 @@
         aria-label="Buscar post"
         class="search-input"
       />
-      <p id="search-message" class="search-message"></p>
+      <p id="search-message" class="search-message"></p></div>
 
       <div class="tags">
         <p>Por categoria:</p>
         <ul>
           {% for tag in collections.tagList %}
             <li>
-              <a href="#"
-                 data-tag="{{ tag }}"
-                 class="tag-link">{{ tag }}</a>
+              <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
             </li>
           {% endfor %}
         </ul>
@@ -40,17 +39,17 @@
 
       <ul role="list" id="search-results" class="articles_list flow">
         {%- for post in collections.post | reverse -%}
-        <li class="snippet">
-          <h3 class="snippet_title">{{ post.data.title }}</h3>
-          <p class="pub-date"> {{ post.date | readableDate }} </p>
-          <p> Autora: {{ post.data.author }} </p>
-          <p> {{ post.data.description }} </p>
-          <a href="{{ post.url }}">Acessar</a>
-        </li>
+          <li class="snippet">
+            <h3 class="snippet_title">{{ post.data.title }}</h3>
+            <p class="pub-date">{{ post.date | readableDate }}</p>
+            <p>Autora: {{ post.data.author }}</p>
+            <p>{{ post.data.description }}</p>
+            <a href="{{ post.url }}">Acessar</a>
+          </li>
         {%- endfor -%}
       </ul>
-    </div>    
-    
+    </div>
+
     {% include "footer.njk" %}
   </body>
 </html>

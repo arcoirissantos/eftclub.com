@@ -1,0 +1,24 @@
+---
+pagination:
+  data: collections.tagPages
+  size: 1
+  alias: tagPage
+
+permalink: "/tags/{{ tagPage.tag | slug }}/"
+layout: base_blog
+---
+
+<h1>Categoria: {{ tagPage.tag }}</h1>
+<p><a href="/blog/index">← Ver todos os artigos</a></p>
+
+<ul class="articles_list flow">
+  {%- for post in tagPage.posts | reverse -%}
+    <li class="snippet">
+      <h3 class="snippet_title">{{ post.data.title }}</h3>
+      <p class="pub-date">{{ post.date | readableDate }}</p>
+      <p>Autora: {{ post.data.author }}</p>
+      <p>{{ post.data.description }}</p>
+      <a href="{{ post.url }}">Acessar</a>
+    </li>
+  {%- endfor -%}
+</ul>

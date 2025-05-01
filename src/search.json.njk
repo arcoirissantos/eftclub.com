@@ -4,12 +4,14 @@ eleventyExcludeFromCollections: true
 ---
 
 [
-  {%- for post in collections.post -%}
+{%- for post in collections.post -%}
   {
-    "title": {{ post.data.title | dump | safe }},
-    "url": {{ post.url | dump | safe }},
-    "description": {{ post.data.description | dump | safe }},
-    "tags": {{ post.data.tags | dump | safe }}
-  }{%- if not loop.last -%},{%- endif -%}
-  {%- endfor -%}
+    "title":       {{ post.data.title       | jsonify }},
+    "date":        {{ post.date              | readableDate | jsonify }},
+    "author":      {{ post.data.author      | jsonify }},
+    "url":         {{ post.url              | jsonify }},
+    "description": {{ post.data.description | jsonify }},
+    "tags":        {{ post.data.tags        | jsonify }}
+  }{%- if not loop.last %},{% endif %}
+{%- endfor -%}
 ]

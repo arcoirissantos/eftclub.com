@@ -81,12 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('search-input')
   const resultsList = document.getElementById('search-results')
   const messageEl = document.getElementById('search-message')
-  const tagLinks = document.querySelectorAll('.tag-link')
   if (!searchInput || !resultsList || !messageEl) return
 
-  let posts = [] // raw list from search.json
+  let posts = []
   let fuse
-  let selectedTag = '' // '' means “no tag selected”
 
   function normalize(str) {
     return str
@@ -95,126 +93,81 @@ document.addEventListener('DOMContentLoaded', () => {
       .replace(/[\u0300-\u036f]/g, '')
   }
 
-  function renderResults(wrappedResults) {
-    resultsList.innerHTML = wrappedResults
-      .map((r) => {
-        const post = r.item
-        return `
-          <li class="snippet">
-            <h3 class="snippet_title">${post.title}</h3>
-            <a href="${post.url}">Acessar</a>
-          </li>`
-      })
+  function renderResults(items) {
+    resultsList.innerHTML = items
+      .map(
+        (item) => `
+        <li class="snippet">
+          <h3 class="snippet_title">${item.title}</h3>
+          <p class="pub-date">${item.date}</p>
+          <p>Autora: ${item.author}</p>
+          <p>${item.description}</p>
+          <a href="${item.url}">Acessar</a>
+        </li>
+      `
+      )
       .join('')
   }
 
   function showMessage(txt) {
     messageEl.textContent = txt
   }
+
   function clearMessage() {
     messageEl.textContent = ''
   }
 
-  // Hide/show the tag links based on which tags appear in filteredResults
-  function updateTagList(filteredResults) {
-    const tagSet = new Set()
-    filteredResults.forEach((r) => {
-      const t = r.item.tags
-      if (Array.isArray(t)) t.forEach((tag) => tagSet.add(tag))
-    })
-
-    tagLinks.forEach((link) => {
-      const tag = link.dataset.tag
-      const isActive = tag === selectedTag
-      const shouldShow = isActive || tagSet.has(tag)
-      link.style.display = shouldShow ? '' : 'none'
-    })
-  }
-
-  function filterByTag(wrappedResults) {
-    if (!selectedTag) return wrappedResults
-    return wrappedResults.filter(
-      (r) => Array.isArray(r.item.tags) && r.item.tags.includes(selectedTag)
-    )
-  }
-
   function doSearch() {
     clearMessage()
-    const rawQuery = searchInput.value.trim()
-    const q = normalize(rawQuery)
+    const raw = searchInput.value.trim()
+    const q = normalize(raw)
 
-    let wrapped
-
+    // 1) Empty query: show all posts, clear any message
     if (!q) {
-      // no text filter → all posts
-      wrapped = posts.map((post) => ({ item: post }))
-    } else if (q.length < 3) {
-      // too-short query: clear results & tags
-      updateTagList([])
-      resultsList.innerHTML = ''
+      renderResults(posts)
+      return
+    }
+
+    // 2) Query too short (< 3 chars): show all + message
+    if (q.length < SEARCH_THRESHOLD) {
+      renderResults(posts)
       return showMessage('Por favor, digite no mínimo 3 caracteres.')
-    } else {
-      const res = fuse.search(q)
-      if (!res.length) {
-        // no matches: clear results & tags
-        updateTagList([])
-        resultsList.innerHTML = ''
-        return showMessage('Nenhum resultado encontrado.')
-      }
-      wrapped = res
     }
 
-    // apply tag filter
-    wrapped = filterByTag(wrapped)
-    if (!wrapped.length) {
-      // no posts in selected category: clear tags too
-      updateTagList([])
-      resultsList.innerHTML = ''
-      return showMessage('Nenhum post nesta categoria.')
+    // 3) Proper query (>=3): perform Fuse search
+    const fuseRes = fuse.search(q)
+    if (!fuseRes.length) {
+      renderResults([])
+      return showMessage('Nenhum resultado encontrado.')
     }
 
-    // update which tags are visible
-    updateTagList(wrapped)
-
-    // render the filtered posts
-    renderResults(wrapped)
+    // 4) Got matches: extract and render
+    const results = fuseRes.map((r) => r.item)
+    renderResults(results)
   }
-
-  // Tag click handling: toggle active class & state
-  tagLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault()
-      const tag = link.dataset.tag
-
-      if (selectedTag === tag) {
-        selectedTag = '' // clear filter
-      } else {
-        selectedTag = tag
-      }
-
-      tagLinks.forEach((a) =>
-        a.classList.toggle('active', a.dataset.tag === selectedTag)
-      )
-
-      clearMessage()
-      doSearch()
-    })
-  })
 
   // Fetch + initialize Fuse
   fetch('/search.json')
-    .then((r) => r.json())
-    .then((json) => {
-      posts = json
-      fuse = new Fuse(posts, {
+    .then((res) => res.json())
+    .then((data) => {
+      // Keep only the fields you need for render
+      posts = data.map((item) => ({
+        title: item.title,
+        description: item.description,
+        url: item.url,
+        date: item.date,
+        author: item.author
+      }))
+
+      fuse = new Fuse(data, {
         keys: ['title', 'description'],
         threshold: 0.3,
         ignoreLocation: true,
         includeScore: false
       })
 
-      // Initial render (all posts + all tags visible)
-      renderResults(posts.map((post) => ({ item: post })))
+      // Initial render: show all posts
+      renderResults(posts)
 
       // Wire up search input
       const live = posts.length <= SEARCH_THRESHOLD
