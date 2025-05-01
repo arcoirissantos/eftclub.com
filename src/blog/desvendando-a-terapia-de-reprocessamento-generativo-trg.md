@@ -1,5 +1,7 @@
 ---
-tags: post
+tags:
+  - post
+  - trg
 title: Desvendando a Terapia de Reprocessamento Generativo (TRG)
 author: Mutisia Santos
 date: 2024-06-06

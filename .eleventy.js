@@ -3,10 +3,10 @@ const { DateTime } = require('luxon')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('src/scss')
-  // ✅ Only let Eleventy handle static files that Parcel does NOT build
+  // Only let Eleventy handle static files that Parcel does NOT build
   eleventyConfig.addPassthroughCopy({ 'src/images': 'images' })
 
-  // ✅ Remove passthrough of CSS and JS — Parcel handles those now
+  // Remove passthrough of CSS and JS — Parcel handles those now
   // eleventyConfig.addPassthroughCopy('src/css'); ← remove
   // eleventyConfig.addPassthroughCopy('src/js');  ← remove
 
@@ -53,6 +53,21 @@ module.exports = function (eleventyConfig) {
       post.data.lastUpdated = stats.mtime
       return post
     })
+  })
+
+  //handling tags in index posts
+  eleventyConfig.addCollection('tagList', (collectionApi) => {
+    let tagSet = new Set()
+    collectionApi.getFilteredByTag('post').forEach((item) => {
+      let tags = item.data.tags || []
+      if (!Array.isArray(tags)) tags = [tags]
+      tags.forEach((tag) => {
+        if (tag && tag !== 'post') {
+          tagSet.add(tag)
+        }
+      })
+    })
+    return Array.from(tagSet).sort((a, b) => a.localeCompare(b))
   })
 
   return {

@@ -15,7 +15,7 @@
   <body>
     {% include "header.njk" %}
     
-    <div class="container">
+    <div class="container-blogs">
       <input
         id="search-input"
         type="search"
@@ -24,11 +24,27 @@
         class="search-input"
       />
       <p id="search-message" class="search-message"></p>
+
+      <div class="tags">
+        <p>Por categoria:</p>
+        <ul>
+          {% for tag in collections.tagList %}
+            <li>
+              <a href="#"
+                 data-tag="{{ tag }}"
+                 class="tag-link">{{ tag }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
       <ul role="list" id="search-results" class="articles_list flow">
         {%- for post in collections.post | reverse -%}
         <li class="snippet">
           <h3 class="snippet_title">{{ post.data.title }}</h3>
-          <p>{{ post.date | readableDate }}</p>
+          <p class="pub-date"> {{ post.date | readableDate }} </p>
+          <p> Autora: {{ post.data.author }} </p>
+          <p> {{ post.data.description }} </p>
           <a href="{{ post.url }}">Acessar</a>
         </li>
         {%- endfor -%}

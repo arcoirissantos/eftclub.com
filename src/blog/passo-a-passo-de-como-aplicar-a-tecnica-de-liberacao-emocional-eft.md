@@ -1,5 +1,7 @@
 ---
-tags: post
+tags:
+  - post
+  - eft
 title: Passo a Passo de Como Aplicar a Técnica de Liberação Emocional (EFT)
 author: Mutisia Santos
 date: 2024-06-06

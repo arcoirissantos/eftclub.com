@@ -1,5 +1,8 @@
 ---
-tags: post
+tags:
+  - post
+  - eft
+  - ansiedade
 title: Passo a Passo da Técnica EFT para Ansiedade
 author: Mutisia Santos
 date: 2024-11-09
