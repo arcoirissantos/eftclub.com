@@ -77,7 +77,6 @@ import Fuse from 'fuse.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const SEARCH_THRESHOLD = 3
-
   const searchInput = document.getElementById('search-input')
   const resultsList = document.getElementById('search-results')
   const messageEl = document.getElementById('search-message')
@@ -96,13 +95,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderResults(items) {
     resultsList.innerHTML = items
       .map(
-        (item) => `
+        (post) => `
         <li class="snippet">
-          <h3 class="snippet_title">${item.title}</h3>
-          <p class="pub-date">${item.date}</p>
-          <p>Autora: ${item.author}</p>
-          <p>${item.description}</p>
-          <a href="${item.url}">Acessar</a>
+          <a href="${post.url}">
+            <img 
+              src="${post.image}" 
+              alt="${post.image_alt || post.title}"
+            >
+            <h3 class="snippet_title">${post.title}</h3>
+            <p class="pub-date">${post.date}</p>
+            <p>Autora: ${post.author}</p>
+            <p>${post.description}</p>
+          </a>
         </li>
       `
       )
@@ -122,43 +126,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const raw = searchInput.value.trim()
     const q = normalize(raw)
 
-    // 1) Empty query: show all posts, clear any message
-    if (!q) {
+    // 1) Empty → revert to full, newest-first
+    if (!raw) {
       renderResults(posts)
       return
     }
 
-    // 2) Query too short (< 3 chars): show all + message
+    // 2) Too short → show full + prompt
     if (q.length < SEARCH_THRESHOLD) {
       renderResults(posts)
       return showMessage('Por favor, digite no mínimo 3 caracteres.')
     }
 
-    // 3) Proper query (>=3): perform Fuse search
+    // 3) Valid query → run Fuse
     const fuseRes = fuse.search(q)
     if (!fuseRes.length) {
       renderResults([])
       return showMessage('Nenhum resultado encontrado.')
     }
 
-    // 4) Got matches: extract and render
-    const results = fuseRes.map((r) => r.item)
-    renderResults(results)
+    // 4) Got matches → extract & render (order as returned by Fuse)
+    renderResults(fuseRes.map((r) => r.item))
   }
 
-  // Fetch + initialize Fuse
+  // Fetch + initialize
   fetch('/search.json')
     .then((res) => res.json())
     .then((data) => {
-      // Keep only the fields you need for render
-      posts = data.map((item) => ({
+      // Map raw JSON into the shape we render
+      const loaded = data.map((item) => ({
         title: item.title,
         description: item.description,
         url: item.url,
         date: item.date,
-        author: item.author
+        author: item.author,
+        image: item.image,
+        image_alt: item.image_alt
       }))
 
+      // Reverse for newest-first default
+      posts = loaded.reverse()
+
+      // Build Fuse on the original data array (order doesn't matter for Fuse)
       fuse = new Fuse(data, {
         keys: ['title', 'description'],
         threshold: 0.3,
@@ -166,10 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
         includeScore: false
       })
 
-      // Initial render: show all posts
-      renderResults(posts)
+      // No initial render: server markup stays until first search
 
-      // Wire up search input
+      // Wire up input events
       const live = posts.length <= SEARCH_THRESHOLD
       if (live) {
         searchInput.addEventListener('input', doSearch)
@@ -177,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.addEventListener('input', () => {
           if (!searchInput.value.trim()) {
             clearMessage()
-            doSearch()
+            renderResults(posts)
           }
         })
         searchInput.addEventListener('keydown', (e) => {

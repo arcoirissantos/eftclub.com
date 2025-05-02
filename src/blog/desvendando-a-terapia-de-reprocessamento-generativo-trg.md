@@ -5,8 +5,7 @@ tags:
 title: Desvendando a Terapia de Reprocessamento Generativo (TRG)
 author: Mutisia Santos
 date: 2024-06-06
-image: /images/Mutisia-Profile-EFTclub.webp
-image_alt: This is a test
+image: /images/featured-pictures/desvendando-a-terapia-de-reprocessamento-regenerativo.webp
 description: A Terapia de Reprocessamento Generativo (TRG) é uma abordagem terapêutica para resolver problemas emocionais atuando diretamente na raíz.
 layout: base_blog
 ---

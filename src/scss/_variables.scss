@@ -20,6 +20,10 @@ section {
   padding: 4rem clamp(2rem, 6vw, 5rem) 4rem;
 }
 
+aside {
+  padding: 4rem clamp(2rem, 6vw, 5rem) 4rem;
+}
+
 //-------- Font --------/
 body {
   font-family: $font;

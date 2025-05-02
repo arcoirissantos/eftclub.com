@@ -6,8 +6,7 @@ tags:
 title: Passo a Passo da Técnica EFT para Ansiedade
 author: Mutisia Santos
 date: 2024-11-09
-image: /images/Mutisia-Profile-EFTclub.webp
-image_alt: This is a test
+image: /images/featured-pictures/passo-a-passo-da-tecnica-eft-para-ansiedade.webp
 description: EFT para ansiedade ajuda o cérebro a associar momentos que antes provocavam sintomas de ansiedade a um estado de calma.
 layout: base_blog
 ---

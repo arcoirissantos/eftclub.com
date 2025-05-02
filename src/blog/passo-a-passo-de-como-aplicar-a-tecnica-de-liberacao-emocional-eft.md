@@ -5,8 +5,7 @@ tags:
 title: Passo a Passo de Como Aplicar a Técnica de Liberação Emocional (EFT)
 author: Mutisia Santos
 date: 2024-06-06
-image: /images/pontos-eft.webp
-image_alt: This is a test
+image: /images/featured-pictures/passo-a-passo-da-tecnica-eft.webp
 description: Técnica de Liberação Emocional (EFT), também chamada de Tapping, é usada para desbloquear todo tipo de traumas e bloqueios emocionais.
 layout: base_blog
 ---

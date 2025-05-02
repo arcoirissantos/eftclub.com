@@ -7,10 +7,11 @@ eleventyExcludeFromCollections: true
 {%- for post in collections.post -%}
   {
     "title":       {{ post.data.title       | jsonify }},
-    "date":        {{ post.date              | readableDate | jsonify }},
+    "date":        {{ post.date             | readableDate | jsonify }},
     "author":      {{ post.data.author      | jsonify }},
     "url":         {{ post.url              | jsonify }},
     "description": {{ post.data.description | jsonify }},
+    "image":       {{ post.data.image       | jsonify }},
     "tags":        {{ post.data.tags        | jsonify }}
   }{%- if not loop.last %},{% endif %}
 {%- endfor -%}

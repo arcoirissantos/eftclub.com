@@ -3,52 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artigos</title>
+    <title>EFTclub Blogs</title>
 
-    <link rel="stylesheet" href="/css/style-blogs.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
+    <link rel="stylesheet" href="/css/style-blogs.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="/js/main.js"></script>
-
   </head>
   <body>
     {% include "header.njk" %}
 
-    <div class="container-blogs">
-      <div class="container-search">
-      <input
-        id="search-input"
-        type="search"
-        placeholder="Buscar post..."
-        aria-label="Buscar post"
-        class="search-input"
-      />
-      <p id="search-message" class="search-message"></p></div>
+    <main class="container" aria-label="EFTclub Blog Content">
+      
+      <div class="post">
 
-      <div class="tags">
-        <p>Por categoria:</p>
-        <ul>
-          {% for tag in collections.tagList %}
-            <li>
-              <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+        <div class="container-title">
+          <h1>EFTclub blogs</h1>
+          <p>Leia mais sobre como você pode melhorar a sua qualidade de vida.</p>
+        </div>
 
-      <ul role="list" id="search-results" class="articles_list flow">
-        {%- for post in collections.post | reverse -%}
+        <ul role="list" id="search-results" class="articles_list flow">
+          {%- for post in collections.post | reverse -%}
           <li class="snippet">
+            <a href="{{ post.url }}"><img src="{{ post.data.image }}">
             <h3 class="snippet_title">{{ post.data.title }}</h3>
             <p class="pub-date">{{ post.date | readableDate }}</p>
             <p>Autora: {{ post.data.author }}</p>
-            <p>{{ post.data.description }}</p>
-            <a href="{{ post.url }}">Acessar</a>
+            <p>{{ post.data.description }}</p></a>
           </li>
-        {%- endfor -%}
-      </ul>
-    </div>
+          {%- endfor -%}
+        </ul>
+      </div>
+
+      <aside class="side-bar">
+        <div class="tags">
+          <p>Por categoria:</p>
+          <ul>
+            {% for tag in collections.tagList %}
+              <li>
+                <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="container-search">
+          <p>Pesquisar todos artigos</p>
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Pesquisar..."
+            aria-label="Buscar post"
+            class="search-input"
+          />
+          <p id="search-message" class="search-message"></p>
+        </div>
+      </aside>
+    </main>
 
     {% include "footer.njk" %}
   </body>

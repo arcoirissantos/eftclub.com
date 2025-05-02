@@ -228,48 +228,46 @@
 }
 
 //index
-.container-blogs {
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
-  justify-content: center;
-  align-items: center;
 
-  .search-input {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    margin: 2rem auto;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-  }
-
-  .search-bar {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-
-    input {
-      flex: 1;
-    }
-  }
-
-  .search-message {
-    text-align: center;
-    font-style: italic;
-    color: #666;
-    margin-bottom: 1rem;
-  }
-
-  .tag-link {
-    // color: variables.$color-primary;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  .tag-link.active {
-    color: variables.$color-secondary;
+.snippet {
+  a {
+    display: grid;
   }
 }
-// search bar
+
+.search-input {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+
+  input {
+    flex: 1;
+  }
+}
+
+.search-message {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.tag-link {
+  // color: variables.$color-primary;
+  cursor: pointer;
+  text-decoration: none;
+}
+.tag-link.active {
+  color: variables.$color-secondary;
+}
