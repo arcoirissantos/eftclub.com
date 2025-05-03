@@ -26,7 +26,7 @@ permalink: '/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
   {%- endfor -%}
 </ul>
 
-{# Only render pagination if there’s more than one page #}
+{# Only render pagination if there is more than one page #}
 {% if pagination.pages.length > 1 %}
   {% set current = pagination.pageNumber + 1 %}
   {% set total   = pagination.pages.length %}

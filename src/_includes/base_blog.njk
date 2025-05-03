@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/style-blogs.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" src="/js/search.js"></script>
+    <script type="module" src="/js/tags.js"></script>
+
   </head>
   <body>
     {% include "header.njk" %}
@@ -29,14 +31,19 @@
       <aside class="side-bar side-bar-blog">
         <div class="tags">
           <p>Por tópico:</p>
-          <ul>
-            {% for tag in collections.tagList %}
-              <li>
+          <ul id="tag-list">
+            {%- for tag in collections.tagList -%}
+              <li class="tag-item" {% if loop.index > 10 %}style="display:none"{% endif %}>
                 <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
               </li>
-            {% endfor %}
+            {%- endfor -%}
           </ul>
+        
+          {% if collections.tagList | length > 10 %}
+            <p id="show-more-tags">Mostrar Mais ↓</p>
+          {% endif %}
         </div>
+        
 
         <div class="container-search">
           <p>Pesquisar todos artigos</p>

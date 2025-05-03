@@ -4,11 +4,11 @@
   "scripts": {
     "start": "concurrently \"npm:eleventy\" \"npm:parcel:css\" \"npm:parcel:js\"",
     "eleventy": "eleventy --watch --serve --output=public",
-    "parcel:js": "parcel watch src/js/main.js src/js/search.js --dist-dir public/js --no-source-maps --no-hmr --no-autoinstall",
+    "parcel:js": "parcel watch \"src/js/**/*.js\" --dist-dir public/js --no-source-maps --no-hmr --no-autoinstall",
     "parcel:css": "parcel watch src/scss/style.scss src/scss/style-blogs.scss --dist-dir public/css --public-url=/css --no-source-maps --no-hmr --no-autoinstall",
     "build": "npm run build:eleventy && npm run build:parcel",
     "build:eleventy": "eleventy --output=public",
-    "build:parcel": "parcel build src/js/main.js --dist-dir public/js --no-source-maps && parcel build src/scss/style.scss src/scss/style-blogs.scss --dist-dir public/css --public-url=/css --no-source-maps",
+    "build:parcel": "parcel build \"src/js/**/*.js\" --dist-dir public/js --no-source-maps && parcel build src/scss/style.scss src/scss/style-blogs.scss --dist-dir public/css --public-url=/css --no-source-maps",
     "format": "prettier --write \"**/*.{js,css,html,njk,md}\" || true"
   },
   "keywords": [],
