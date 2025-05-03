@@ -1,11 +1,19 @@
 ---
 layout: base_blog
-title: EFTclub blog
+title: EFTclub Blog
+
+pagination:
+  data: collections.posts
+  size: 10
+  alias: posts
+  reverse: true
+
+permalink: '/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumber + 1 }}/{% endif %}'
 ---
 {% import "snippet.njk" as Snippet %}
 
 <ul role="list" class="articles_list flow">
-  {%- for post in collections.posts | reverse -%}
+  {%- for post in pagination.items -%}
     {{ Snippet.snippet(
          post.url,
          post.data.image,
@@ -17,3 +25,37 @@ title: EFTclub blog
     ) }}
   {%- endfor -%}
 </ul>
+
+{# Only render pagination if there’s more than one page #}
+{% if pagination.pages.length > 1 %}
+  {% set current = pagination.pageNumber + 1 %}
+  {% set total   = pagination.pages.length %}
+  {% set window  = 2 %}
+
+  <nav class="pagination" aria-label="Navegação de páginas">
+    {# Only show “Anterior” if there is a previous page #}
+    {% if pagination.href.previous %}
+      <a class="prev" href="{{ pagination.href.previous }}">&laquo; Anterior</a>
+    {% endif %}
+
+    {# Page numbers with ellipses and current page in <strong> #}
+    {%- for href in pagination.hrefs -%}
+      {% set i = loop.index %}
+      {% if i == 1 or i == total
+            or (i >= current - window and i <= current + window) %}
+        {% if i == current %}
+          <strong class="page-link current" aria-current="page">{{ i }}</strong>
+        {% else %}
+          <a href="{{ href }}" class="page-link">{{ i }}</a>
+        {% endif %}
+      {% elif i == (current - window - 1) or i == (current + window + 1) %}
+        <span class="ellipsis">…</span>
+      {% endif %}
+    {%- endfor -%}
+
+    {# Only show “Próximo” if there is a next page #}
+    {% if pagination.href.next %}
+      <a class="next" href="{{ pagination.href.next }}">Próximo &raquo;</a>
+    {% endif %}
+  </nav>
+{% endif %}
