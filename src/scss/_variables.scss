@@ -153,6 +153,35 @@ p {
   }
 }
 
+.tags {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+
+    li {
+      background-color: $color-primary;
+      padding: 0.3rem 1rem;
+      border-radius: 1rem;
+      color: $color-white;
+      transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.1);
+        background-color: $color-secondary;
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+  }
+}
+
 //-------- header --------//
 .navigation {
   margin: 1rem;

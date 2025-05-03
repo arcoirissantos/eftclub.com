@@ -1,0 +1,11 @@
+{# define a macro called “snippet” with positional args #}
+{% macro snippet(url, image, image_alt, title, date, author, description) -%}
+<li class="snippet">
+  <a href="{{ url }}">
+    <img src="{{ image }}" alt="{{ image_alt or title }}">
+    <h3 class="snippet_title">{{ title }}</h3>
+    <p class="snippet_author-date">{{ author }} | {{ date }}</p>
+    <p class="snippet_description">{{ description }}</p>
+  </a>
+</li>
+{%- endmacro %}

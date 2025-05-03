@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+
+    <!-- JS -->
+    <script type="module" src="/js/main.js"></script>
+
+    <link rel="stylesheet" href="/css/style-blogs.css" />
+
+    <!-- SEO -->
+    <meta name="description" content="{{ description }}" />
+    <meta name="robots" content="index, follow" />
+  </head>
+  <body>
+    {% include "header.njk" %}
+
+    <div class="container">
+      <main class="post">
+        <article class="post-content">
+          <h1>{{ title }}</h1>
+
+          <p class="pub-date">
+            Publicado em:
+            <time datetime="{{ date | dateISO }}">{{ date | readableDate }}</time>
+
+            {% if lastUpdated and (date | updatedAfterSixMonths(lastUpdated)) %}
+              e atualizado em:
+              <span class="last-updated">
+                <time datetime="{{ lastUpdated | dateISO }}">
+                  {{ lastUpdated | readableDate }}
+                </time>
+              </span>
+            {% endif %}
+          </p>
+
+          <div class="autor-data-container">
+            {% set authorInfo = authors[author] or {
+              "image": "/images/authors/default.webp",
+              "alt": "Default Author"
+            } %}
+
+            <img
+              src="{{ authorInfo.image }}"
+              alt="{{ authorInfo.alt }}"
+              class="author-picture"
+            />
+
+            <div class="autor-data">
+              <address>
+                Autora: <br />
+                <strong>{{ author }}</strong>
+              </address>
+            </div>
+          </div>
+
+          {{ content | safe }}
+        </article>
+      </main>
+
+      <aside class="side-bar">
+        <div class="ajuda">
+          <h2>Precisa da minha ajuda?</h2>
+          <!-- <a href="/index" class="btn btn_border">Saiba Mais</a> -->
+           <p><a href="/index">Saiba Mais →</a></p>
+        </div>
+
+        <div class="artigos">
+          <h2>Você pode se interessar também:</h2>
+
+        
+          {% import "snippet.njk" as Snippet %}
+        
+          {% set suggestions = collections.posts
+            | suggestions(tags, page.url, 2) %}         
+        
+          {% if suggestions | length %}
+            <ul class="articles_list flow">
+              {%- for post in suggestions -%}
+                {{ Snippet.snippet(
+                     post.url,
+                     post.data.image,
+                     post.data.image_alt,
+                     post.data.title,
+                     post.date | readableDate,
+                     post.data.author
+                ) }}
+              {%- endfor -%}
+              <li>
+                <p><a href="/blog/index">Ver todos artigos →</a></p>
+              </li>
+            </ul>
+          {% else %}
+            <p>Nenhum outro artigo encontrado.</p>
+          {% endif %}
+        </div>
+      </aside>
+    </div>
+
+    {% include "whatsapp-btn.njk" %}
+    {% include "footer.njk" %}
+  </body>
+</html>

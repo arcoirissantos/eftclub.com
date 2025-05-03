@@ -126,6 +126,61 @@ module.exports = function (eleventyConfig) {
     })
   })
 
+  eleventyConfig.addGlobalData('eleventyComputed', {
+    title: (data) => {
+      if (data.tagPage && data.tagPage.tag) {
+        return `Tópico: ${data.tagPage.tag}`
+      }
+      // fall back to any front-matter title
+      return data.title
+    }
+  })
+
+  eleventyConfig.addFilter(
+    'suggestions',
+    (allPosts, pageTags = [], currentUrl = '', maxCount = 3) => {
+      // 1) Normalize & drop “post” from current page’s tags
+      const relevantPageTags = (Array.isArray(pageTags) ? pageTags : [pageTags])
+        .map((t) => (t || '').toString().trim().toLowerCase())
+        .filter((t) => t && t !== 'post')
+
+      console.log('→ suggestions(): currentUrl =', currentUrl)
+      console.log('→ suggestions(): relevantPageTags =', relevantPageTags)
+
+      // 2) Exclude the current post
+      const others = allPosts.filter((p) => p.url !== currentUrl)
+
+      const related = []
+      const unrelated = []
+
+      others.forEach((p) => {
+        // pull & normalize this post’s tags
+        let tags = p.data.tags || []
+        if (!Array.isArray(tags)) tags = [tags]
+        const filteredTags = tags
+          .map((t) => (t || '').toString().trim().toLowerCase())
+          .filter((t) => t && t !== 'post')
+
+        console.log(`   checking ${p.url} tags =`, filteredTags)
+
+        const isRelated = relevantPageTags.some((tag) =>
+          filteredTags.includes(tag)
+        )
+
+        if (isRelated) related.push(p)
+        else unrelated.push(p)
+      })
+
+      console.log(
+        '→ suggestions(): related urls =',
+        related.map((p) => p.url)
+      )
+
+      // 4) Merge & cap
+      return related.concat(unrelated).slice(0, maxCount)
+    }
+  )
+
   return {
     dir: {
       input: 'src',

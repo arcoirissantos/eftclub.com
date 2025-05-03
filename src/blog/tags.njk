@@ -1,11 +1,23 @@
 ---
+pagination:
+  data: collections.tagPages
+  size: 1
+  alias: tagPage
+
+permalink: "/tags/{{ tagPage.tag | slug }}/"
 layout: base_blog
-title: EFTclub blog
+
+eleventyComputed:
+  title: "Tópico: {{ tagPage.tag }}"
 ---
+
+
+<p><a href="/blog/index">← Ver todos os artigos</a></p>
+
 {% import "snippet.njk" as Snippet %}
 
-<ul role="list" class="articles_list flow">
-  {%- for post in collections.posts | reverse -%}
+<ul class="articles_list flow">
+  {%- for post in tagPage.posts | reverse -%}
     {{ Snippet.snippet(
          post.url,
          post.data.image,

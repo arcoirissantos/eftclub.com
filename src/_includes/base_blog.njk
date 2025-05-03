@@ -3,94 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }}</title>
-
-    <!-- JS -->
-    <script type="module" src="/js/main.js"></script>
+    <title>EFTclub Blogs</title>
 
     <link rel="stylesheet" href="/css/style-blogs.css" />
-
-    <!-- SEO -->
-    <meta name="description" content="{{ description }}" />
-    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="/js/search.js"></script>
   </head>
   <body>
     {% include "header.njk" %}
 
-    <div class="container">
-      <main class="post">
-        <article class="post-content">
-          <h1>{{ title }}</h1>
+    <main class="container blog-index" aria-label="EFTclub Blog Content">
+      
+      <div class="container-title">
+        <h1> {{ title }} </h1>
+        <p>Leia mais sobre como você pode melhorar a sua qualidade de vida.</p>
+      </div>
+      
+      <div class="post">
+        
 
-          <p class="pub-date">
-            Publicado em:
-            <time datetime="{{ date | dateISO }}">{{ date | readableDate }}</time>
+        {{ content | safe }}
 
-            {% if lastUpdated and (date | updatedAfterSixMonths(lastUpdated)) %}
-              e atualizado em:
-              <span class="last-updated">
-                <time datetime="{{ lastUpdated | dateISO }}">
-                  {{ lastUpdated | readableDate }}
-                </time>
-              </span>
-            {% endif %}
-          </p>
+      </div>
 
-          <div class="autor-data-container">
-            {% set authorInfo = authors[author] or {
-              "image": "/images/authors/default.webp",
-              "alt": "Default Author"
-            } %}
-
-            <img
-              src="{{ authorInfo.image }}"
-              alt="{{ authorInfo.alt }}"
-              class="author-picture"
-            />
-
-            <div class="autor-data">
-              <address>
-                Autora: <br />
-                <strong>{{ author }}</strong>
-              </address>
-            </div>
-          </div>
-
-          {{ content | safe }}
-        </article>
-      </main>
-
-      <aside class="side-bar">
-        <div class="ajuda">
-          <h2>Precisa da minha ajuda?</h2>
-          <a href="/index" class="btn btn_border">Saiba Mais</a>
+      <aside class="side-bar side-bar-blog">
+        <div class="tags">
+          <p>Por tópico:</p>
+          <ul>
+            {% for tag in collections.tagList %}
+              <li>
+                <a href="/tags/{{ tag | slug }}/">{{ tag }}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
 
-        <div class="artigos">
-          <h2>Você pode se interessar também:</h2>
-
-          {% set otherPosts = collections.posts | excludeCurrentPost(page.url) | reverse %}
-          {% set limitedPosts = otherPosts | slice(0, 3) %}
-
-          {% if limitedPosts | length > 0 %}
-            <ul>
-              {% for post in limitedPosts %}
-                <li class="img_link">
-                  <a href="{{ post.url }}">
-                    <h3>{{ post.data.title }}</h3>
-                    <p>Autora: {{ post.data.author }}</p>
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          {% else %}
-            <p>Nenhum outro artigo encontrado.</p>
-          {% endif %}
+        <div class="container-search">
+          <p>Pesquisar todos artigos</p>
+          <form id="index-search-form" action="/search/" method="get">
+            <input
+              name="q"
+              id="search-input"
+              type="search"
+              placeholder="Pesquisar..."
+              aria-label="Buscar post"
+              class="search-input"
+            />
+          </form>
+          <p id="search-message" class="search-message"></p>
         </div>
       </aside>
-    </div>
+    </main>
 
-    {% include "whatsapp-btn.njk" %}
     {% include "footer.njk" %}
   </body>
 </html>

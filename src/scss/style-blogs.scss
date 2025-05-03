@@ -11,6 +11,11 @@
 
   .post {
     max-width: 720px;
+    margin-top: 1rem;
+
+    @media (max-width: variables.$mobile-break) {
+      margin-top: 0px;
+    }
 
     .pub-date {
       padding-left: 10px;
@@ -37,6 +42,10 @@
   }
 
   .side-bar {
+    height: fit-content;
+    padding-top: 2rem;
+    position: sticky;
+    top: 0rem;
     max-width: 400px;
     min-width: 300px;
     display: flex;
@@ -45,43 +54,39 @@
     padding-right: 0;
 
     @media (max-width: variables.$mobile-break) {
+      position: static;
       padding: inherit;
       margin-top: 2rem;
     }
 
     .ajuda {
-      background-image: variables.$color-background;
+      background-image: linear-gradient(to right, #b8ddc5, #faebd0);
       border: 3px solid variables.$color-text;
       border-radius: 30px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 2rem;
-      gap: 3rem;
+      padding: 1.5rem;
+      gap: 1.5rem;
     }
+
     .artigos {
-      //   border: 3px solid variables.$color-text;
       border-radius: 30px;
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 1rem 2rem;
-      gap: 2rem;
+      margin-top: 1rem;
+
+      img {
+        max-width: 80px;
+      }
+
+      .snippet {
+        margin: 1rem;
+      }
 
       ul {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
-
-        li {
-          border-left: 3px solid variables.$color-primary;
-          padding-left: 0.5rem;
-
-          p {
-            font-size: 0.8rem;
-            line-height: 1rem;
-          }
-        }
+        align-items: center;
       }
     }
   }
@@ -227,47 +232,140 @@
   }
 }
 
-//index
+//-------- index --------//
 
-.snippet {
-  a {
-    display: grid;
+.blog-index {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+    'title aside'
+    'post aside';
+
+  .container-title {
+    margin-top: 1rem;
+    grid-area: title;
+  }
+
+  .post {
+    grid-area: post;
+  }
+
+  .side-bar-blog {
+    grid-area: aside;
+    align-self: start;
+  }
+
+  @media (max-width: variables.$mobile-break) {
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    grid-template-areas:
+      'title'
+      'aside'
+      'post';
+
+    place-items: center;
+
+    .container-title {
+      text-align: center;
+    }
   }
 }
 
-.search-input {
-  display: block;
-  width: 100%;
-  max-width: 400px;
-  margin: 2rem auto;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.snippet {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+
+  a {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      'img title'
+      'img author'
+      'img description';
+    align-items: center;
+
+    img {
+      grid-area: img;
+      max-width: 150px;
+      margin-right: 1rem;
+      border-radius: 1rem;
+    }
+    .snippet_title {
+      grid-area: title;
+      margin-top: 3%;
+    }
+    .snippet_author-date {
+      grid-area: author;
+      margin-bottom: 0.5rem;
+      font-size: 0.8em;
+    }
+    .snippet_description {
+      grid-area: description;
+      margin-bottom: 3%;
+    }
+
+    @media (max-width: variables.$mobile-break) {
+      img {
+        max-width: 100px;
+        align-self: start;
+      }
+    }
+  }
 }
 
-.search-bar {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+.tags {
+  p {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
 
-  input {
-    flex: 1;
+.container-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  p {
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .search-input {
+    margin: 1rem 0rem;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+  }
+
+  .search-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    input {
+      flex: 1;
+    }
   }
 }
 
 .search-message {
   text-align: center;
   font-style: italic;
-  color: #666;
+  color: gray;
   margin-bottom: 1rem;
+  // background-color: #fa4b48;
+  border-radius: 1rem;
+  padding: 0.3rem 0.5rem;
+  max-width: 250px;
 }
 
-.tag-link {
-  // color: variables.$color-primary;
-  cursor: pointer;
-  text-decoration: none;
-}
-.tag-link.active {
-  color: variables.$color-secondary;
+.go-back {
+  margin-bottom: 2rem;
 }

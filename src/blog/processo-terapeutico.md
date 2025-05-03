@@ -3,11 +3,11 @@ tags:
   - post
   - terapia
 title: Processo Terapêutico da Terapia Cura Emocional
-author: Mutisia Santos
+author: Terapeuta Mutisia
 date: 2024-08-15
 image: /images/featured-pictures/processo-terapeutico-da-terapia-cura-emocional.webp
 description: Na terapia cura emocional, não estamos apenas tratando os sintomas superficiais, mas sim as raízes emocionais que os causam.
-layout: base_blog
+layout: base_post
 ---
 
 <div class="video">
@@ -137,7 +137,7 @@ Esse é o pilar que sustenta a nossa conexão com o poder curador que está alé
 
 Com uma abordagem alternativa, utilizando métodos e técnicas comprovados, como a TRG e a EFT, você pode **libertar-se de dores emocionais** e começar a viver plenamente. Não adie o cuidado com a sua saúde emocional.
 
-**Não adie o cuidado com a sua saúde emocional.  
-<a href="/index">Agende</a> agora mesmo sua sessão.**
+<div><p>Não adie o cuidado com a sua saúde emocional.  
+<a href="/index">Agende</a> agora mesmo sua sessão.</p>
 
-<a href="/index" id="blog-call" class="btn">Saiba Mais</a>
+<a href="/index" id="blog-call" class="btn">Saiba Mais</a></div>
