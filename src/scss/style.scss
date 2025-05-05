@@ -511,3 +511,15 @@ body.no-scroll {
 [hidden] {
   display: none !important;
 }
+
+// 404 page
+#notFound_body {
+  .notFound_div {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
