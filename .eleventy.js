@@ -3,12 +3,23 @@ const { DateTime } = require('luxon')
 const nunjucks = require('nunjucks')
 const slugify = require('slugify')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
+const pluginSitemap = require('@quasibit/eleventy-plugin-sitemap')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss)
+
+  if (process.env.ELEVENTY_ENV === 'production') {
+    eleventyConfig.addPlugin(pluginSitemap, {
+      sitemap: {
+        hostname: 'https://eftclub.com'
+      }
+    })
+  }
+
   eleventyConfig.addWatchTarget('src/scss')
   // Only let Eleventy handle static files that Parcel does NOT build
   eleventyConfig.addPassthroughCopy({ 'src/images': 'images' })
+  eleventyConfig.addPassthroughCopy({ 'src/_redirects': '_redirects' })
 
   // Remove passthrough of CSS and JS — Parcel handles those now
   // eleventyConfig.addPassthroughCopy('src/css'); ← remove
