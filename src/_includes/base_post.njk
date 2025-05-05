@@ -1,19 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
+    {% set base = siteURL.url %}
+  
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }}</title>
-
-    <!-- JS -->
-    <script type="module" src="/js/main.js"></script>
-
-    <link rel="stylesheet" href="/css/style-blogs.css" />
-
-    <!-- SEO -->
+  
+    <!-- Primary SEO -->
+    <title>{{ title }} | EFTclub</title>
     <meta name="description" content="{{ description }}" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="{{ robots or 'index, follow' }}" />
+    <link
+      rel="canonical"
+      href="{{ (canonical or page.url) | absoluteUrl(base) }}"
+    />
+  
+    <!-- Open Graph / Facebook -->
+    <meta
+      property="og:type"
+      content="article"
+    />
+    <meta
+      property="og:url"
+      content="{{ (canonical or page.url) | absoluteUrl(base) }}"
+    />
+    <meta
+      property="og:title"
+      content="{{ title }}"
+    />
+    <meta
+      property="og:description"
+      content="{{ description }}"
+    />
+    {% if image %}
+      <meta
+        property="og:image"
+        content="{{ image | absoluteUrl(base) }}"
+      />
+    {% endif %}
+    {% if date %}
+      <meta
+        property="article:published_time"
+        content="{{ date | dateISO }}"
+      />
+    {% endif %}
+    {% if lastmod %}
+      <meta
+        property="article:modified_time"
+        content="{{ lastmod | dateISO }}"
+      />
+    {% endif %}
+    {% if author %}
+      <meta
+        property="article:author"
+        content="{{ author }}"
+      />
+    {% endif %}
+  
+    <!-- Twitter Card -->
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="twitter:site"
+      content="@EFTclub"
+    />
+    <meta
+      name="twitter:title"
+      content="{{ title }}"
+    />
+    <meta
+      name="twitter:description"
+      content="{{ description }}"
+    />
+    {% if image %}
+      <meta
+        name="twitter:image"
+        content="{{ image | absoluteUrl(base) }}"
+      />
+    {% endif %}
+  
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ (canonical or page.url) | absoluteUrl(base) }}"
+      },
+      "headline": "{{ title }}",
+      "description": "{{ description }}",
+      {% if image %}"image": ["{{ image | absoluteUrl(base) }}"],{% endif %}
+      "author": {
+        "@type": "Person",
+        "name": "{{ author }}"
+      },
+      "datePublished": "{{ date | dateISO }}",
+      {% if lastmod %}"dateModified": "{{ lastmod | dateISO }}",{% endif %}
+      "publisher": {
+        "@type": "Organization",
+        "name": "EFTclub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://eftclub.com/images/icons/favicon-32.png"
+        }
+      }
+    }
+    </script>
+  
+    <!-- Styles -->
+    <link
+      rel="preload"
+      href="/css/style-blogs.css"
+      as="style"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/style-blogs.css"
+    />
+  
+    <!-- Scripts -->
+    <script
+      type="module"
+      defer
+      src="/js/main.js"
+    ></script>
+  
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      href="/images/icons/favicon-16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/images/icons/favicon-32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/icons/apple-touch-icon.png"
+    />
   </head>
+  
+
   <body>
     {% include "header.njk" %}
 
@@ -26,11 +162,11 @@
             Publicado em:
             <time datetime="{{ date | dateISO }}">{{ date | readableDate }}</time>
 
-            {% if lastUpdated and (date | updatedAfterSixMonths(lastUpdated)) %}
-              e atualizado em:
+            {% if lastmod %}
+              e atualizado em
               <span class="last-updated">
-                <time datetime="{{ lastUpdated | dateISO }}">
-                  {{ lastUpdated | readableDate }}
+                <time datetime="{{ lastmod | dateISO }}">
+                  {{ lastmod | readableDate }}
                 </time>
               </span>
             {% endif %}
@@ -84,12 +220,13 @@
                      post.data.image,
                      post.data.image_alt,
                      post.data.title,
-                     post.date | readableDate,
-                     post.data.author
+                     post.date,
+                     post.data.author,
+                     post.data.lastmod
                 ) }}
               {%- endfor -%}
               <li>
-                <p><a href="/blog/index">Ver todos artigos →</a></p>
+                <p><a href="/blog/">Ver todos artigos →</a></p>
               </li>
             </ul>
           {% else %}

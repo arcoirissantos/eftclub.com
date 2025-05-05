@@ -1,10 +1,20 @@
-{# define a macro called “snippet” with positional args #}
-{% macro snippet(url, image, image_alt, title, date, author, description) -%}
+
+{% macro snippet(url, image, image_alt, title, date, author, lastmod, description) %}
 <li class="snippet">
   <a href="{{ url }}">
     <img src="{{ image }}" alt="{{ image_alt or title }}">
     <h3 class="snippet_title">{{ title }}</h3>
-    <p class="snippet_author-date">{{ author }} | {{ date }}</p>
+    <p class="snippet_author-date">
+      {{ author }} | {{ date | readableDate }}
+      {% if lastmod %}
+              e atualizado em
+              <span class="last-updated">
+                <time datetime="{{ lastmod | dateISO }}">
+                  {{ lastmod | readableDate }}
+                </time>
+              </span>
+            {% endif %}
+    </p>
     <p class="snippet_description">{{ description }}</p>
   </a>
 </li>

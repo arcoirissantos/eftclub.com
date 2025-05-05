@@ -1,16 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EFTclub Blogs</title>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+    <!-- Primary SEO -->
+    <title>EFTclub Blogs – Artigos e tutoriais para superar desafios emocionais</title>
+    <meta name="description" content="Explore artigos e tutoriais para superar desafios emocionais e aumentar sua qualidade de vida." />
+    <link rel="canonical" href="https://eftclub.com/blog/" />
+  
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://eftclub.com/blog/" />
+    <meta property="og:title"       content="EFTclub Blog – Superando desafios emocionais" />
+    <meta property="og:description" content="Explore artigos e tutoriais para superar desafios emocionais." />
+    <meta property="og:image"       content="https://eftclub.com/images/icons/apple-touch-icon.png" />
+  
+    <!-- Twitter -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:site"        content="@EFTclub" />
+    <meta name="twitter:title"       content="EFTclub Blogs – Superando desafios emocionais" />
+    <meta name="twitter:description" content="Explore artigos e tutoriais para superar desafios emocionais." />
+    <meta name="twitter:image"       content="https://eftclub.com/images/icons/apple-touch-icon.png" />
+  
+    <!-- JSON-LD structured data for a list of blog posts -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "url": "https://eftclub.com/blog/",
+      "name": "EFTclub Blog",
+      "description": "Artigos e tutoriais de como você pode superar desafios emocionais e melhorar a sua qualidade de vida.",
+      "itemListElement": [
+        {% for post in collections.post | slice(0,10) | reverse %}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "url": "https://eftclub.com{{ post.url }}"
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+    </script>
+  
+    <!-- Preconnect & preload for performance -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="/css/style-blogs.css" as="style" />
     <link rel="stylesheet" href="/css/style-blogs.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <script type="module" src="/js/search.js"></script>
-    <script type="module" src="/js/tags.js"></script>
-
+  
+    <!-- Favicons -->
+    <link rel="icon" href="/images/icons/favicon-32.png" sizes="32x32" />
+    <link rel="icon" href="/images/icons/favicon-16.png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180" />
+  
+    <!-- Make JS non-blocking -->
+    <script type="module" defer src="/js/search.js"></script>
+    <script type="module" defer src="/js/tags.js"></script>
   </head>
+  
   <body>
     {% include "header.njk" %}
 
@@ -21,12 +69,12 @@
         <p>Leia mais sobre como você pode melhorar a sua qualidade de vida.</p>
       </div>
       
-      <div class="post">
+      <article class="post">
         
 
         {{ content | safe }}
 
-      </div>
+      </article>
 
       <aside class="side-bar side-bar-blog">
         <div class="tags">

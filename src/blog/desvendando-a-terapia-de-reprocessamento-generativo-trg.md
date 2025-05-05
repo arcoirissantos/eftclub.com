@@ -1,13 +1,17 @@
 ---
+title: Desvendando a Terapia de Reprocessamento Generativo (TRG)
+description: A Terapia de Reprocessamento Generativo (TRG) é uma abordagem terapêutica para resolver problemas emocionais atuando diretamente na raíz.
+date: 2024-06-06
+lastmod:
 tags:
   - post
   - trg
-title: Desvendando a Terapia de Reprocessamento Generativo (TRG)
 author: Terapeuta Mutisia
-date: 2024-06-06
 image: /images/featured-pictures/desvendando-a-terapia-de-reprocessamento-regenerativo.webp
-description: A Terapia de Reprocessamento Generativo (TRG) é uma abordagem terapêutica para resolver problemas emocionais atuando diretamente na raíz.
+slug:
+canonical:
 layout: base_post
+robots:
 ---
 
 <div class="video">

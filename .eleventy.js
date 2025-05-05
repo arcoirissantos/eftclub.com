@@ -2,8 +2,10 @@ const fs = require('fs')
 const { DateTime } = require('luxon')
 const nunjucks = require('nunjucks')
 const slugify = require('slugify')
+const pluginRss = require('@11ty/eleventy-plugin-rss')
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addWatchTarget('src/scss')
   // Only let Eleventy handle static files that Parcel does NOT build
   eleventyConfig.addPassthroughCopy({ 'src/images': 'images' })

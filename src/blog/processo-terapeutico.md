@@ -1,13 +1,17 @@
 ---
+title: Processo Terapêutico da Terapia Cura Emocional
+description: Na terapia cura emocional, não estamos apenas tratando os sintomas superficiais, mas sim as raízes emocionais que os causam.
+author: Terapeuta Mutisia
+date: 2024-08-15
+lastmod:
 tags:
   - post
   - terapia
-title: Processo Terapêutico da Terapia Cura Emocional
-author: Terapeuta Mutisia
-date: 2024-08-15
 image: /images/featured-pictures/processo-terapeutico-da-terapia-cura-emocional.webp
-description: Na terapia cura emocional, não estamos apenas tratando os sintomas superficiais, mas sim as raízes emocionais que os causam.
+slug:
+canonical:
 layout: base_post
+robots:
 ---
 
 <div class="video">

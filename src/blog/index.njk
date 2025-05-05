@@ -19,8 +19,9 @@ permalink: '/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
          post.data.image,
          post.data.image_alt,
          post.data.title,
-         post.date | readableDate,
+         post.date,
          post.data.author,
+         post.data.lastmod,
          post.data.description
     ) }}
   {%- endfor -%}
