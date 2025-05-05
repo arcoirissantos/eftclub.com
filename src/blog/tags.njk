@@ -18,14 +18,16 @@ eleventyComputed:
 
 <ul class="articles_list flow">
   {%- for post in tagPage.posts | reverse -%}
-    {{ Snippet.snippet(
-         post.url,
-         post.data.image,
-         post.data.image_alt,
-         post.data.title,
-         post.date | readableDate,
-         post.data.author,
-         post.data.description
-    ) }}
+  {{ Snippet.snippet(
+    post.url,
+    post.data.image,
+    post.data.image_alt,
+    post.data.title,
+    post.date,
+    post.data.author,
+    post.data.lastmod,
+    post.data.description
+  ) }}
   {%- endfor -%}
 </ul>
+
