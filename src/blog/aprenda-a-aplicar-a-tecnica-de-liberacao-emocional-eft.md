@@ -59,7 +59,7 @@ Pense em qualquer coisa que te incomoda, pode ser uma dor física, o momento em 
 
 Avalie a intensidade da emoção e/ou dor numa escala de 0 a 10 (0 para nenhuma emoção/dor e 10 para emoção/dor insuportável). A avaliação se refere a como você se sente agora, quando pensa no problema, e não no que você sentiu na hora da memória ou acontecimento.
 
-<img src="/images/posts/avaliacao-eft.webp" alt="Escala de avaliação EFT de zero a dez representadas com cores. Verde para zero e vermelho para dez." loading="lazy"></img>
+<figure><img src="/images/posts/avaliacao-eft.webp" alt="Escala de avaliação EFT de zero a dez representadas com cores. Verde para zero e vermelho para dez." loading="lazy"></img></figure>
 
 Este passo é muito importante como ponto de referência para acompanhar o progresso depois de cada rodada da EFT.
 
@@ -67,7 +67,7 @@ Este passo é muito importante como ponto de referência para acompanhar o progr
 
 A preparação é o processo que usamos para iniciar as rodadas do tapping. Precisamos comunicar ao nosso sistema o que nós queremos trabalhar. Para isso, usamos uma simples frase enquanto damos leves tapinhas continuamente no ponto caratê.
 
-<img src="/images/posts/ponto-carate-eft.webp" alt="Ponto caratê do EFT localizado na lateral externa da mão, na base do dedo mínimo, próximo ao osso da mão." loading="lazy"></img>
+<figure><img src="/images/posts/ponto-carate-eft.webp" alt="Ponto caratê do EFT localizado na lateral externa da mão, na base do dedo mínimo, próximo ao osso da mão." loading="lazy"></img></figure>
 
 A frase terá dois propósitos, um de reconhecer o problema e o outro de aceitar a si mesmo apesar do problema. A frase é formulada da seguinte forma: “Mesmo que eu tenha (sinta) este/esta [ o problema que você quer trabalhar ], eu me amo e aceito profunda e completamente”. Por exemplo: “Mesmo que eu tenha esta dor pulsando no lado esquerdo da minha cabeça, eu me amo e aceito profunda e completamente” ou “Mesmo que eu me sinta humilhado(a) pelo jeito que meu chefe me tratou na frente dos meus colegas, eu me amo e aceito profunda e completamente”. Quanto mais específico você descreve a situação e quanto mais você consegue se conectar com a emoção, mais rápido será o resultado.
 

@@ -57,6 +57,8 @@
       position: static;
       padding: inherit;
       margin-top: 2rem;
+      margin-bottom: 2rem;
+      min-width: 200px;
     }
 
     .ajuda {
@@ -381,4 +383,17 @@
 
 .go-back {
   margin-bottom: 2rem;
+}
+
+// Pinterest ifram
+@media (max-width: variables.$mobile-break) {
+  .post-content iframe[src*='pinterest.com'] {
+    position: relative !important; /* override your .video styling */
+    display: block;
+    width: 100%;
+    aspect-ratio: 345 / 618;
+    height: auto;
+    border: none;
+    border-radius: 30px;
+  }
 }
