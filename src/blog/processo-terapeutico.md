@@ -113,7 +113,7 @@ A <a href="/blog/desvendando-a-terapia-de-reprocessamento-generativo-trg" target
 
 ### EFT (Técnica de Liberação Emocional)
 
-A <a href="/blog/passo-a-passo-de-como-aplicar-a-tecnica-de-liberacao-emocional-eft" target="_blank">técnica de liberação emocional EFT</a> é altamente eficaz no tratamento de traumas, aliviando emoções como angústia, tristeza, medo e culpa que ficam presas no sistema energético e criam bloqueios, dificultando uma vida leve e saudável. Através de leves batidinhas em pontos específicos dos meridianos, a EFT gradualmente dissipa a carga emocional vinculada aos traumas, transformando eventos dolorosos em memórias que já não causam mais dor ou sofrimento.
+A <a href="/blog/aprenda-a-aplicar-a-tecnica-de-liberacao-emocional-eft/" target="_blank">técnica de liberação emocional EFT</a> é altamente eficaz no tratamento de traumas, aliviando emoções como angústia, tristeza, medo e culpa que ficam presas no sistema energético e criam bloqueios, dificultando uma vida leve e saudável. Através de leves batidinhas em pontos específicos dos meridianos, a <a href="/blog/aprenda-a-aplicar-a-tecnica-de-liberacao-emocional-eft/" target="_blank">EFT</a> gradualmente dissipa a carga emocional vinculada aos traumas, transformando eventos dolorosos em memórias que já não causam mais dor ou sofrimento.
 
 ## Quais são os pilares da Terapia Cura Emocional?
 
@@ -139,7 +139,7 @@ Esse é o pilar que sustenta a nossa conexão com o poder curador que está alé
 
 ## Dê o primeiro passo
 
-Com uma abordagem alternativa, utilizando métodos e técnicas comprovados, como a TRG e a EFT, você pode **libertar-se de dores emocionais** e começar a viver plenamente. Não adie o cuidado com a sua saúde emocional.
+Com uma abordagem alternativa, utilizando métodos e técnicas comprovados, como a <a href="/blog/desvendando-a-terapia-de-reprocessamento-generativo-trg" target="_blank">TRG</a> e a <a href="/blog/aprenda-a-aplicar-a-tecnica-de-liberacao-emocional-eft/" target="_blank">EFT</a>, você pode **libertar-se de dores emocionais** e começar a viver plenamente. Não adie o cuidado com a sua saúde emocional.
 
 <div><p>Não adie o cuidado com a sua saúde emocional.  
 <a href="/index">Agende</a> agora mesmo sua sessão.</p>

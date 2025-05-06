@@ -32,11 +32,11 @@ Esse mecanismo de defesa, que a princípio deveria nos ajudar em momentos de per
 
 ## Existe uma Saída para Esse Ciclo de Ansiedade?
 
-Sim, existe uma forma de liberar essas emoções presas: com a <a href="/blog/passo-a-passo-de-como-aplicar-a-tecnica-de-liberacao-emocional-eft" target="_blank">técnica EFT</a>, você ajuda corpo e mente a se libertarem desse ciclo de alerta constante, recuperando o equilíbrio emocional e a sua paz interior.
+Sim, existe uma forma de liberar essas emoções presas: com a <a href="/blog/aprenda-a-aplicar-a-tecnica-de-liberacao-emocional-eft/" target="_blank">técnica EFT</a>, você ajuda corpo e mente a se libertarem desse ciclo de alerta constante, recuperando o equilíbrio emocional e a sua paz interior.
 
 ## Técnica EFT para Ansiedade, Entenda a sua Eficácia.
 
-Se você ainda não conhece a técnica de Liberação Emocional (EFT), <a href="/blog/passo-a-passo-de-como-aplicar-a-tecnica-de-liberacao-emocional-eft" target="_blank">clique aqui</a> para aprender o passo a passo detalhado. Depois, retorne a esta página para entender como aplicar a EFT especificamente no tratamento da ansiedade.
+Se você ainda não conhece a técnica de Liberação Emocional (EFT), <a href="/blog/aprenda-a-aplicar-a-tecnica-de-liberacao-emocional-eft/" target="_blank">clique aqui</a> para aprender o passo a passo detalhado. Depois, retorne a esta página para entender como aplicar a EFT especificamente no tratamento da ansiedade.
 
 Entenda a seguir como a técnica EFT age nos principais aspectos da ansiedade:
 
