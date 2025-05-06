@@ -5,7 +5,7 @@ date: 2024-06-06
 lastmod:
 tags:
   - post
-  - eft
+  - EFT
 author: Terapeuta Mutisia
 image: /images/featured-pictures/passo-a-passo-da-tecnica-eft.webp
 slug:

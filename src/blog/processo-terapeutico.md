@@ -6,7 +6,7 @@ date: 2024-08-15
 lastmod:
 tags:
   - post
-  - terapia
+  - Terapia
 image: /images/featured-pictures/processo-terapeutico-da-terapia-cura-emocional.webp
 slug:
 canonical:

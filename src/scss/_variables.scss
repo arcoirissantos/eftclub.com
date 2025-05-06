@@ -38,7 +38,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
   line-height: 1.3em;
   text-align: center;
@@ -46,7 +46,7 @@ h2 {
 
 h3 {
   line-height: 1.5rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 p {
@@ -188,11 +188,11 @@ p {
 .navigation {
   margin: 1rem;
   .nav-main {
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     padding: 0.5rem;
     padding-right: 2rem;
-    background-color: $color-nav;
-    // background-image: linear-gradient(to right, $color-nav, #c2ffff);
+    // background-color: $color-nav;
+    background-image: linear-gradient(to right, $color-nav, #ffffff);
+    // box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     border-radius: 100px;
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -273,6 +273,10 @@ footer {
         img {
           width: 20px;
         }
+      }
+
+      a {
+        color: #033b3b;
       }
     }
 

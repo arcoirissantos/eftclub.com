@@ -5,8 +5,8 @@ date: 2024-11-09
 lastmod:
 tags:
   - post
-  - eft
-  - ansiedade
+  - EFT
+  - Ansiedade
 author: Terapeuta Mutisia
 image: /images/featured-pictures/passo-a-passo-da-tecnica-eft-para-ansiedade.webp
 slug:
