@@ -10,13 +10,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss)
 
   // Sitemap (only in production builds)
-  if (process.env.NODE_ENV === 'production') {
-    eleventyConfig.addPlugin(pluginSitemap, {
-      sitemap: {
-        hostname: 'https://eftclub.com'
-      }
-    })
-  }
+  eleventyConfig.addPlugin(pluginSitemap, {
+    sitemap: {
+      hostname: 'https://eftclub.com'
+    }
+  })
 
   // Watch & static passthroughs
   eleventyConfig.addWatchTarget('src/scss')
@@ -96,6 +94,31 @@ module.exports = function (eleventyConfig) {
       data.tagPage && data.tagPage.tag
         ? `Tópico: ${data.tagPage.tag}`
         : data.title
+  })
+
+  // 4) sitemapUrls (homepage + blog index + posts + tags)
+  eleventyConfig.addCollection('sitemapUrls', (col) => {
+    // core
+    let core = [{ url: '/' }, { url: '/blog/' }]
+    // posts
+    let posts = col.getFilteredByTag('post').map((p) => ({ url: p.url }))
+    // tags
+    let tagUrls = [
+      ...new Set(
+        col
+          .getFilteredByTag('post')
+          .flatMap((i) =>
+            Array.isArray(i.data.tags) ? i.data.tags : [i.data.tags || []]
+          )
+          .filter((t) => t && t !== 'post')
+      )
+    ]
+      .sort((a, b) => a.localeCompare(b))
+      .map((tag) => ({
+        url: `/blog/tags/${slugify(tag, { lower: true, remove: /[*+~.()'"!:@]/g })}/`
+      }))
+
+    return core.concat(posts, tagUrls)
   })
 
   // Suggestions helper
