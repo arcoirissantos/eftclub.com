@@ -10,7 +10,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss)
 
   // Sitemap (only in production builds)
-  if (process.env.ELEVENTY_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     eleventyConfig.addPlugin(pluginSitemap, {
       sitemap: {
         hostname: 'https://eftclub.com'
