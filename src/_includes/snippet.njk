@@ -1,6 +1,6 @@
 
 {% macro snippet(url, image, image_alt, title, date, author, lastmod, description) %}
-<li class="snippet">
+<li class="snippet transition-fade">
   <a href="{{ url }}">
     <img src="{{ image }}" alt="{{ image_alt or title }}">
     <h3 class="snippet_title">{{ title }}</h3>

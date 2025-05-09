@@ -16,3 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 })
+
+// Transition
+
+// /js/swup-init.js
+import Swup from 'swup'
+
+const swup = new Swup({
+  // only elements matching your selector will animate
+  animationSelector: '.transition-fade, .transition-slide-up'
+})

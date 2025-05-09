@@ -397,3 +397,41 @@
     border-radius: 30px;
   }
 }
+
+// Transiiton animation
+/* when the new page is about to load, fade back to full opacity */
+html.is-changing .transition-fade {
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+/* when the old page is animating out, hide it */
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+/* slide-up container in and out */
+html.is-changing .transition-slide-up {
+  /* on “render” phase, come back to natural position */
+  transition: transform 0.4s ease-out;
+  transform: translateY(0);
+}
+
+/* on “leave” phase, shift it down a bit */
+html.is-animating .transition-slide-up {
+  transform: translateY(20px);
+}
+
+//transition for seach
+/* only hide & animate snippets inside #search-results */
+#search-results li.snippet {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.4s ease-out,
+    transform 0.4s ease-out;
+}
+
+#search-results li.snippet.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
