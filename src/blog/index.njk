@@ -12,7 +12,7 @@ permalink: '/blog/{% if pagination.pageNumber > 0 %}page/{{ pagination.pageNumbe
 ---
 {% import "snippet.njk" as Snippet %}
 
-<ul role="list" class="articles_list flow">
+<ul role="list" class="articles_list flow transition-slide-up">
   {%- for post in pagination.items -%}
     {{ Snippet.snippet(
          post.url,
