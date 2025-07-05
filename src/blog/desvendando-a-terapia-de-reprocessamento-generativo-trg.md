@@ -5,7 +5,7 @@ date: 2024-06-06
 lastmod:
 tags:
   - post
-  - trg
+  - TRG
 author: Terapeuta Mutisia
 image: /images/featured-pictures/desvendando-a-terapia-de-reprocessamento-regenerativo.webp
 slug:
