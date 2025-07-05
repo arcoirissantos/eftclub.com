@@ -139,7 +139,7 @@ Esse é o pilar que sustenta a nossa conexão com o poder curador que está alé
 
 ## Dê o primeiro passo
 
-Com uma abordagem alternativa, utilizando métodos e técnicas comprovados, como a <a href="/blog/desvendando-a-terapia-de-reprocessamento-generativo-trg" target="_blank">TRG</a> e a <a href="/blog/aprenda-a-aplicar-a-tecnica-de-liberacao-emocional-eft/" target="_blank">EFT</a>, você pode **libertar-se de dores emocionais** e começar a viver plenamente. Não adie o cuidado com a sua saúde emocional.
+Com uma abordagem alternativa, utilizando métodos e técnicas comprovados, como a <a href="/blog/desvendando-a-terapia-de-reprocessamento-generativo-trg" target="_blank">TRG</a> e a <a href="/blog/aprenda-a-aplicar-a-tecnica-de-liberacao-emocional-eft/" target="_blank">EFT</a>, você pode **libertar-se de dores emocionais** e começar a viver plenamente.
 
 <div><p>Não adie o cuidado com a sua saúde emocional.  
 <a href="/index">Agende</a> agora mesmo sua sessão.</p>
