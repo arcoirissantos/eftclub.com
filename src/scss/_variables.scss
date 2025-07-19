@@ -188,7 +188,7 @@ p {
 .navigation {
   margin: 1rem;
   .nav-main {
-    padding: 0.5rem;
+    padding: 0.3rem;
     padding-right: 2rem;
     // background-color: $color-nav;
     background-image: linear-gradient(to right, $color-nav, #ffffff);
@@ -204,7 +204,7 @@ p {
     z-index: 1;
 
     img {
-      width: clamp(30px, 5vw, 50px);
+      width: clamp(40px, 5vw, 50px);
     }
 
     p {

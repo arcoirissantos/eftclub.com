@@ -2,7 +2,7 @@
 @use 'variables';
 
 .container {
-  margin: 5%;
+  margin: 4%;
   display: flex;
   justify-content: center;
   @media (max-width: variables.$mobile-break) {
@@ -27,16 +27,17 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      margin: 2rem 0rem 1rem;
+      margin: 2rem 0rem 2rem;
 
       img {
-        width: clamp(60px, 10vw, 90px);
+        width: clamp(60px, 10vw, 70px);
         border: solid 3px variables.$color-primary;
         border-radius: 100px;
       }
 
       .author-picture {
-        margin: inherit;
+        margin: 0;
+        // margin: inherit;
       }
     }
   }
