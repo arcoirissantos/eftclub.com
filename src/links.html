@@ -2140,9 +2140,11 @@ templateEngineOverride: njk
         dot.addEventListener('click', () => goTo(i))
       })
 
+      let hintDone = false
+
       function showSwipeHint() {
-        if (sessionStorage.getItem('swipeHintSeen')) return
-        sessionStorage.setItem('swipeHintSeen', '1')
+        if (hintDone) return
+        hintDone = true
         const peek = Math.round(slides[0].offsetWidth * 0.22)
         setTimeout(() => {
           track.scrollTo({ left: peek, behavior: 'smooth' })
@@ -2157,7 +2159,7 @@ templateEngineOverride: njk
             showSwipeHint()
           }
         },
-        { threshold: 0.5 }
+        { threshold: 0.3 }
       )
       hintObserver.observe(document.querySelector('.testimonials-section'))
 
