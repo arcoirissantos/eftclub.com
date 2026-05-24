@@ -790,8 +790,9 @@ templateEngineOverride: njk
 
       .pattern-item {
         background: rgba(201, 163, 90, 0.1);
-        border-radius: 999px;
+        border-radius: 16px;
         padding: 9px 18px;
+        text-align: center;
       }
 
       .pattern-text {
@@ -1059,6 +1060,74 @@ templateEngineOverride: njk
         letter-spacing: -0.02em;
         line-height: 1.1;
         margin-top: 2px;
+      }
+
+      .pricing-unified {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 163, 90, 0.14),
+          rgba(201, 163, 90, 0.06)
+        );
+        border: 1px solid rgba(201, 163, 90, 0.38);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      .pricing-unified-top {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        flex-wrap: wrap;
+      }
+
+      .pricing-unified-top s {
+        font-size: clamp(0.8rem, 2.9vw, 0.88rem);
+        color: var(--cream-dim);
+        text-decoration-color: rgba(243, 235, 220, 0.4);
+      }
+
+      .pricing-unified-arrow {
+        font-size: clamp(0.8rem, 2.9vw, 0.88rem);
+        color: var(--cream-dim);
+      }
+
+      .pricing-unified-current {
+        flex: 1;
+        font-weight: 500;
+        font-size: clamp(0.92rem, 3.4vw, 1rem);
+        color: var(--cream);
+      }
+
+      .pricing-unified-current em {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 0.88em;
+        color: var(--cream-dim);
+      }
+
+      .pricing-unified-bottom {
+        border-top: 1px solid rgba(201, 163, 90, 0.22);
+        padding: 10px 16px;
+        background: rgba(201, 163, 90, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .pricing-unified-vista-label {
+        font-size: clamp(0.72rem, 2.6vw, 0.78rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+      }
+
+      .pricing-unified-vista-value {
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: clamp(1.4rem, 5.5vw, 1.7rem);
+        color: var(--gold-soft);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
       }
 
       .pricing-btn {
@@ -1749,22 +1818,22 @@ templateEngineOverride: njk
 
         <ul class="patterns-list">
           <li class="pattern-item">
-            <span class="pattern-text">Ansiedade nos relacionamentos</span>
+            <span class="pattern-text">Ansiedade nos<br>relacionamentos</span>
           </li>
           <li class="pattern-item">
-            <span class="pattern-text">Medo de rejeição e abandono</span>
+            <span class="pattern-text">Medo de rejeição<br>e abandono</span>
           </li>
           <li class="pattern-item">
-            <span class="pattern-text">Dependência emocional</span>
+            <span class="pattern-text">Dependência<br>emocional</span>
           </li>
           <li class="pattern-item">
-            <span class="pattern-text">Necessidade de agradar</span>
+            <span class="pattern-text">Necessidade<br>de agradar</span>
           </li>
           <li class="pattern-item">
-            <span class="pattern-text">Se anula para não perder pessoas</span>
+            <span class="pattern-text">Se anula para<br>não perder pessoas</span>
           </li>
           <li class="pattern-item">
-            <span class="pattern-text">Repete padrões que machucam você</span>
+            <span class="pattern-text">Repete padrões<br>que machucam você</span>
           </li>
         </ul>
       </div>
@@ -1933,26 +2002,16 @@ templateEngineOverride: njk
             </li>
           </ul>
 
-          <div class="pricing-discount-strip">
-            <span class="pricing-discount-badge">−18%</span>
-            <span class="pricing-discount-text">
-              de desconto
-              <br />
+          <div class="pricing-unified">
+            <div class="pricing-unified-top">
               <s>R$ 145</s>
-              → R$ 120 por sessão
-            </span>
-          </div>
-
-          <div class="pricing-rule"></div>
-
-          <div class="pricing-price-block">
-            <span class="pricing-price-label">Por sessão</span>
-            <span class="pricing-price">R$ 120</span>
-            <span class="pricing-price-sub">por sessão</span>
-
-            <div class="pricing-price-vista">
-              <div class="pricing-price-vista-label">Investimento à vista</div>
-              <div class="pricing-price-vista-value">R$ 480</div>
+              <span class="pricing-unified-arrow">→</span>
+              <span class="pricing-unified-current">R$ 120 <em>/ sessão</em></span>
+              <span class="pricing-discount-badge">−18%</span>
+            </div>
+            <div class="pricing-unified-bottom">
+              <span class="pricing-unified-vista-label">Investimento à vista</span>
+              <span class="pricing-unified-vista-value">R$ 480</span>
             </div>
           </div>
 
