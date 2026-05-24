@@ -1315,6 +1315,7 @@ templateEngineOverride: njk
       .testimonials-track {
         display: flex;
         align-items: flex-start;
+        gap: 12px;
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
@@ -1367,6 +1368,15 @@ templateEngineOverride: njk
         background: var(--gold);
         width: 18px;
         border-radius: 3px;
+      }
+
+      .testimonials-swipe-hint {
+        margin-top: 12px;
+        font-size: clamp(0.68rem, 2.5vw, 0.74rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+        letter-spacing: 0.04em;
+        text-align: center;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -1812,6 +1822,8 @@ templateEngineOverride: njk
           ></button>
           {% endfor %}
         </div>
+
+        <p class="testimonials-swipe-hint">← Arraste para ver mais depoimentos →</p>
       </div>
 
       <!-- Transformations section -->
@@ -2117,10 +2129,13 @@ templateEngineOverride: njk
       const slides = Array.from(track.querySelectorAll('.testimonial-slide'))
 
       function getIndex() {
-        return Math.min(
-          Math.round(track.scrollLeft / slides[0].offsetWidth),
-          slides.length - 1
-        )
+        let closest = 0
+        let minDiff = Infinity
+        slides.forEach((slide, i) => {
+          const diff = Math.abs(slide.offsetLeft - track.scrollLeft)
+          if (diff < minDiff) { minDiff = diff; closest = i }
+        })
+        return closest
       }
 
       function update() {
@@ -2131,7 +2146,7 @@ templateEngineOverride: njk
       }
 
       function goTo(i) {
-        track.scrollTo({ left: slides[0].offsetWidth * i, behavior: 'smooth' })
+        track.scrollTo({ left: slides[i].offsetLeft, behavior: 'smooth' })
       }
 
       track.addEventListener('scroll', update, { passive: true })
@@ -2140,28 +2155,6 @@ templateEngineOverride: njk
         dot.addEventListener('click', () => goTo(i))
       })
 
-      let hintDone = false
-
-      function showSwipeHint() {
-        if (hintDone) return
-        hintDone = true
-        const peek = Math.round(slides[0].offsetWidth * 0.22)
-        setTimeout(() => {
-          track.scrollTo({ left: peek, behavior: 'smooth' })
-          setTimeout(() => track.scrollTo({ left: 0, behavior: 'smooth' }), 600)
-        }, 800)
-      }
-
-      const hintObserver = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            hintObserver.disconnect()
-            showSwipeHint()
-          }
-        },
-        { threshold: 0.3 }
-      )
-      hintObserver.observe(document.querySelector('.testimonials-section'))
 
       const firstImg = slides[0].querySelector('img')
       if (firstImg.complete) update()
