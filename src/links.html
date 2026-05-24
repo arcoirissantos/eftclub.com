@@ -1,3 +1,7 @@
+---
+templateEngineOverride: njk
+---
+
 <!doctype html>
 <html lang="pt-BR">
   <head>
@@ -667,6 +671,712 @@
       .trust-card:focus-visible {
         box-shadow: 0 0 0 2px var(--gold-soft);
       }
+
+      /* Extended content section */
+      .content-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 1.6s forwards;
+      }
+
+      .content-divider {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        margin-bottom: clamp(32px, 8vw, 40px);
+      }
+
+      .content-divider::before,
+      .content-divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--cream-faint);
+      }
+
+      .content-divider-gem {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        box-shadow: 0 0 8px var(--gold);
+        opacity: 0.7;
+      }
+
+      .pull-quote {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(1.35rem, 5.2vw, 1.6rem);
+        line-height: 1.55;
+        color: var(--cream);
+        text-align: center;
+        margin-bottom: clamp(28px, 7vw, 36px);
+        letter-spacing: -0.01em;
+        max-width: 380px;
+        text-wrap: balance;
+      }
+
+      .content-image-wrap {
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: clamp(28px, 7vw, 36px);
+        background: var(--bg-soft);
+        box-shadow:
+          var(--shadow-deep),
+          0 0 0 1px var(--cream-faint);
+      }
+
+      .content-image-wrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .content-body {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+        line-height: 1.75;
+        color: var(--cream-soft);
+        text-align: center;
+        max-width: 380px;
+        text-wrap: balance;
+      }
+
+      .content-body .highlight {
+        color: var(--gold-soft);
+        font-weight: 400;
+      }
+
+      /* Patterns section */
+      .patterns-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 1.8s forwards;
+      }
+
+      .patterns-question {
+        font-family: 'Signika', sans-serif;
+        font-weight: 400;
+        font-size: clamp(0.98rem, 3.6vw, 1.08rem);
+        color: var(--cream-dim);
+        text-align: center;
+        margin-bottom: clamp(20px, 5vw, 24px);
+        letter-spacing: 0.01em;
+        text-wrap: balance;
+      }
+
+      .patterns-list {
+        list-style: none;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .pattern-item {
+        background: rgba(201, 163, 90, 0.1);
+        border-radius: 999px;
+        padding: 9px 18px;
+      }
+
+      .pattern-text {
+        font-family: 'Signika', sans-serif;
+        font-weight: 400;
+        font-size: clamp(0.88rem, 3.2vw, 0.95rem);
+        color: var(--cream-soft);
+        line-height: 1.3;
+      }
+
+      /* Promise card section */
+      .promise-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 2s forwards;
+      }
+
+      .promise-card {
+        width: 100%;
+        background: rgba(201, 163, 90, 0.06);
+        border: 1px solid rgba(201, 163, 90, 0.28);
+        border-radius: 20px;
+        padding: clamp(28px, 7vw, 36px) clamp(24px, 6vw, 32px);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(16px, 4vw, 20px);
+        text-align: center;
+      }
+
+      .promise-title {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(1.3rem, 5vw, 1.55rem);
+        line-height: 1.35;
+        color: var(--cream);
+        letter-spacing: -0.01em;
+        text-wrap: balance;
+      }
+
+      .promise-title strong {
+        font-weight: 600;
+      }
+
+      .promise-divider {
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+        margin: 0 auto;
+        opacity: 0.6;
+      }
+
+      .promise-body {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(0.92rem, 3.4vw, 1rem);
+        line-height: 1.75;
+        color: var(--cream-soft);
+        text-wrap: balance;
+      }
+
+      .promise-closing {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(0.88rem, 3.2vw, 0.95rem);
+        line-height: 1.6;
+        color: var(--cream-dim);
+        font-style: italic;
+      }
+
+      /* Pricing section */
+      .pricing-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 2s forwards;
+      }
+
+      .pricing-section-title {
+        font-size: var(--fs-role);
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--cream-dim);
+        margin-bottom: clamp(32px, 8vw, 40px);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .pricing-section-title::before,
+      .pricing-section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--cream-faint);
+      }
+
+      .pricing-featured {
+        width: 100%;
+        background: rgba(201, 163, 90, 0.07);
+        border: 1px solid rgba(201, 163, 90, 0.38);
+        border-radius: 20px;
+        padding: clamp(22px, 6vw, 30px) clamp(20px, 5vw, 26px);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .pricing-badge {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 11px;
+        border-radius: 999px;
+        background: rgba(201, 163, 90, 0.18);
+        border: 1px solid rgba(201, 163, 90, 0.38);
+        font-size: clamp(0.6rem, 2.2vw, 0.66rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold-soft);
+        font-weight: 500;
+      }
+
+      .pricing-title {
+        font-family: 'Signika', sans-serif;
+        font-weight: 500;
+        font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+        color: var(--cream);
+        line-height: 1.3;
+      }
+
+      .pricing-checks {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+
+      .pricing-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: clamp(0.84rem, 3.1vw, 0.92rem);
+        color: var(--cream-soft);
+        font-weight: 300;
+        line-height: 1.45;
+      }
+
+      .pricing-check-icon {
+        flex-shrink: 0;
+        margin-top: 2px;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: rgba(201, 163, 90, 0.12);
+        border: 1px solid rgba(201, 163, 90, 0.38);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pricing-rule {
+        height: 1px;
+        background: var(--cream-faint);
+        margin: 2px 0;
+      }
+
+      .pricing-price-block {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .pricing-price-label {
+        font-size: clamp(0.72rem, 2.6vw, 0.78rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+      }
+
+      .pricing-price {
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: clamp(2rem, 7.5vw, 2.5rem);
+        color: var(--cream);
+        letter-spacing: -0.025em;
+        line-height: 1;
+      }
+
+      .pricing-price-sub {
+        font-size: clamp(0.72rem, 2.6vw, 0.78rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+        margin-top: 2px;
+      }
+
+      .pricing-discount-strip {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 16px;
+        background: linear-gradient(
+          135deg,
+          rgba(201, 163, 90, 0.22),
+          rgba(201, 163, 90, 0.1)
+        );
+        border: 1px solid rgba(201, 163, 90, 0.4);
+        border-radius: 12px;
+      }
+
+      .pricing-discount-badge {
+        font-family: 'Signika', sans-serif;
+        font-weight: 700;
+        font-size: clamp(1.1rem, 4vw, 1.3rem);
+        color: var(--gold-soft);
+        letter-spacing: -0.01em;
+        line-height: 1;
+      }
+
+      .pricing-discount-text {
+        font-size: clamp(0.8rem, 3vw, 0.88rem);
+        color: var(--cream-soft);
+        font-weight: 300;
+        line-height: 1.35;
+      }
+
+      .pricing-discount-text s {
+        color: var(--cream-dim);
+        text-decoration-color: rgba(243, 235, 220, 0.4);
+      }
+
+      .pricing-price-vista {
+        margin-top: 8px;
+        padding: 10px 14px;
+        background: rgba(243, 235, 220, 0.04);
+        border-radius: 10px;
+        border: 1px solid var(--cream-faint);
+      }
+
+      .pricing-price-vista-label {
+        font-size: clamp(0.72rem, 2.6vw, 0.78rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+      }
+
+      .pricing-price-vista-value {
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: clamp(1.4rem, 5.5vw, 1.7rem);
+        color: var(--gold-soft);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-top: 2px;
+      }
+
+      .pricing-btn {
+        display: block;
+        text-align: center;
+        padding: clamp(13px, 3.8vw, 15px);
+        border-radius: 12px;
+        text-decoration: none;
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: clamp(0.9rem, 3.3vw, 0.98rem);
+        letter-spacing: 0.02em;
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .pricing-btn-gold {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 163, 90, 0.28),
+          rgba(201, 163, 90, 0.12)
+        );
+        color: var(--gold-soft);
+        border: 1px solid rgba(201, 163, 90, 0.45);
+      }
+
+      .pricing-btn-gold:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 163, 90, 0.38),
+          rgba(201, 163, 90, 0.2)
+        );
+        border-color: rgba(201, 163, 90, 0.65);
+      }
+
+      .pricing-secondary {
+        width: 100%;
+        background: rgba(243, 235, 220, 0.03);
+        border: 1px solid var(--cream-faint);
+        border-radius: 16px;
+        padding: clamp(18px, 5vw, 22px) clamp(20px, 5vw, 26px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .pricing-secondary-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .pricing-secondary-title {
+        font-family: 'Signika', sans-serif;
+        font-weight: 400;
+        font-size: clamp(0.88rem, 3.2vw, 0.96rem);
+        color: var(--cream-soft);
+      }
+
+      .pricing-secondary-price {
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: clamp(1.1rem, 4vw, 1.25rem);
+        color: var(--cream);
+        letter-spacing: -0.015em;
+        white-space: nowrap;
+      }
+
+      .pricing-note {
+        font-size: clamp(0.68rem, 2.5vw, 0.74rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0 4px;
+      }
+
+      .pricing-note a {
+        color: var(--gold-soft);
+        text-decoration: none;
+      }
+
+      .pricing-btn-ghost {
+        background: transparent;
+        color: var(--cream-dim);
+        border: 1px solid var(--cream-faint);
+      }
+
+      .pricing-btn-ghost:hover {
+        background: rgba(243, 235, 220, 0.06);
+        color: var(--cream-soft);
+        border-color: rgba(243, 235, 220, 0.28);
+      }
+
+      /* Final CTA section */
+      .cta-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 2s forwards;
+      }
+
+      .cta-glow {
+        position: relative;
+        width: 100%;
+        padding: clamp(36px, 9vw, 48px) clamp(20px, 5vw, 28px)
+          clamp(32px, 8vw, 40px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(24px, 6vw, 32px);
+      }
+
+      .cta-glow::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+        background: radial-gradient(
+          ellipse 80% 60% at 50% 40%,
+          rgba(201, 163, 90, 0.14),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .cta-headline {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(1.5rem, 6vw, 1.9rem);
+        line-height: 1.3;
+        letter-spacing: -0.02em;
+        color: var(--cream);
+        text-wrap: balance;
+        position: relative;
+      }
+
+      .cta-headline .cta-accent {
+        color: var(--gold-soft);
+        font-weight: 500;
+      }
+
+      .cta-section .link.whatsapp {
+        width: 100%;
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+
+      /* Transformations section */
+      .transformations-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 2s forwards;
+      }
+
+      .transformations-title {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(1.2rem, 4.5vw, 1.4rem);
+        line-height: 1.35;
+        color: var(--cream);
+        text-align: center;
+        margin-bottom: clamp(24px, 6vw, 32px);
+        letter-spacing: -0.01em;
+        text-wrap: balance;
+      }
+
+      .transformations-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .transformation-card {
+        background: linear-gradient(
+          145deg,
+          rgba(201, 163, 90, 0.13),
+          rgba(201, 163, 90, 0.05)
+        );
+        border-radius: 18px;
+        padding: clamp(18px, 5vw, 22px) clamp(14px, 4vw, 18px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .transformation-card:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 6px);
+        margin: 0 auto;
+      }
+
+      .transformation-icon {
+        font-size: clamp(1.8rem, 6vw, 2.1rem);
+        line-height: 1;
+      }
+
+      .transformation-text {
+        font-family: 'Signika', sans-serif;
+        font-weight: 400;
+        font-size: clamp(0.85rem, 3.1vw, 0.93rem);
+        color: var(--cream-soft);
+        line-height: 1.4;
+      }
+
+      /* Testimonials section */
+      .testimonials-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 2.2s forwards;
+      }
+
+      .testimonials-label {
+        font-size: var(--fs-role);
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--cream-dim);
+        margin-bottom: clamp(32px, 8vw, 40px);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .testimonials-label::before,
+      .testimonials-label::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--cream-faint);
+      }
+
+      .testimonials-wrap {
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .testimonials-track {
+        display: flex;
+        align-items: flex-start;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .testimonials-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .testimonial-slide {
+        flex-shrink: 0;
+        width: 100%;
+        scroll-snap-align: start;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow:
+          var(--shadow-soft),
+          0 0 0 1px var(--cream-faint);
+      }
+
+      .testimonial-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .testimonials-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin-top: 16px;
+      }
+
+      .testimonial-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--cream-faint);
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        flex-shrink: 0;
+      }
+
+      .testimonial-dot.active {
+        background: var(--gold);
+        width: 18px;
+        border-radius: 3px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .content-section,
+        .patterns-section,
+        .promise-section,
+        .testimonials-section {
+          opacity: 1 !important;
+        }
+      }
     </style>
   </head>
   <body>
@@ -823,26 +1533,41 @@
           </svg>
         </a>
 
-        <!-- WEBSITE -->
-        <!-- REPLACE_WEBSITE_URL: change href below -->
-        <a
-          href="https://eftclub.com/"
-          class="link"
-          target="_blank"
-          rel="noopener"
-        >
+        <!-- SCROLL TO MORE INFO -->
+        <a href="#saiba-mais" class="link">
           <div class="link-icon" aria-hidden="true">
-            <img
-              src="/images/logo-eftclub-64w.webp"
-              alt=""
-              width="32"
-              height="32"
-              style="border-radius: 6px; object-fit: contain"
-            />
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="9"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M12 8v4m0 0l-2 2m2-2l2 2"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 16v.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
           </div>
           <div class="link-text">
-            <span class="link-title">Visitar meu site</span>
-            <span class="link-sub">Conheça meu método e leia meus artigos</span>
+            <span class="link-title">Quero saber mais</span>
+            <span class="link-sub">Conheça mais sobre meu trabalho</span>
           </div>
           <svg
             class="link-arrow"
@@ -854,7 +1579,7 @@
             aria-hidden="true"
           >
             <path
-              d="M9 6L15 12L9 18"
+              d="M6 9L12 15L18 9"
               stroke="currentColor"
               stroke-width="1.6"
               stroke-linecap="round"
@@ -975,6 +1700,401 @@
         </p>
       </div>
 
+      <!-- Extended content section -->
+      <div class="content-section" id="saiba-mais">
+        <div class="content-divider">
+          <div class="content-divider-gem"></div>
+        </div>
+
+        <div class="content-image-wrap">
+          <img
+            src="/images/authors/profile-picture-main-eftclub.webp"
+            alt="Mutisia, terapeuta"
+            loading="lazy"
+          />
+        </div>
+
+        <blockquote class="pull-quote">
+          Talvez você nunca tenha aprendido a amar — apenas a se abandonar para
+          manter vínculos.
+        </blockquote>
+
+        <p class="content-body">
+          É por isso que os relacionamentos machucam tanto: não por serem a
+          <span class="highlight">origem da dor</span>
+          , mas porque revelam feridas emocionais que nunca foram realmente
+          resolvidas.
+        </p>
+      </div>
+
+      <!-- Patterns section -->
+      <div class="patterns-section">
+        <div class="content-divider">
+          <div class="content-divider-gem"></div>
+        </div>
+
+        <p class="patterns-question">
+          Com quais desses padrões você mais se identifica?
+        </p>
+
+        <ul class="patterns-list">
+          <li class="pattern-item">
+            <span class="pattern-text">Ansiedade nos relacionamentos</span>
+          </li>
+          <li class="pattern-item">
+            <span class="pattern-text">Medo de rejeição e abandono</span>
+          </li>
+          <li class="pattern-item">
+            <span class="pattern-text">Dependência emocional</span>
+          </li>
+          <li class="pattern-item">
+            <span class="pattern-text">Necessidade de agradar</span>
+          </li>
+          <li class="pattern-item">
+            <span class="pattern-text">Se anula para não perder pessoas</span>
+          </li>
+          <li class="pattern-item">
+            <span class="pattern-text">Repete padrões que machucam você</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Promise card section -->
+      <div class="promise-section">
+        <div class="content-divider">
+          <div class="content-divider-gem"></div>
+        </div>
+
+        <div class="promise-card">
+          <p class="promise-title">
+            Você não precisa passar por isso
+            <strong>sozinha</strong>
+          </p>
+
+          <div class="promise-divider"></div>
+
+          <p class="promise-body">
+            Eu te conduzo em um processo profundo de transformação emocional,
+            ajudando você a acessar, compreender e liberar padrões que mantêm
+            ciclos de sofrimento emocional ativos dentro de você.
+          </p>
+
+          <p class="promise-closing">
+            Tudo de forma acolhedora, profunda e respeitando o seu tempo
+            emocional.
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonials section -->
+      <div class="testimonials-section">
+        <div class="testimonials-label">Depoimentos</div>
+
+        <div class="testimonials-wrap">
+          <div class="testimonials-track" id="testimonialsTrack">
+            {% for dep in depoimentos %}
+            <div class="testimonial-slide">
+              <img
+                src="{{ dep.src }}"
+                alt="{{ dep.alt }}"
+                loading="{{ dep.loading }}"
+              />
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="testimonials-dots" id="testimonialsDots">
+          {% for dep in depoimentos %}
+          <button
+            class="testimonial-dot{% if loop.first %} active{% endif %}"
+            aria-label="{{ dep.alt }}"
+          ></button>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Transformations section -->
+      <div class="transformations-section">
+        <div class="content-divider">
+          <div class="content-divider-gem"></div>
+        </div>
+
+        <p class="transformations-title">
+          Transformações que você começa a sentir
+        </p>
+
+        <div class="transformations-grid">
+          <div class="transformation-card">
+            <span class="transformation-icon">✨</span>
+            <span class="transformation-text">
+              Mais clareza e equilíbrio emocional
+            </span>
+          </div>
+          <div class="transformation-card">
+            <span class="transformation-icon">🌱</span>
+            <span class="transformation-text">Autoestima mais fortalecida</span>
+          </div>
+          <div class="transformation-card">
+            <span class="transformation-icon">🤝</span>
+            <span class="transformation-text">
+              Relacionamentos mais saudáveis
+            </span>
+          </div>
+          <div class="transformation-card">
+            <span class="transformation-icon">🌸</span>
+            <span class="transformation-text">Mais conexão com você mesma</span>
+          </div>
+          <div class="transformation-card">
+            <span class="transformation-icon">☀️</span>
+            <span class="transformation-text">Mais paz emocional</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing section -->
+      <div class="pricing-section">
+        <div class="pricing-section-title">Preço das Sessões</div>
+
+        <!-- Featured: Pacote -->
+        <div class="pricing-featured">
+          <span class="pricing-badge">★ Mais popular</span>
+
+          <p class="pricing-title">Pacote de Quatro Sessões</p>
+
+          <ul class="pricing-checks">
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Terapia online por videoconferência
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Sessões com duração de 1h a 1h30
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Anamnese e técnicas alternativas*
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Suporte contínuo pelo WhatsApp
+            </li>
+          </ul>
+
+          <div class="pricing-discount-strip">
+            <span class="pricing-discount-badge">−18%</span>
+            <span class="pricing-discount-text">
+              de desconto
+              <br />
+              <s>R$ 145</s>
+              → R$ 120 por sessão
+            </span>
+          </div>
+
+          <div class="pricing-rule"></div>
+
+          <div class="pricing-price-block">
+            <span class="pricing-price-label">Por sessão</span>
+            <span class="pricing-price">R$ 120</span>
+            <span class="pricing-price-sub">por sessão</span>
+
+            <div class="pricing-price-vista">
+              <div class="pricing-price-vista-label">Investimento à vista</div>
+              <div class="pricing-price-vista-value">R$ 480</div>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/5521920172600?text=Ol%C3%A1%20Mutisia%2C%20gostaria%20de%20adquirir%20o%20pacote%20de%20quatro%20sess%C3%B5es."
+            class="pricing-btn pricing-btn-gold"
+            target="_blank"
+            rel="noopener"
+          >
+            Adquirir Pacote
+          </a>
+        </div>
+
+        <!-- Secondary: Sessão individual -->
+        <div class="pricing-secondary">
+          <div class="pricing-secondary-header">
+            <span class="pricing-secondary-title">Uma Sessão por Vez</span>
+            <span class="pricing-secondary-price">R$ 145</span>
+          </div>
+
+          <ul class="pricing-checks">
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Terapia online por videoconferência
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Sessões com duração de 1h a 1h30
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Anamnese e técnicas alternativas*
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Suporte contínuo pelo WhatsApp
+            </li>
+          </ul>
+
+          <a
+            href="https://wa.me/5521920172600?text=Ol%C3%A1%20Mutisia%2C%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+            class="pricing-btn pricing-btn-ghost"
+            target="_blank"
+            rel="noopener"
+          >
+            Agendar Sessão
+          </a>
+        </div>
+
+        <p class="pricing-note">
+          *Técnicas alternativas: Causa Raiz, EFT e TRG.
+        </p>
+      </div>
+
+      <!-- Final CTA section -->
+      <div class="cta-section">
+        <div class="content-divider">
+          <div class="content-divider-gem"></div>
+        </div>
+
+        <div class="cta-glow">
+          <h2 class="cta-headline">
+            Comece agora seu processo de
+            <span class="cta-accent">transformação emocional.</span>
+          </h2>
+
+          <a
+            href="https://wa.me/5521920172600?text=Ol%C3%A1%20Mutisia%2C%20gostaria%20de%20conhecer%20o%20seu%20trabalho."
+            class="link whatsapp"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="link-icon" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4 7.94 7.94 0 0 0 5.1 16.07L4 20l4.05-1.06a7.93 7.93 0 0 0 3.99 1.02h.01A7.95 7.95 0 0 0 20 12.04a7.86 7.86 0 0 0-2.4-5.72zm-5.55 12.2h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.4.63.64-2.34-.16-.25a6.55 6.55 0 0 1-1-3.46 6.59 6.59 0 0 1 11.25-4.66 6.55 6.55 0 0 1 1.93 4.66 6.59 6.59 0 0 1-6.65 6.48zm3.62-4.86c-.2-.1-1.18-.58-1.36-.65-.18-.07-.32-.1-.45.1-.13.2-.51.65-.63.78-.12.13-.23.15-.43.05-.2-.1-.84-.31-1.6-.99-.59-.53-.99-1.18-1.11-1.38-.12-.2-.01-.31.09-.41.09-.09.2-.23.3-.35.1-.12.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.33-.34-.45-.34l-.38-.01a.74.74 0 0 0-.54.25c-.18.2-.71.69-.71 1.69s.73 1.96.83 2.09c.1.13 1.43 2.18 3.46 3.06.48.21.86.33 1.16.42.49.16.93.13 1.28.08.39-.06 1.18-.48 1.35-.95.17-.46.17-.86.12-.95-.05-.08-.18-.13-.38-.23z"
+                  fill="#25d366"
+                />
+              </svg>
+            </div>
+            <div class="link-text">
+              <span class="link-title">
+                Falar comigo no
+                <span class="accent">WhatsApp</span>
+              </span>
+              <span class="link-sub">Tire dúvidas ou agende uma sessão</span>
+            </div>
+            <svg
+              class="link-arrow"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
       <footer class="footer">
         <div class="footer-credential">
           <span class="footer-credential-dot"></span>
@@ -990,6 +2110,81 @@
 
     <script>
       document.getElementById('year').textContent = new Date().getFullYear()
+
+      const wrap = document.querySelector('.testimonials-wrap')
+      const track = document.getElementById('testimonialsTrack')
+      const dots = document.querySelectorAll('.testimonial-dot')
+      const slides = Array.from(track.querySelectorAll('.testimonial-slide'))
+
+      function getIndex() {
+        return Math.min(
+          Math.round(track.scrollLeft / slides[0].offsetWidth),
+          slides.length - 1
+        )
+      }
+
+      function update() {
+        const i = getIndex()
+        dots.forEach((dot, j) => dot.classList.toggle('active', j === i))
+        const h = slides[i].offsetHeight
+        if (h > 0) wrap.style.height = h + 'px'
+      }
+
+      let autoplay
+
+      function goTo(i) {
+        track.scrollTo({ left: slides[0].offsetWidth * i, behavior: 'smooth' })
+      }
+
+      let sectionVisible = false
+
+      function startAutoplay() {
+        clearInterval(autoplay)
+        if (!sectionVisible) return
+        autoplay = setInterval(() => {
+          const next = (getIndex() + 1) % slides.length
+          goTo(next)
+        }, 3500)
+      }
+
+      function resetAutoplay() {
+        clearInterval(autoplay)
+        startAutoplay()
+      }
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          sectionVisible = entry.isIntersecting
+          sectionVisible ? startAutoplay() : clearInterval(autoplay)
+        },
+        { threshold: 0.3 }
+      )
+      observer.observe(document.querySelector('.testimonials-section'))
+
+      track.addEventListener('scroll', update, { passive: true })
+
+      track.addEventListener('pointerdown', () => clearInterval(autoplay))
+      track.addEventListener('pointerup', resetAutoplay)
+      track.addEventListener('pointercancel', resetAutoplay)
+      track.addEventListener('mouseenter', () => clearInterval(autoplay))
+      track.addEventListener('mouseleave', resetAutoplay)
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          goTo(i)
+          resetAutoplay()
+        })
+      })
+
+      const firstImg = slides[0].querySelector('img')
+      if (firstImg.complete) {
+        update()
+        startAutoplay()
+      } else
+        firstImg.addEventListener('load', () => {
+          update()
+          startAutoplay()
+        })
     </script>
   </body>
 </html>
