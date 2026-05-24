@@ -2130,61 +2130,40 @@ templateEngineOverride: njk
         if (h > 0) wrap.style.height = h + 'px'
       }
 
-      let autoplay
-
       function goTo(i) {
         track.scrollTo({ left: slides[0].offsetWidth * i, behavior: 'smooth' })
       }
 
-      let sectionVisible = false
-
-      function startAutoplay() {
-        clearInterval(autoplay)
-        if (!sectionVisible) return
-        autoplay = setInterval(() => {
-          const next = (getIndex() + 1) % slides.length
-          goTo(next)
-        }, 3500)
-      }
-
-      function resetAutoplay() {
-        clearInterval(autoplay)
-        startAutoplay()
-      }
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          sectionVisible = entry.isIntersecting
-          sectionVisible ? startAutoplay() : clearInterval(autoplay)
-        },
-        { threshold: 0.3 }
-      )
-      observer.observe(document.querySelector('.testimonials-section'))
-
       track.addEventListener('scroll', update, { passive: true })
 
-      track.addEventListener('pointerdown', () => clearInterval(autoplay))
-      track.addEventListener('pointerup', resetAutoplay)
-      track.addEventListener('pointercancel', resetAutoplay)
-      track.addEventListener('mouseenter', () => clearInterval(autoplay))
-      track.addEventListener('mouseleave', resetAutoplay)
-
       dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => {
-          goTo(i)
-          resetAutoplay()
-        })
+        dot.addEventListener('click', () => goTo(i))
       })
 
+      function showSwipeHint() {
+        if (sessionStorage.getItem('swipeHintSeen')) return
+        sessionStorage.setItem('swipeHintSeen', '1')
+        const peek = Math.round(slides[0].offsetWidth * 0.22)
+        setTimeout(() => {
+          track.scrollTo({ left: peek, behavior: 'smooth' })
+          setTimeout(() => track.scrollTo({ left: 0, behavior: 'smooth' }), 600)
+        }, 800)
+      }
+
+      const hintObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            hintObserver.disconnect()
+            showSwipeHint()
+          }
+        },
+        { threshold: 0.5 }
+      )
+      hintObserver.observe(document.querySelector('.testimonials-section'))
+
       const firstImg = slides[0].querySelector('img')
-      if (firstImg.complete) {
-        update()
-        startAutoplay()
-      } else
-        firstImg.addEventListener('load', () => {
-          update()
-          startAutoplay()
-        })
+      if (firstImg.complete) update()
+      else firstImg.addEventListener('load', update)
     </script>
   </body>
 </html>
