@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // —————————————————————————————————————————
   const form = document.getElementById('index-search-form')
   const allMessageEls = Array.from(document.querySelectorAll('#search-message'))
-  // If there are two, [0] is the page’s, [1] is the sidebar’s; otherwise just [0].
+  // On /search/ there are two: [0] is page, [1] sidebar. Else just [0].
   const pageMessageEl = allMessageEls.length > 1 ? allMessageEls[0] : null
   const sidebarMessageEl =
     allMessageEls.length > 1 ? allMessageEls[1] : allMessageEls[0]
@@ -19,11 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!rawInput) {
         e.preventDefault()
         sidebarMessageEl.textContent = 'Nenhum termo de busca fornecido.'
-      } else if (rawInput.length < 3) {
+        return
+      }
+      if (rawInput.length < 3) {
         e.preventDefault()
         sidebarMessageEl.textContent =
           'Por favor, insira pelo menos três caracteres.'
+        return
       }
+      // else allow the navigation to /search/?q=...
     })
   }
 
@@ -35,45 +39,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const infoEl = document.getElementById('search-info')
   const snippetTpl = document.getElementById('snippet-template')
-  // reuse sidebarMessageEl & pageMessageEl references
 
-  // grab & normalize query
+  // grab & normalize query from URL
   const params = new URLSearchParams(window.location.search)
   const rawQ = params.get('q') || ''
   const q = rawQ.trim().toLowerCase()
 
-  // show “Resultados da pesquisa para …”
-  if (infoEl) {
-    infoEl.textContent = rawQ
-      ? `Resultados da pesquisa para "${rawQ.trim()}"`
-      : ''
-  }
-
   function clearResults() {
     resultsList.querySelectorAll('li.snippet').forEach((el) => el.remove())
   }
-
-  function showSidebarMessage(txt) {
-    if (sidebarMessageEl) {
-      sidebarMessageEl.textContent = txt
-    }
-  }
   function showPageMessage(txt) {
     clearResults()
-    if (pageMessageEl) {
-      pageMessageEl.textContent = txt
-    }
+    if (pageMessageEl) pageMessageEl.textContent = txt
   }
 
-  // **Validation before fetching**: messages in the sidebar
+  // — Validation *before* doing anything on the search page —
   if (!q) {
-    return showSidebarMessage('Nenhum termo de busca fornecido.')
+    showPageMessage('Nenhum termo de busca fornecido.')
+    return
   }
   if (q.length < 3) {
-    return showSidebarMessage('Por favor, insira pelo menos três caracteres.')
+    showPageMessage('Por favor, insira pelo menos três caracteres.')
+    return
   }
 
-  // valid → fetch + Fuse
+  // now that q is valid (≥3 chars), show the “Resultados para…” line
+  if (infoEl) {
+    infoEl.textContent = `Resultados da pesquisa para "${rawQ.trim()}"`
+  }
+
+  // fetch + Fuse
   fetch('/search.json')
     .then((res) => res.json())
     .then((data) => {
@@ -93,9 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return showPageMessage('Nenhum resultado encontrado.')
       }
 
-      // render hits (clear sidebar message, keep page message empty)
+      // clear any sidebar message & previous page message
       sidebarMessageEl.textContent = ''
-      pageMessageEl.textContent = ''
+      if (pageMessageEl) pageMessageEl.textContent = ''
+
+      // render hits
       clearResults()
       results.forEach((post) => {
         const clone = snippetTpl.content.cloneNode(true)
@@ -109,6 +106,14 @@ document.addEventListener('DOMContentLoaded', () => {
         clone.querySelector('.snippet_description').textContent =
           post.description
         resultsList.appendChild(clone)
+      })
+
+      // animate them in if you kept the .visible logic
+      const items = Array.from(resultsList.querySelectorAll('li.snippet'))
+      requestAnimationFrame(() => {
+        items.forEach((el, i) => {
+          setTimeout(() => el.classList.add('visible'), i * 50)
+        })
       })
     })
     .catch((err) => {
