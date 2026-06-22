@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
   
     <!-- Primary SEO -->
     <title>EFTclub Blogs – Artigos e tutoriais para superar desafios emocionais</title>
@@ -50,9 +51,9 @@
     <link rel="stylesheet" href="/css/style-blogs.css" />
   
     <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180" />
     <link rel="icon" href="/images/icons/favicon-32.png" sizes="32x32" />
     <link rel="icon" href="/images/icons/favicon-16.png" sizes="16x16" />
-    <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180" />
   
     <!-- Make JS non-blocking -->
     <script type="module" defer src="/js/search.js"></script>
@@ -62,10 +63,10 @@
   <body>
     {% include "header.njk" %}
 
-    <main class="container blog-index" aria-label="EFTclub Blog Content">
+    <main id="swup" class="container blog-index" aria-label="EFTclub Blog Content">
       
       <div class="container-title">
-        <h1> {{ title }} </h1>
+        <h1 class="transition-fade"> {{ title }} </h1>
         <p>Leia mais sobre como você pode melhorar a sua qualidade de vida.</p>
       </div>
       

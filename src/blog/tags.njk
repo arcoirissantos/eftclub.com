@@ -16,7 +16,7 @@ eleventyComputed:
 
 {% import "snippet.njk" as Snippet %}
 
-<ul class="articles_list flow">
+<ul class="articles_list flow transition-slide-up">
   {%- for post in tagPage.posts | reverse -%}
   {{ Snippet.snippet(
     post.url,

@@ -1,0 +1,2435 @@
+---
+templateEngineOverride: njk
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#122119" />
+    <title>Mutisia · Terapeuta — Pós-Divórcio 40+ · Um novo caminho</title>
+    <meta
+      name="description"
+      content="Espaço terapêutico para mulheres que se anularam em relações e querem voltar para si. Pós-divórcio 40+."
+    />
+
+    <!--
+============================================================
+  REPLACE THESE PLACEHOLDERS BEFORE GOING LIVE:
+
+  1. WhatsApp number → search for: https://wa.me/55XXXXXXXXXXX
+     (format: country code + DDD + number, no spaces, no symbols)
+     Example for Brazil: https://wa.me/5511987654321
+
+  2. Website URL → search for: REPLACE_WEBSITE_URL
+
+  3. YouTube URL → search for: REPLACE_YOUTUBE_URL
+
+  4. Profile photo → search for: REPLACE_PROFILE_PHOTO
+     Replace the URL with a square photo (min 400x400px recommended)
+
+  5. ABRATH verification link (optional) → search for: REPLACE_ABRATH_LINK
+
+  6. Google reviews link (optional) → search for: REPLACE_GOOGLE_REVIEWS
+============================================================
+-->
+
+    <link
+      rel="apple-touch-icon"
+      href="/images/Icons/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link rel="icon" href="/images/Icons/favicon-32.png" sizes="32x32" />
+    <link rel="icon" href="/images/Icons/favicon-16.png" sizes="16x16" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-deep: #122119;
+        --bg-mid: #1c3327;
+        --bg-soft: #264536;
+        --cream: #f3ebdc;
+        --cream-soft: #e6dcc8;
+        --cream-dim: rgba(243, 235, 220, 0.65);
+        --cream-faint: rgba(243, 235, 220, 0.18);
+        --gold: #c9a35a;
+        --gold-soft: #d8b97a;
+        --whatsapp: #25d366;
+        --shadow-deep: 0 24px 60px -20px rgba(0, 0, 0, 0.55);
+        --shadow-soft: 0 8px 24px -10px rgba(0, 0, 0, 0.4);
+
+        /* Fluid type scale — mobile-first */
+        --fs-name: clamp(2rem, 8vw, 2.6rem);
+        --fs-tagline: clamp(0.98rem, 3.6vw, 1.08rem);
+        --fs-role: clamp(0.66rem, 2.4vw, 0.74rem);
+        --fs-button: clamp(0.95rem, 3.5vw, 1rem);
+        --fs-button-sub: clamp(0.74rem, 2.7vw, 0.8rem);
+        --fs-trust-value: clamp(0.82rem, 3vw, 0.92rem);
+        --fs-trust-label: clamp(0.58rem, 2.1vw, 0.64rem);
+        --fs-quote: clamp(0.92rem, 3.4vw, 1rem);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        min-height: 100vh;
+        min-height: 100dvh;
+        font-family:
+          'Signika',
+          system-ui,
+          -apple-system,
+          sans-serif;
+        font-weight: 400;
+        color: var(--cream);
+        background:
+          radial-gradient(
+            ellipse 80% 60% at 50% -10%,
+            rgba(201, 163, 90, 0.18),
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 60% 40% at 50% 110%,
+            rgba(201, 163, 90, 0.08),
+            transparent 70%
+          ),
+          linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 100%);
+        background-attachment: fixed;
+        line-height: 1.55;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      /* Subtle grain texture overlay */
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.4;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.92  0 0 0 0 0.86  0 0 0 0.06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+        mix-blend-mode: overlay;
+      }
+
+      .page {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        padding: max(40px, calc(env(safe-area-inset-top) + 32px))
+          clamp(18px, 5vw, 24px)
+          max(36px, calc(env(safe-area-inset-bottom) + 28px));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Decorative top ornament */
+      .ornament {
+        width: clamp(48px, 16vw, 64px);
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold) 50%,
+          transparent
+        );
+        margin-bottom: clamp(28px, 7vw, 36px);
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out 0.1s forwards;
+      }
+
+      /* Profile photo */
+      .avatar {
+        position: relative;
+        width: clamp(108px, 30vw, 132px);
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--bg-soft), var(--bg-mid));
+        box-shadow:
+          var(--shadow-deep),
+          0 0 0 1px var(--cream-faint),
+          0 0 0 6px rgba(243, 235, 220, 0.04);
+        margin-bottom: clamp(20px, 5.5vw, 28px);
+        opacity: 0;
+        transform: translateY(12px);
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+      }
+
+      .avatar::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 1px rgba(243, 235, 220, 0.15);
+        pointer-events: none;
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .avatar-fallback {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Signika', sans-serif;
+        font-size: clamp(2.6rem, 9vw, 3.2rem);
+        font-weight: 500;
+        color: var(--cream-soft);
+        background: linear-gradient(135deg, var(--bg-soft), var(--bg-mid));
+      }
+
+      /* Name & tagline */
+      .name {
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: var(--fs-name);
+        line-height: 1.05;
+        letter-spacing: -0.015em;
+        margin-bottom: 8px;
+        text-align: center;
+        opacity: 0;
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+      }
+
+      .role {
+        font-family: 'Signika', sans-serif;
+        font-size: var(--fs-role);
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--cream-dim);
+        margin-bottom: clamp(14px, 4vw, 18px);
+        opacity: 0;
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+      }
+
+      .tagline {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: var(--fs-tagline);
+        line-height: 1.5;
+        text-align: center;
+        color: var(--cream-soft);
+        max-width: 340px;
+        margin-bottom: clamp(22px, 6vw, 28px);
+        opacity: 0;
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+        text-wrap: balance;
+      }
+
+      .tagline .accent {
+        color: var(--gold-soft);
+        font-weight: 500;
+      }
+
+      /* Trust strip */
+      .trust {
+        display: flex;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: clamp(28px, 7vw, 36px);
+        opacity: 0;
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+        width: 100%;
+        max-width: 420px;
+      }
+
+      .trust-card {
+        flex: 1;
+        min-width: 0;
+        background: rgba(243, 235, 220, 0.04);
+        border: 1px solid var(--cream-faint);
+        border-radius: 14px;
+        padding: 12px clamp(10px, 3vw, 14px);
+        display: flex;
+        align-items: center;
+        gap: clamp(8px, 2.4vw, 10px);
+        text-decoration: none;
+        color: var(--cream);
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        touch-action: manipulation;
+      }
+
+      .trust-card:hover,
+      .trust-card:focus-visible {
+        background: rgba(243, 235, 220, 0.07);
+        border-color: rgba(243, 235, 220, 0.28);
+        transform: translateY(-1px);
+        outline: none;
+      }
+
+      .trust-icon {
+        flex-shrink: 0;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .trust-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+        min-width: 0;
+      }
+
+      .trust-label {
+        font-size: var(--fs-trust-label);
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--cream-dim);
+        margin-bottom: 2px;
+      }
+
+      .trust-value {
+        font-family: 'Signika', sans-serif;
+        font-size: var(--fs-trust-value);
+        font-weight: 500;
+        color: var(--cream);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .stars {
+        display: inline-flex;
+        gap: 1px;
+        color: var(--gold);
+        font-size: 0.75em;
+        margin-left: 2px;
+      }
+
+      /* Section divider label */
+      .section-label {
+        font-size: var(--fs-role);
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--cream-dim);
+        margin: 4px 0 clamp(14px, 4vw, 18px);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 420px;
+        opacity: 0;
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+      }
+
+      .section-label::before,
+      .section-label::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--cream-faint);
+      }
+
+      /* Buttons */
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 420px;
+      }
+
+      .link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: clamp(12px, 3.5vw, 14px);
+        padding: clamp(14px, 4.2vw, 18px) clamp(16px, 4.5vw, 22px);
+        min-height: 64px;
+        border-radius: 16px;
+        text-decoration: none;
+        font-family: 'Signika', sans-serif;
+        font-weight: 500;
+        color: var(--cream);
+        background: rgba(243, 235, 220, 0.05);
+        border: 1px solid var(--cream-faint);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(10px);
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .link:nth-of-type(1) {
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
+      }
+      .link:nth-of-type(2) {
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards;
+      }
+      .link:nth-of-type(3) {
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards;
+      }
+      .link:nth-of-type(4) {
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.95s forwards;
+      }
+      .link:nth-of-type(5) {
+        animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.05s forwards;
+      }
+
+      .link::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          120deg,
+          transparent 30%,
+          rgba(243, 235, 220, 0.08) 50%,
+          transparent 70%
+        );
+        transform: translateX(-100%);
+        transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .link:hover::before {
+        transform: translateX(100%);
+      }
+
+      .link:hover,
+      .link:focus-visible {
+        background: rgba(243, 235, 220, 0.09);
+        border-color: rgba(243, 235, 220, 0.32);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-soft);
+        outline: none;
+      }
+
+      .link:active {
+        transform: translateY(0);
+        transition-duration: 0.1s;
+      }
+
+      .link-icon {
+        flex-shrink: 0;
+        width: clamp(38px, 11vw, 42px);
+        height: clamp(38px, 11vw, 42px);
+        border-radius: 12px;
+        background: rgba(243, 235, 220, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .link:hover .link-icon {
+        background: rgba(243, 235, 220, 0.12);
+        transform: scale(1.05);
+      }
+
+      .link-text {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 0;
+        line-height: 1.25;
+        text-align: left;
+      }
+
+      .link-title {
+        font-weight: 500;
+        font-size: var(--fs-button);
+        margin-bottom: 2px;
+      }
+
+      .link-title .accent {
+        color: var(--gold-soft);
+        font-weight: 600;
+      }
+
+      .link-sub {
+        font-size: var(--fs-button-sub);
+        color: var(--cream-dim);
+        font-weight: 400;
+      }
+
+      .link-arrow {
+        flex-shrink: 0;
+        color: var(--cream-dim);
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .link:hover .link-arrow {
+        transform: translateX(4px);
+        color: var(--cream);
+      }
+
+      /* WhatsApp - primary CTA */
+      .link.whatsapp {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 163, 90, 0.18),
+          rgba(201, 163, 90, 0.08)
+        );
+        border-color: rgba(201, 163, 90, 0.35);
+      }
+
+      .link.whatsapp:hover,
+      .link.whatsapp:focus-visible {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 163, 90, 0.25),
+          rgba(201, 163, 90, 0.12)
+        );
+        border-color: rgba(201, 163, 90, 0.55);
+      }
+
+      .link.whatsapp .link-icon {
+        background: rgba(37, 211, 102, 0.18);
+      }
+
+      /* CTA quote / closing */
+      .closing {
+        margin-top: clamp(32px, 9vw, 40px);
+        text-align: center;
+        max-width: 360px;
+        opacity: 0;
+        animation: fadeIn 1s ease-out 1.2s forwards;
+      }
+
+      .closing-quote {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: var(--fs-quote);
+        line-height: 1.55;
+        color: var(--cream-soft);
+        letter-spacing: 0.005em;
+      }
+
+      .closing-quote::before,
+      .closing-quote::after {
+        content: '—';
+        color: var(--gold);
+        margin: 0 8px;
+        font-weight: 400;
+      }
+
+      /* Footer */
+      .footer {
+        margin-top: clamp(36px, 10vw, 48px);
+        text-align: center;
+        color: var(--cream-dim);
+        line-height: 1.6;
+        opacity: 0;
+        animation: fadeIn 1s ease-out 1.4s forwards;
+      }
+
+      .footer-credential {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(243, 235, 220, 0.04);
+        border: 1px solid var(--cream-faint);
+        font-size: clamp(0.66rem, 2.4vw, 0.7rem);
+        letter-spacing: 0.05em;
+        margin-bottom: 14px;
+        font-weight: 400;
+      }
+
+      .footer-credential-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        box-shadow: 0 0 8px var(--gold);
+      }
+
+      .footer-text {
+        font-size: clamp(0.66rem, 2.4vw, 0.7rem);
+        font-weight: 300;
+      }
+
+      /* Animations */
+      @keyframes rise {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* ========================================
+     RESPONSIVE BREAKPOINTS
+     Mobile-first base, then progressive enhancement
+     ======================================== */
+
+      /* Very small phones (≤ 359px — older Androids, iPhone SE 1st gen) */
+      @media (max-width: 359px) {
+        .trust {
+          gap: 8px;
+        }
+        .trust-card {
+          padding: 10px 10px;
+          gap: 8px;
+        }
+        .trust-icon {
+          width: 22px;
+          height: 22px;
+        }
+        .trust-icon svg {
+          width: 18px;
+          height: 18px;
+        }
+        .role {
+          letter-spacing: 0.24em;
+        }
+      }
+
+      /* Slightly larger screens — small refinement */
+      @media (min-width: 481px) {
+        .page {
+          padding-top: 56px;
+          padding-bottom: 48px;
+        }
+      }
+
+      /* Landscape phones — reduce vertical spacing so it fits */
+      @media (max-height: 600px) and (orientation: landscape) {
+        .page {
+          padding-top: 24px;
+          padding-bottom: 24px;
+        }
+        .ornament {
+          margin-bottom: 16px;
+        }
+        .avatar {
+          margin-bottom: 16px;
+        }
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+        .ornament,
+        .avatar,
+        .name,
+        .role,
+        .tagline,
+        .trust,
+        .section-label,
+        .link,
+        .closing,
+        .footer {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+
+      /* Focus styles for keyboard accessibility */
+      .link:focus-visible,
+      .trust-card:focus-visible {
+        box-shadow: 0 0 0 2px var(--gold-soft);
+      }
+
+      /* Extended content section */
+      .content-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 1.6s forwards;
+      }
+
+      .content-divider {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+        margin-bottom: clamp(32px, 8vw, 40px);
+      }
+
+      .content-divider::before,
+      .content-divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--cream-faint);
+      }
+
+      .content-divider-gem {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        box-shadow: 0 0 8px var(--gold);
+        opacity: 0.7;
+      }
+
+      .pull-quote {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(1.35rem, 5.2vw, 1.6rem);
+        line-height: 1.55;
+        color: var(--cream);
+        text-align: center;
+        margin-bottom: clamp(28px, 7vw, 36px);
+        letter-spacing: -0.01em;
+        max-width: 380px;
+        text-wrap: balance;
+      }
+
+      .content-image-wrap {
+        width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-bottom: clamp(28px, 7vw, 36px);
+        background: var(--bg-soft);
+        box-shadow:
+          var(--shadow-deep),
+          0 0 0 1px var(--cream-faint);
+      }
+
+      .content-image-wrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .content-body {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+        line-height: 1.75;
+        color: var(--cream-soft);
+        text-align: center;
+        max-width: 380px;
+        text-wrap: balance;
+      }
+
+      .content-body .highlight {
+        color: var(--gold-soft);
+        font-weight: 400;
+      }
+
+      /* Patterns section */
+      .patterns-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 1.8s forwards;
+      }
+
+      .patterns-question {
+        font-family: 'Signika', sans-serif;
+        font-weight: 400;
+        font-size: clamp(0.98rem, 3.6vw, 1.08rem);
+        color: var(--cream-dim);
+        text-align: center;
+        margin-bottom: clamp(20px, 5vw, 24px);
+        letter-spacing: 0.01em;
+        text-wrap: balance;
+      }
+
+      .patterns-list {
+        list-style: none;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .pattern-item {
+        background: rgba(201, 163, 90, 0.1);
+        border-radius: 16px;
+        padding: 9px 18px;
+        text-align: center;
+        line-height: 1.15;
+      }
+
+      .pattern-text {
+        font-family: 'Signika', sans-serif;
+        font-weight: 400;
+        font-size: clamp(0.88rem, 3.2vw, 0.95rem);
+        color: var(--cream-soft);
+        line-height: 1.15;
+      }
+
+      /* Promise card section */
+      .promise-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 2s forwards;
+      }
+
+      .promise-card {
+        width: 100%;
+        background: rgba(201, 163, 90, 0.06);
+        border: 1px solid rgba(201, 163, 90, 0.28);
+        border-radius: 20px;
+        padding: clamp(28px, 7vw, 36px) clamp(24px, 6vw, 32px);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(16px, 4vw, 20px);
+        text-align: center;
+      }
+
+      .promise-title {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(1.3rem, 5vw, 1.55rem);
+        line-height: 1.35;
+        color: var(--cream);
+        letter-spacing: -0.01em;
+        text-wrap: balance;
+      }
+
+      .promise-title strong {
+        font-weight: 600;
+      }
+
+      .promise-divider {
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+        margin: 0 auto;
+        opacity: 0.6;
+      }
+
+      .promise-body {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(0.92rem, 3.4vw, 1rem);
+        line-height: 1.75;
+        color: var(--cream-soft);
+        text-wrap: balance;
+      }
+
+      .promise-closing {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(0.88rem, 3.2vw, 0.95rem);
+        line-height: 1.6;
+        color: var(--cream-dim);
+        font-style: italic;
+      }
+
+      /* Pricing section */
+      .pricing-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 2s forwards;
+      }
+
+      .pricing-section-title {
+        font-size: var(--fs-role);
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--cream-dim);
+        margin-bottom: clamp(32px, 8vw, 40px);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .pricing-section-title::before,
+      .pricing-section-title::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--cream-faint);
+      }
+
+      .pricing-featured {
+        width: 100%;
+        background: rgba(201, 163, 90, 0.07);
+        border: 1px solid rgba(201, 163, 90, 0.38);
+        border-radius: 20px;
+        padding: clamp(22px, 6vw, 30px) clamp(20px, 5vw, 26px);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .pricing-badge {
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 4px 11px;
+        border-radius: 999px;
+        background: rgba(201, 163, 90, 0.18);
+        border: 1px solid rgba(201, 163, 90, 0.38);
+        font-size: clamp(0.6rem, 2.2vw, 0.66rem);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold-soft);
+        font-weight: 500;
+      }
+
+      .pricing-title {
+        font-family: 'Signika', sans-serif;
+        font-weight: 500;
+        font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+        color: var(--cream);
+        line-height: 1.3;
+      }
+
+      .pricing-checks {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+      }
+
+      .pricing-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: clamp(0.84rem, 3.1vw, 0.92rem);
+        color: var(--cream-soft);
+        font-weight: 300;
+        line-height: 1.45;
+      }
+
+      .pricing-check-icon {
+        flex-shrink: 0;
+        margin-top: 2px;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: rgba(201, 163, 90, 0.12);
+        border: 1px solid rgba(201, 163, 90, 0.38);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .pricing-rule {
+        height: 1px;
+        background: var(--cream-faint);
+        margin: 2px 0;
+      }
+
+      .pricing-price-block {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .pricing-price-label {
+        font-size: clamp(0.72rem, 2.6vw, 0.78rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+      }
+
+      .pricing-price {
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: clamp(2rem, 7.5vw, 2.5rem);
+        color: var(--cream);
+        letter-spacing: -0.025em;
+        line-height: 1;
+      }
+
+      .pricing-price-sub {
+        font-size: clamp(0.72rem, 2.6vw, 0.78rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+        margin-top: 2px;
+      }
+
+      .pricing-discount-strip {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 16px;
+        background: linear-gradient(
+          135deg,
+          rgba(201, 163, 90, 0.22),
+          rgba(201, 163, 90, 0.1)
+        );
+        border: 1px solid rgba(201, 163, 90, 0.4);
+        border-radius: 12px;
+      }
+
+      .pricing-discount-badge {
+        font-family: 'Signika', sans-serif;
+        font-weight: 700;
+        font-size: clamp(1.1rem, 4vw, 1.3rem);
+        color: var(--gold-soft);
+        letter-spacing: -0.01em;
+        line-height: 1;
+      }
+
+      .pricing-discount-text {
+        font-size: clamp(0.8rem, 3vw, 0.88rem);
+        color: var(--cream-soft);
+        font-weight: 300;
+        line-height: 1.35;
+      }
+
+      .pricing-discount-text s {
+        color: var(--cream-dim);
+        text-decoration-color: rgba(243, 235, 220, 0.4);
+      }
+
+      .pricing-price-vista {
+        margin-top: 8px;
+        padding: 10px 14px;
+        background: rgba(243, 235, 220, 0.04);
+        border-radius: 10px;
+        border: 1px solid var(--cream-faint);
+      }
+
+      .pricing-price-vista-label {
+        font-size: clamp(0.72rem, 2.6vw, 0.78rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+      }
+
+      .pricing-price-vista-value {
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: clamp(1.4rem, 5.5vw, 1.7rem);
+        color: var(--gold-soft);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+        margin-top: 2px;
+      }
+
+      .pricing-unified {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 163, 90, 0.14),
+          rgba(201, 163, 90, 0.06)
+        );
+        border: 1px solid rgba(201, 163, 90, 0.38);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+
+      .pricing-unified-top {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        flex-wrap: wrap;
+      }
+
+      .pricing-unified-top s {
+        font-size: clamp(0.8rem, 2.9vw, 0.88rem);
+        color: var(--cream-dim);
+        text-decoration-color: rgba(243, 235, 220, 0.4);
+      }
+
+      .pricing-unified-arrow {
+        font-size: clamp(0.8rem, 2.9vw, 0.88rem);
+        color: var(--cream-dim);
+      }
+
+      .pricing-unified-current {
+        flex: 1;
+        font-weight: 500;
+        font-size: clamp(0.92rem, 3.4vw, 1rem);
+        color: var(--cream);
+      }
+
+      .pricing-unified-current em {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 0.88em;
+        color: var(--cream-dim);
+      }
+
+      .pricing-unified-bottom {
+        border-top: 1px solid rgba(201, 163, 90, 0.22);
+        padding: 10px 16px;
+        background: rgba(201, 163, 90, 0.05);
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .pricing-unified-vista-label {
+        font-size: clamp(0.72rem, 2.6vw, 0.78rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+      }
+
+      .pricing-unified-vista-value {
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: clamp(1.4rem, 5.5vw, 1.7rem);
+        color: var(--gold-soft);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+
+      .pricing-btn {
+        display: block;
+        text-align: center;
+        padding: clamp(13px, 3.8vw, 15px);
+        border-radius: 12px;
+        text-decoration: none;
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: clamp(0.9rem, 3.3vw, 0.98rem);
+        letter-spacing: 0.02em;
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .pricing-btn-gold {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 163, 90, 0.28),
+          rgba(201, 163, 90, 0.12)
+        );
+        color: var(--gold-soft);
+        border: 1px solid rgba(201, 163, 90, 0.45);
+      }
+
+      .pricing-btn-gold:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 163, 90, 0.38),
+          rgba(201, 163, 90, 0.2)
+        );
+        border-color: rgba(201, 163, 90, 0.65);
+      }
+
+      .pricing-secondary {
+        width: 100%;
+        background: rgba(243, 235, 220, 0.03);
+        border: 1px solid var(--cream-faint);
+        border-radius: 16px;
+        padding: clamp(18px, 5vw, 22px) clamp(20px, 5vw, 26px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .pricing-secondary-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .pricing-secondary-title {
+        font-family: 'Signika', sans-serif;
+        font-weight: 400;
+        font-size: clamp(0.88rem, 3.2vw, 0.96rem);
+        color: var(--cream-soft);
+      }
+
+      .pricing-secondary-price {
+        font-family: 'Signika', sans-serif;
+        font-weight: 600;
+        font-size: clamp(1.1rem, 4vw, 1.25rem);
+        color: var(--cream);
+        letter-spacing: -0.015em;
+        white-space: nowrap;
+      }
+
+      .pricing-note {
+        font-size: clamp(0.68rem, 2.5vw, 0.74rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0 4px;
+      }
+
+      .pricing-note a {
+        color: var(--gold-soft);
+        text-decoration: none;
+      }
+
+      .pricing-btn-ghost {
+        background: transparent;
+        color: var(--cream-dim);
+        border: 1px solid var(--cream-faint);
+      }
+
+      .pricing-btn-ghost:hover {
+        background: rgba(243, 235, 220, 0.06);
+        color: var(--cream-soft);
+        border-color: rgba(243, 235, 220, 0.28);
+      }
+
+      /* Final CTA section */
+      .cta-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 2s forwards;
+      }
+
+      .cta-glow {
+        position: relative;
+        width: 100%;
+        padding: clamp(36px, 9vw, 48px) 0 clamp(32px, 8vw, 40px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(24px, 6vw, 32px);
+      }
+
+      .cta-glow::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+        background: radial-gradient(
+          ellipse 80% 60% at 50% 40%,
+          rgba(201, 163, 90, 0.14),
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .cta-headline {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(1.5rem, 6vw, 1.9rem);
+        line-height: 1.3;
+        letter-spacing: -0.02em;
+        color: var(--cream);
+        text-wrap: balance;
+        position: relative;
+      }
+
+      .cta-headline .cta-accent {
+        color: var(--gold-soft);
+        font-weight: 500;
+      }
+
+      .cta-section .link.whatsapp {
+        width: 100%;
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+
+      /* Transformations section */
+      .transformations-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 2s forwards;
+      }
+
+      .transformations-title {
+        font-family: 'Signika', sans-serif;
+        font-weight: 300;
+        font-size: clamp(1.2rem, 4.5vw, 1.4rem);
+        line-height: 1.35;
+        color: var(--cream);
+        text-align: center;
+        margin-bottom: clamp(24px, 6vw, 32px);
+        letter-spacing: -0.01em;
+        text-wrap: balance;
+      }
+
+      .transformations-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .transformation-card {
+        background: linear-gradient(
+          145deg,
+          rgba(201, 163, 90, 0.13),
+          rgba(201, 163, 90, 0.05)
+        );
+        border-radius: 18px;
+        padding: clamp(18px, 5vw, 22px) clamp(14px, 4vw, 18px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .transformation-card:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 6px);
+        margin: 0 auto;
+      }
+
+      .transformation-icon {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--gold);
+        flex-shrink: 0;
+      }
+
+      .transformation-text {
+        font-family: 'Signika', sans-serif;
+        font-weight: 400;
+        font-size: clamp(0.85rem, 3.1vw, 0.93rem);
+        color: var(--cream-soft);
+        line-height: 1.4;
+      }
+
+      /* Testimonials section */
+      .testimonials-section {
+        margin-top: clamp(40px, 10vw, 56px);
+        width: 100%;
+        max-width: 420px;
+        opacity: 0;
+        animation: fadeIn 1.2s ease-out 2.2s forwards;
+      }
+
+      .testimonials-label {
+        font-size: var(--fs-role);
+        font-weight: 500;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: var(--cream-dim);
+        margin-bottom: clamp(32px, 8vw, 40px);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .testimonials-label::before,
+      .testimonials-label::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--cream-faint);
+      }
+
+      .testimonials-wrap {
+        width: 100%;
+        overflow: hidden;
+        transition: height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .testimonials-track {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .testimonials-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .testimonial-slide {
+        flex-shrink: 0;
+        width: 100%;
+        scroll-snap-align: start;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow:
+          var(--shadow-soft),
+          0 0 0 1px var(--cream-faint);
+      }
+
+      .testimonial-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .testimonials-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        margin-top: 16px;
+      }
+
+      .testimonial-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--cream-faint);
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        flex-shrink: 0;
+      }
+
+      .testimonial-dot.active {
+        background: var(--gold);
+        width: 18px;
+        border-radius: 3px;
+      }
+
+      .testimonials-swipe-hint {
+        margin-top: 12px;
+        font-size: clamp(0.68rem, 2.5vw, 0.74rem);
+        color: var(--cream-dim);
+        font-weight: 300;
+        letter-spacing: 0.04em;
+        text-align: center;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .content-section,
+        .patterns-section,
+        .promise-section,
+        .testimonials-section {
+          opacity: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="ornament"></div>
+
+      <!-- REPLACE_PROFILE_PHOTO: replace the src below with the URL of Mutisia's photo -->
+      <div class="avatar">
+        <img
+          src="/images/authors/profile-picture-mutisia-eftclub.webp"
+          alt="Mutisia, terapeuta"
+          loading="eager"
+          onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend','<div class=&quot;avatar-fallback&quot;>M</div>')"
+        />
+      </div>
+
+      <h1 class="name">Mutisia</h1>
+      <div class="role">Terapeuta</div>
+
+      <p class="tagline">
+        Para mulheres que se anularam em relações e querem voltar para
+        <span class="accent">si mesmas</span>
+        .
+      </p>
+
+      <!-- Trust signals -->
+      <div class="trust">
+        <a
+          href="https://www.abrath.org.br/localizar-filiados.php"
+          class="trust-card"
+          target="_blank"
+          rel="noopener"
+          aria-label="Registro profissional ABRATH CRTH-BR 17974"
+        >
+          <div class="trust-icon" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2L4 5V11C4 16 7 20.5 12 22C17 20.5 20 16 20 11V5L12 2Z"
+                stroke="#c9a35a"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 12L11 14L15 10"
+                stroke="#c9a35a"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="trust-text">
+            <span class="trust-label">ABRATH</span>
+            <span class="trust-value">CRTH-BR 17974</span>
+          </div>
+        </a>
+
+        <a
+          href="https://maps.app.goo.gl/xdwBKmU5331wy8iDA"
+          class="trust-card"
+          target="_blank"
+          rel="noopener"
+          aria-label="Avaliação 5 de 5 estrelas no Google"
+        >
+          <div class="trust-icon" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill="#4285F4"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+              />
+              <path
+                fill="#34A853"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+              />
+              <path
+                fill="#FBBC05"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+              />
+              <path
+                fill="#EA4335"
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+              />
+            </svg>
+          </div>
+          <div class="trust-text">
+            <span class="trust-label">Google</span>
+            <span class="trust-value">
+              5.0
+              <span class="stars">★★★★★</span>
+            </span>
+          </div>
+        </a>
+      </div>
+
+      <div class="section-label">Conecte-se</div>
+
+      <nav class="links" aria-label="Links de contato">
+        <!-- WHATSAPP — primary CTA -->
+        <!-- REPLACE: change href below to https://wa.me/55XXXXXXXXXXX (no spaces, no symbols) -->
+        <a
+          href="https://wa.me/5521920172600?text=Ol%C3%A1%20Mutisia%2C%20gostaria%20de%20conhecer%20o%20seu%20trabalho."
+          class="link whatsapp"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="link-icon" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4 7.94 7.94 0 0 0 5.1 16.07L4 20l4.05-1.06a7.93 7.93 0 0 0 3.99 1.02h.01A7.95 7.95 0 0 0 20 12.04a7.86 7.86 0 0 0-2.4-5.72zm-5.55 12.2h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.4.63.64-2.34-.16-.25a6.55 6.55 0 0 1-1-3.46 6.59 6.59 0 0 1 11.25-4.66 6.55 6.55 0 0 1 1.93 4.66 6.59 6.59 0 0 1-6.65 6.48zm3.62-4.86c-.2-.1-1.18-.58-1.36-.65-.18-.07-.32-.1-.45.1-.13.2-.51.65-.63.78-.12.13-.23.15-.43.05-.2-.1-.84-.31-1.6-.99-.59-.53-.99-1.18-1.11-1.38-.12-.2-.01-.31.09-.41.09-.09.2-.23.3-.35.1-.12.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.33-.34-.45-.34l-.38-.01a.74.74 0 0 0-.54.25c-.18.2-.71.69-.71 1.69s.73 1.96.83 2.09c.1.13 1.43 2.18 3.46 3.06.48.21.86.33 1.16.42.49.16.93.13 1.28.08.39-.06 1.18-.48 1.35-.95.17-.46.17-.86.12-.95-.05-.08-.18-.13-.38-.23z"
+                fill="#25d366"
+              />
+            </svg>
+          </div>
+          <div class="link-text">
+            <span class="link-title">
+              Fale comigo no
+              <span class="accent">WhatsApp</span>
+            </span>
+            <span class="link-sub">Tire dúvidas ou agende uma sessão</span>
+          </div>
+          <svg
+            class="link-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M9 6L15 12L9 18"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+
+        <!-- SCROLL TO MORE INFO -->
+        <a href="#saiba-mais" class="link">
+          <div class="link-icon" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="9"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M12 8v4m0 0l-2 2m2-2l2 2"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 16v.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <div class="link-text">
+            <span class="link-title">Quero saber mais</span>
+            <span class="link-sub">Conheça mais sobre meu trabalho</span>
+          </div>
+          <svg
+            class="link-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M6 9L12 15L18 9"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+
+        <!-- YOUTUBE -->
+        <!-- REPLACE_YOUTUBE_URL: change href below -->
+        <a
+          href="https://www.youtube.com/@eftclub/"
+          class="link"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="link-icon" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22 8.4C22 8.4 21.8 7 21.2 6.4C20.4 5.6 19.6 5.6 19.2 5.5C16.4 5.3 12 5.3 12 5.3H12C12 5.3 7.6 5.3 4.8 5.5C4.4 5.6 3.6 5.6 2.8 6.4C2.2 7 2 8.4 2 8.4C2 8.4 1.8 10 1.8 11.7V13.3C1.8 14.9 2 16.6 2 16.6C2 16.6 2.2 18 2.8 18.6C3.6 19.4 4.6 19.4 5.1 19.5C6.7 19.6 12 19.7 12 19.7C12 19.7 16.4 19.7 19.2 19.5C19.6 19.4 20.4 19.4 21.2 18.6C21.8 18 22 16.6 22 16.6C22 16.6 22.2 14.9 22.2 13.3V11.7C22.2 10 22 8.4 22 8.4Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+              <path d="M10 9.5L15 12.5L10 15.5V9.5Z" fill="currentColor" />
+            </svg>
+          </div>
+          <div class="link-text">
+            <span class="link-title">Canal no YouTube</span>
+            <span class="link-sub">Práticas em vídeo</span>
+          </div>
+          <svg
+            class="link-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M9 6L15 12L9 18"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+
+        <!-- BLOG -->
+        <a
+          href="https://eftclub.com/blog/"
+          class="link"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="link-icon" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="4"
+                y="3"
+                width="16"
+                height="18"
+                rx="2"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M8 8h8M8 12h8M8 16h5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <div class="link-text">
+            <span class="link-title">Blog · Artigos</span>
+            <span class="link-sub">
+              Meus artigos sobre meu método e técnicas
+            </span>
+          </div>
+          <svg
+            class="link-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M9 6L15 12L9 18"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+
+        <!-- INSTAGRAM (back-link) -->
+        <a
+          href="https://instagram.com/mutisia_terapeuta"
+          class="link"
+          target="_blank"
+          rel="noopener"
+        >
+          <div class="link-icon" aria-hidden="true">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+            </svg>
+          </div>
+          <div class="link-text">
+            <span class="link-title">Instagram</span>
+            <span class="link-sub">@mutisia_terapeuta</span>
+          </div>
+          <svg
+            class="link-arrow"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              d="M9 6L15 12L9 18"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </nav>
+
+      <div class="closing">
+        <p class="closing-quote">
+          A volta para si começa com um primeiro passo
+        </p>
+      </div>
+
+      <!-- Extended content section -->
+      <div class="content-section" id="saiba-mais">
+        <div class="content-divider">
+          <div class="content-divider-gem"></div>
+        </div>
+
+        <div class="content-image-wrap">
+          <img
+            src="/images/authors/profile-picture-main-eftclub.webp"
+            alt="Mutisia, terapeuta"
+            loading="lazy"
+          />
+        </div>
+
+        <blockquote class="pull-quote">
+          Talvez você nunca tenha aprendido a amar — apenas a se abandonar para
+          manter vínculos.
+        </blockquote>
+
+        <p class="content-body">
+          É por isso que os relacionamentos machucam tanto: não por serem a
+          <span class="highlight">origem da dor</span>
+          , mas porque revelam feridas emocionais que nunca foram realmente
+          resolvidas.
+        </p>
+      </div>
+
+      <!-- Patterns section -->
+      <div class="patterns-section">
+        <div class="content-divider">
+          <div class="content-divider-gem"></div>
+        </div>
+
+        <p class="patterns-question">
+          Com quais desses padrões você mais se identifica?
+        </p>
+
+        <ul class="patterns-list">
+          <li class="pattern-item">
+            <span class="pattern-text">
+              Ansiedade nos
+              <br />
+              relacionamentos
+            </span>
+          </li>
+          <li class="pattern-item">
+            <span class="pattern-text">
+              Medo de rejeição
+              <br />
+              e abandono
+            </span>
+          </li>
+          <li class="pattern-item">
+            <span class="pattern-text">
+              Dependência
+              <br />
+              emocional
+            </span>
+          </li>
+          <li class="pattern-item">
+            <span class="pattern-text">
+              Necessidade
+              <br />
+              de agradar
+            </span>
+          </li>
+          <li class="pattern-item">
+            <span class="pattern-text">
+              Se anula para
+              <br />
+              não perder pessoas
+            </span>
+          </li>
+          <li class="pattern-item">
+            <span class="pattern-text">
+              Repete padrões
+              <br />
+              que machucam você
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Promise card section -->
+      <div class="promise-section">
+        <div class="content-divider">
+          <div class="content-divider-gem"></div>
+        </div>
+
+        <div class="promise-card">
+          <p class="promise-title">
+            Você não precisa passar por isso
+            <strong>sozinha</strong>
+          </p>
+
+          <div class="promise-divider"></div>
+
+          <p class="promise-body">
+            Eu te conduzo em um processo profundo de transformação emocional,
+            ajudando você a acessar, compreender e liberar padrões que mantêm
+            ciclos de sofrimento emocional ativos dentro de você.
+          </p>
+
+          <p class="promise-closing">
+            Tudo de forma acolhedora, profunda e respeitando o seu tempo
+            emocional.
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonials section -->
+      <div class="testimonials-section">
+        <div class="testimonials-label">Depoimentos</div>
+
+        <div class="testimonials-wrap">
+          <div class="testimonials-track" id="testimonialsTrack">
+            {% for dep in depoimentos %}
+            <div class="testimonial-slide">
+              <img
+                src="{{ dep.src }}"
+                alt="{{ dep.alt }}"
+                loading="{{ dep.loading }}"
+              />
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="testimonials-dots" id="testimonialsDots">
+          {% for dep in depoimentos %}
+          <button
+            class="testimonial-dot{% if loop.first %} active{% endif %}"
+            aria-label="{{ dep.alt }}"
+          ></button>
+          {% endfor %}
+        </div>
+
+        <p class="testimonials-swipe-hint">
+          ← Arraste para ver mais depoimentos →
+        </p>
+      </div>
+
+      <!-- Transformations section -->
+      <div class="transformations-section">
+        <div class="content-divider">
+          <div class="content-divider-gem"></div>
+        </div>
+
+        <p class="transformations-title">
+          Transformações que você começa a sentir
+        </p>
+
+        <div class="transformations-grid">
+          <div class="transformation-card">
+            <span class="transformation-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4.5"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                />
+                <path
+                  d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M5.6 18.4l1.8-1.8M16.6 7.4l1.8-1.8"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            <span class="transformation-text">
+              Mais clareza e equilíbrio emocional
+            </span>
+          </div>
+          <div class="transformation-card">
+            <span class="transformation-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L4 5.5V11c0 4.8 3.4 9.2 8 10.5C16.6 20.2 20 15.8 20 11V5.5L12 2z"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.5 12l2.5 2.5 4.5-4.5"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="transformation-text">Autoestima mais fortalecida</span>
+          </div>
+          <div class="transformation-card">
+            <span class="transformation-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 21C12 21 3.5 15.5 3.5 9.5a4.5 4.5 0 0 1 8.5-2 4.5 4.5 0 0 1 8.5 2C20.5 15.5 12 21 12 21z"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span class="transformation-text">
+              Relacionamentos mais saudáveis
+            </span>
+          </div>
+          <div class="transformation-card">
+            <span class="transformation-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="12"
+                  cy="7.5"
+                  r="3.5"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                />
+                <path
+                  d="M5 21v-1.5a7 7 0 0 1 14 0V21"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M12 11.5v3M10.5 14h3"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            <span class="transformation-text">Mais conexão com você mesma</span>
+          </div>
+          <div class="transformation-card">
+            <span class="transformation-icon" aria-hidden="true">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 3C9 5.5 6 9 6 13a6 6 0 0 0 12 0c0-4-3-7.5-6-10z"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 21v-9"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M12 16l-2.5-2.5M12 13.5l2.5-2.5"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            <span class="transformation-text">Mais paz emocional</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing section -->
+      <div class="pricing-section">
+        <div class="pricing-section-title">Preço das Sessões</div>
+
+        <!-- Featured: Pacote -->
+        <div class="pricing-featured">
+          <span class="pricing-badge">★ Mais popular</span>
+
+          <p class="pricing-title">Pacote de Quatro Sessões</p>
+
+          <ul class="pricing-checks">
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Terapia online por videoconferência
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Sessões com duração de 1h a 1h30
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Anamnese e técnicas alternativas*
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Suporte contínuo pelo WhatsApp
+            </li>
+          </ul>
+
+          <div class="pricing-unified">
+            <div class="pricing-unified-top">
+              <s>R$ 145</s>
+              <span class="pricing-unified-arrow">→</span>
+              <span class="pricing-unified-current">
+                R$ 120
+                <em>/ sessão</em>
+              </span>
+              <span class="pricing-discount-badge">−18%</span>
+            </div>
+            <div class="pricing-unified-bottom">
+              <span class="pricing-unified-vista-label">
+                Investimento à vista
+              </span>
+              <span class="pricing-unified-vista-value">R$ 480</span>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/5521920172600?text=Ol%C3%A1%20Mutisia%2C%20gostaria%20de%20adquirir%20o%20pacote%20de%20quatro%20sess%C3%B5es."
+            class="pricing-btn pricing-btn-gold"
+            target="_blank"
+            rel="noopener"
+          >
+            Adquirir Pacote
+          </a>
+        </div>
+
+        <!-- Secondary: Sessão individual -->
+        <div class="pricing-secondary">
+          <div class="pricing-secondary-header">
+            <span class="pricing-secondary-title">Uma Sessão por Vez</span>
+            <span class="pricing-secondary-price">R$ 145</span>
+          </div>
+
+          <ul class="pricing-checks">
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Terapia online por videoconferência
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Sessões com duração de 1h a 1h30
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Anamnese e técnicas alternativas*
+            </li>
+            <li class="pricing-check">
+              <span class="pricing-check-icon">
+                <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                  <path
+                    d="M1 4L3.5 6.5L9 1"
+                    stroke="#c9a35a"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              Suporte contínuo pelo WhatsApp
+            </li>
+          </ul>
+
+          <a
+            href="https://wa.me/5521920172600?text=Ol%C3%A1%20Mutisia%2C%20gostaria%20de%20agendar%20uma%20sess%C3%A3o."
+            class="pricing-btn pricing-btn-ghost"
+            target="_blank"
+            rel="noopener"
+          >
+            Agendar Sessão
+          </a>
+        </div>
+
+        <p class="pricing-note">
+          *Técnicas alternativas: Causa Raiz, EFT e TRG.
+        </p>
+      </div>
+
+      <!-- Final CTA section -->
+      <div class="cta-section">
+        <div class="content-divider">
+          <div class="content-divider-gem"></div>
+        </div>
+
+        <div class="cta-glow">
+          <h2 class="cta-headline">
+            Comece agora seu processo de
+            <span class="cta-accent">transformação emocional.</span>
+          </h2>
+
+          <a
+            href="https://wa.me/5521920172600?text=Ol%C3%A1%20Mutisia%2C%20gostaria%20de%20conhecer%20o%20seu%20trabalho."
+            class="link whatsapp"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="link-icon" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4 7.94 7.94 0 0 0 5.1 16.07L4 20l4.05-1.06a7.93 7.93 0 0 0 3.99 1.02h.01A7.95 7.95 0 0 0 20 12.04a7.86 7.86 0 0 0-2.4-5.72zm-5.55 12.2h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.4.63.64-2.34-.16-.25a6.55 6.55 0 0 1-1-3.46 6.59 6.59 0 0 1 11.25-4.66 6.55 6.55 0 0 1 1.93 4.66 6.59 6.59 0 0 1-6.65 6.48zm3.62-4.86c-.2-.1-1.18-.58-1.36-.65-.18-.07-.32-.1-.45.1-.13.2-.51.65-.63.78-.12.13-.23.15-.43.05-.2-.1-.84-.31-1.6-.99-.59-.53-.99-1.18-1.11-1.38-.12-.2-.01-.31.09-.41.09-.09.2-.23.3-.35.1-.12.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.33-.34-.45-.34l-.38-.01a.74.74 0 0 0-.54.25c-.18.2-.71.69-.71 1.69s.73 1.96.83 2.09c.1.13 1.43 2.18 3.46 3.06.48.21.86.33 1.16.42.49.16.93.13 1.28.08.39-.06 1.18-.48 1.35-.95.17-.46.17-.86.12-.95-.05-.08-.18-.13-.38-.23z"
+                  fill="#25d366"
+                />
+              </svg>
+            </div>
+            <div class="link-text">
+              <span class="link-title">
+                Fale comigo no
+                <span class="accent">WhatsApp</span>
+              </span>
+              <span class="link-sub">Tire dúvidas ou agende uma sessão</span>
+            </div>
+            <svg
+              class="link-arrow"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 6L15 12L9 18"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-credential">
+          <span class="footer-credential-dot"></span>
+          Terapeuta credenciada · ABRATH CRTH-BR 17974
+        </div>
+        <div class="footer-text">
+          ©
+          <span id="year"></span>
+          EFTclub
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear()
+
+      const wrap = document.querySelector('.testimonials-wrap')
+      const track = document.getElementById('testimonialsTrack')
+      const dots = document.querySelectorAll('.testimonial-dot')
+      const slides = Array.from(track.querySelectorAll('.testimonial-slide'))
+
+      function getIndex() {
+        let closest = 0
+        let minDiff = Infinity
+        slides.forEach((slide, i) => {
+          const diff = Math.abs(slide.offsetLeft - track.scrollLeft)
+          if (diff < minDiff) {
+            minDiff = diff
+            closest = i
+          }
+        })
+        return closest
+      }
+
+      function update() {
+        const i = getIndex()
+        dots.forEach((dot, j) => dot.classList.toggle('active', j === i))
+        const h = slides[i].offsetHeight
+        if (h > 0) wrap.style.height = h + 'px'
+      }
+
+      function goTo(i) {
+        track.scrollTo({ left: slides[i].offsetLeft, behavior: 'smooth' })
+      }
+
+      track.addEventListener('scroll', update, { passive: true })
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => goTo(i))
+      })
+
+      const firstImg = slides[0].querySelector('img')
+      if (firstImg.complete) update()
+      else firstImg.addEventListener('load', update)
+    </script>
+  </body>
+</html>
